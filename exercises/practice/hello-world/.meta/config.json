@@ -1,18 +1,9 @@
 {
   "blurb": "The classical introductory exercise. Just say \"Hello, World!\"",
-  "authors": ["rchavarria"],
-  "contributors": [
-    "austinratcliff",
-    "designfrontier",
-    "draalger",
-    "kytrinyx",
-    "matthewmorgan",
-    "ryanplusplus",
-    "SleeplessByte",
-    "tejasbubane"
-  ],
+  "authors": ["bushidocodes"],
+  "contributors": [],
   "files": {
-    "solution": ["hello-world.js"],
+    "solution": ["hello-world.wat"],
     "test": ["hello-world.spec.js"],
     "example": [".meta/proof.ci.js"]
   },
