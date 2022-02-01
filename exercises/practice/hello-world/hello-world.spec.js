@@ -6,11 +6,6 @@ let currentInstance;
 let linearMemory;
 let textDecoder = new TextDecoder('utf8');
 
-let buildHostString = jest.fn((offset, len) => {
-  const buffer = new Uint8Array(linearMemory.buffer, offset, len);
-  return textDecoder.decode(buffer);
-});
-
 beforeAll(async () => {
   try {
     const {buffer} = await compileWat("hello-world.wat", {multi_value: true});
@@ -29,8 +24,8 @@ describe('Hello World', () => {
       return;
     }
     try {
-      linearMemory = new WebAssembly.Memory({initial: 3});
-      currentInstance = await WebAssembly.instantiate(wasmModule, {env: {linearMemory, buildHostString}});
+      linearMemory = new WebAssembly.Memory({initial: 1});
+      currentInstance = await WebAssembly.instantiate(wasmModule, {env: {linearMemory}});
     } catch (err) {
       console.log(`Error instantiating WebAssembly module: ${err}`);
     }
@@ -39,9 +34,11 @@ describe('Hello World', () => {
 
   test('Say Hi!', () => {
     expect(currentInstance).toBeTruthy();
-    currentInstance.exports.hello();
-    expect(buildHostString.mock.calls.length).toBe(1);
-    expect(buildHostString.mock.results[0].value).toBe("Hello, World!");
-    expect(buildHostString.mock.calls[0][1]).toBe("Hello, World!".length);
+    const offset = currentInstance.exports.hello();
+    const maxBuffer = 20;
+    const buffer = new Uint8Array(linearMemory.buffer, offset, maxBuffer);
+    const greetingBuffer = textDecoder.decode(buffer);
+    const greeting = greetingBuffer.split("\0")[0];
+    expect(greeting).toBe("Hello, World!");
   });
 });
