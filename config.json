@@ -29,6 +29,13 @@
         "name": "Darts",
         "uuid": "276fc3b9-6951-4db4-9732-996af3f86feb",
         "difficulty": 3
+      }, {
+        "slug": "hello-world",
+        "name": "Hello World",
+        "uuid": "8eae71ff-c56c-4f1c-affa-47c88fadfab8",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1
       }
     ]
   },
