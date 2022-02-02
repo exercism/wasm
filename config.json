@@ -23,7 +23,14 @@
   },
   "exercises": {
     "concept": [],
-    "practice": []
+    "practice": [
+      {
+        "slug": "darts",
+        "name": "Darts",
+        "uuid": "276fc3b9-6951-4db4-9732-996af3f86feb",
+        "difficulty": 3
+      }
+    ]
   },
   "concepts": [],
   "key_features": [],
