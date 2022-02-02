@@ -1,7 +1,6 @@
 {
   "blurb": "The classical introductory exercise. Just say \"Hello, World!\"",
   "authors": ["bushidocodes"],
-  "contributors": [],
   "files": {
     "solution": ["hello-world.wat"],
     "test": ["hello-world.spec.js"],
