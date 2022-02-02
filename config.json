@@ -30,11 +30,7 @@
         "uuid": "8eae71ff-c56c-4f1c-affa-47c88fadfab8",
         "practices": [],
         "prerequisites": [],
-        "difficulty": 1,
-        "topics": [
-          "strings",
-          "text_formatting"
-        ]
+        "difficulty": 1
       }
     ]
   },
