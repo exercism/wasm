@@ -1,5 +1,5 @@
 {
-  "language": "WebAssembly",
+  "language": "Web Assembly",
   "slug": "wasm",
   "active": false,
   "status": {
@@ -13,7 +13,7 @@
   "online_editor": {
     "indent_style": "space",
     "indent_size": 4,
-    "highlightjs_language": "wasm"
+    "highlightjs_language": "TODO: specify highlightjs language"
   },
   "files": {
     "solution": [],
