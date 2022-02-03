@@ -1,9 +1,8 @@
 #!/bin/bash
 
+# Used to allow CI to execute all exercise unit tests against known solutions to check for regressions
 # Assumed to be run from project root directory
 
-# Overwrites the starter *.wat files with the solution *.wat files located in each exercise's .meta directory
-# Used to allow CI to execute all exercise unit tests against known solutions to check for regressions
 for exercise_dir in ./exercises/*/*; do
     exercise_name=$(basename "$exercise_dir")
 
@@ -19,6 +18,7 @@ for exercise_dir in ./exercises/*/*; do
 done
 
 npm test
+declare -i jest_exit_code=$?
 
 for exercise_dir in ./exercises/*/*; do
     exercise_name=$(basename "$exercise_dir")
@@ -29,3 +29,5 @@ for exercise_dir in ./exercises/*/*; do
     # Enable the original Jest test spec
     mv "${exercise_dir}/${exercise_name}.spec.js.old" "${exercise_dir}/${exercise_name}.spec.js"
 done
+
+exit $jest_exit_code
