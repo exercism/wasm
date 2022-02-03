@@ -1,5 +1,5 @@
 {
-  "language": "Web Assembly",
+  "language": "WebAssembly",
   "slug": "wasm",
   "active": false,
   "status": {
@@ -8,12 +8,12 @@
     "representer": false,
     "analyzer": false
   },
-  "blurb": "TODO: add blurb",
+  "blurb": "WebAssembly is the Assembly Language of the Web. Its level of abstraction is similar to native assembly languages, but it targets an abstract stack-based virtual machine. While primarily intended as a compilation target for higher level languages, WebAssembly's textual representation can be written by hand. Such *.wat files frequently use S-Expressions, giving them a LISP-like appearance.",
   "version": 3,
   "online_editor": {
     "indent_style": "space",
     "indent_size": 4,
-    "highlightjs_language": "TODO: specify highlightjs language"
+    "highlightjs_language": "wasm"
   },
   "files": {
     "solution": [],
@@ -28,6 +28,8 @@
         "slug": "darts",
         "name": "Darts",
         "uuid": "276fc3b9-6951-4db4-9732-996af3f86feb",
+        "practices": [],
+        "prerequisites": [],
         "difficulty": 3
       }, {
         "slug": "hello-world",
@@ -40,6 +42,59 @@
     ]
   },
   "concepts": [],
-  "key_features": [],
-  "tags": []
+  "key_features": [
+    {
+      "icon": "fun",
+      "title": "Simple Syntax",
+      "content": "Simpler than native assembly languages, offering a good onramp to systems programming."
+    },
+    {
+      "icon": "fast",
+      "title": "Fast",
+      "content": "Optimized for fast (just-in-time) compilation to native code and raw execution speed."
+    },
+    {
+      "icon": "cross-platform",
+      "title": "Cross-platform",
+      "content": "Libraries reuse across languages and ecosystems. Executables run on desktops and servers."
+    },
+    {
+      "icon": "community",
+      "title": "Designed by a committee",
+      "content": "A vendor-neutral W3C standard with numerous contributors from research labs and industry."
+    },
+    {
+      "icon": "evolving",
+      "title": "Ever-evolving",
+      "content": "While a core MVP is production-ready, numerous proposals will expand WebAssembly in the future."
+    },
+    {
+      "icon": "interop",
+      "title": "JavaScript Interopability",
+      "content": "WebAssembly is a first-class citizen of the web with excellent interoperability with JavaScript."
+    }
+  ],
+  "tags": [
+    "paradigm/imperative",
+    "paradigm/procedural",
+    "typing/static",
+    "typing/weak",
+    "execution_mode/compiled",
+    "platform/windows",
+    "platform/mac",
+    "platform/linux",
+    "platform/ios",
+    "platform/android",
+    "platform/web",
+    "runtime/wasmtime",
+    "used_for/artificial_intelligence",
+    "used_for/backends",
+    "used_for/cross_platform_development",
+    "used_for/embedded_systems",
+    "used_for/frontends",
+    "used_for/games",
+    "used_for/guis",
+    "used_for/mobile",
+    "used_for/web_development"
+  ]
 }
