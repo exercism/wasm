@@ -13,7 +13,7 @@
 # Requires scripts:
 # - bin/test
 
-name: <track> / Test
+name: WebAssembly / Test
 
 on:
   push:
@@ -23,17 +23,19 @@ on:
 
 jobs:
   ci:
-    runs-on: <image-name>
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
 
-      - name: Use <setup tooling>
-        uses: <action to setup tooling>
+      - name: Use Node.js LTS (16.x)
+        uses: actions/setup-node@1f8c6b94b26d0feae1e387ca63ccbdc44d27b561
+        with:
+          node-version: "16"
 
       - name: Install project dependencies
-        run: <install dependencies>
+        run: npm ci
 
       - name: Run tests for all exercises
-        run: bin/test
+        run: ./scripts/test-known-solutions.sh
