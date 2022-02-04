@@ -4,10 +4,10 @@
   ],
   "files": {
     "solution": [
-      "collatz-conjecture.wat"
+      "difference-of-squares.wat"
     ],
     "test": [
-      "collatz-conjecture.spec.js"
+      "difference-of-squares.spec.js"
     ],
     "example": [
       ".meta/proof.ci.wat"
