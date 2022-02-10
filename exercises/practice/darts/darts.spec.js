@@ -13,19 +13,19 @@ beforeAll(async () => {
 });
 
 describe('Darts', () => {
-  beforeEach(async (done) => {
+  beforeEach(async () => {
     currentInstance = null;
 
     if (!wasmModule) {
-      done();
-      return;
+      return Promise.reject();
     }
     try {
       currentInstance = await WebAssembly.instantiate(wasmModule);
+      return Promise.resolve();
     } catch (err) {
       console.log(`Error instantiating WebAssembly module: ${err}`);
+      return Promise.reject();
     }
-    done();
   });
 
   test('Missed target', () => {
