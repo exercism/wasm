@@ -4,3 +4,4 @@ bin/configlet
 bin/configlet.exe
 node_modules
 yarn.lock
+package-lock.json
