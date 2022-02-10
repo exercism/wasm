@@ -16,20 +16,20 @@ beforeAll(async () => {
 });
 
 describe('Hello World', () => {
-  beforeEach(async (done) => {
+  beforeEach(async () => {
     currentInstance = null;
 
     if (!wasmModule) {
-      done();
-      return;
+      return Promise.reject();
     }
     try {
       linearMemory = new WebAssembly.Memory({initial: 1});
       currentInstance = await WebAssembly.instantiate(wasmModule, {env: {linearMemory}});
+      return Promise.resolve();
     } catch (err) {
       console.log(`Error instantiating WebAssembly module: ${err}`);
+      return Promise.reject();
     }
-    done();
   });
 
   test('Say Hi!', () => {
