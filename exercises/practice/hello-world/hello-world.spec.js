@@ -34,11 +34,10 @@ describe('Hello World', () => {
 
   test('Say Hi!', () => {
     expect(currentInstance).toBeTruthy();
-    const offset = currentInstance.exports.hello();
-    const maxBuffer = 20;
-    const buffer = new Uint8Array(linearMemory.buffer, offset, maxBuffer);
-    const greetingBuffer = textDecoder.decode(buffer);
-    const greeting = greetingBuffer.split("\0")[0];
+    const [offset, length] = currentInstance.exports.hello();
+    expect(length).toBe(13);
+    const buffer = new Uint8Array(linearMemory.buffer, offset, length);
+    const greeting = textDecoder.decode(buffer);
     expect(greeting).toBe("Hello, World!");
   });
 });
