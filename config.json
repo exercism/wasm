@@ -80,6 +80,13 @@
         "practices": [],
         "prerequisites": [],
         "difficulty": 1
+      }, {
+        "slug": "circular-buffer",
+        "name": "Circular Buffer",
+        "uuid": "db61cc68-40d8-47a7-838e-508784153a10",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 8
       }
     ]
   },
