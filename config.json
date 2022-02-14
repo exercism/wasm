@@ -80,6 +80,13 @@
         "practices": [],
         "prerequisites": [],
         "difficulty": 1
+      }, {
+        "slug": "all-your-base",
+        "name": "All Your Base",
+        "uuid": "e201215c-169c-487c-8b50-47fa6a395906",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 5
       }
     ]
   },
