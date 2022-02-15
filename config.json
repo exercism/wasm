@@ -81,6 +81,13 @@
         "prerequisites": [],
         "difficulty": 1
       }, {
+        "slug": "circular-buffer",
+        "name": "Circular Buffer",
+        "uuid": "db61cc68-40d8-47a7-838e-508784153a10",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 8
+      }, {
         "slug": "acronym",
         "name": "Acronym",
         "uuid": "086ecf2c-9356-4d09-9391-0ae4035a34f1",
