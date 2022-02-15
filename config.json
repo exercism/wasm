@@ -81,6 +81,13 @@
         "prerequisites": [],
         "difficulty": 1
       }, {
+        "slug": "raindrops",
+        "name": "Raindrops",
+        "uuid": "5bb7a61c-c942-4d80-87fb-a06fed959854",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3
+      }, {
         "slug": "hamming",
         "name": "Hamming",
         "uuid": "257096af-21dc-47ed-a00f-dd17a7d03c76",
