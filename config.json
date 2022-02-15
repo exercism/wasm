@@ -87,6 +87,76 @@
         "practices": [],
         "prerequisites": [],
         "difficulty": 8
+      }, {
+        "slug": "acronym",
+        "name": "Acronym",
+        "uuid": "086ecf2c-9356-4d09-9391-0ae4035a34f1",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
+      }, {
+        "slug": "all-your-base",
+        "name": "All Your Base",
+        "uuid": "e201215c-169c-487c-8b50-47fa6a395906",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 5
+      }, {
+        "slug": "binary-search",
+        "name": "Binary Search",
+        "uuid": "7c569e5d-bb00-44b8-8adc-34253790c19b",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 6
+      }, {
+        "slug": "triangle",
+        "name": "Triangle",
+        "uuid": "ed3ca73a-a0f0-46b8-8013-8b6d20758c8f",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
+      }, {
+        "slug": "nucleotide-count",
+        "name": "Nucleotide Count",
+        "uuid": "dbb13cbe-fea4-4aec-879f-15cda81f5a27",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1
+      }, {
+        "slug": "armstrong-numbers",
+        "name": "Armstrong Numbers",
+        "uuid": "8dff76c0-68a7-4181-859c-8e86cc1d3be4",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1
+      }, {
+        "slug": "rna-transcription",
+        "name": "Rna Transcription",
+        "uuid": "c54c9479-5ee1-43fa-906c-5f3a6c041485",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3
+      }, {
+        "slug": "raindrops",
+        "name": "Raindrops",
+        "uuid": "5bb7a61c-c942-4d80-87fb-a06fed959854",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3
+      }, {
+        "slug": "hamming",
+        "name": "Hamming",
+        "uuid": "257096af-21dc-47ed-a00f-dd17a7d03c76",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
+      }, {
+        "slug": "pangram",
+        "name": "Pangram",
+        "uuid": "53d9f022-03df-464f-8838-c8aaff76fa0c",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
       }
     ]
   },
