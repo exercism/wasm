@@ -86,6 +86,27 @@
         "uuid": "c54c9479-5ee1-43fa-906c-5f3a6c041485",
         "practices": [],
         "prerequisites": [],
+        "difficulty": 3
+      }, {
+        "slug": "raindrops",
+        "name": "Raindrops",
+        "uuid": "5bb7a61c-c942-4d80-87fb-a06fed959854",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3
+      }, {
+        "slug": "hamming",
+        "name": "Hamming",
+        "uuid": "257096af-21dc-47ed-a00f-dd17a7d03c76",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
+      }, {
+        "slug": "pangram",
+        "name": "Pangram",
+        "uuid": "53d9f022-03df-464f-8838-c8aaff76fa0c",
+        "practices": [],
+        "prerequisites": [],
         "difficulty": 2
       }
     ]
