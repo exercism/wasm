@@ -80,7 +80,14 @@
         "practices": [],
         "prerequisites": [],
         "difficulty": 1
-      },  {
+      }, {
+        "slug": "hamming",
+        "name": "Hamming",
+        "uuid": "257096af-21dc-47ed-a00f-dd17a7d03c76",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
+      }, {
         "slug": "pangram",
         "name": "Pangram",
         "uuid": "53d9f022-03df-464f-8838-c8aaff76fa0c",
