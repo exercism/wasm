@@ -81,6 +81,13 @@
         "prerequisites": [],
         "difficulty": 1
       }, {
+        "slug": "armstrong-numbers",
+        "name": "Armstrong Numbers",
+        "uuid": "8dff76c0-68a7-4181-859c-8e86cc1d3be4",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1
+      }, {
         "slug": "rna-transcription",
         "name": "Rna Transcription",
         "uuid": "c54c9479-5ee1-43fa-906c-5f3a6c041485",
