@@ -81,6 +81,13 @@
         "prerequisites": [],
         "difficulty": 1
       }, {
+        "slug": "triangle",
+        "name": "Triangle",
+        "uuid": "ed3ca73a-a0f0-46b8-8013-8b6d20758c8f",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
+      }, {
         "slug": "nucleotide-count",
         "name": "Nucleotide Count",
         "uuid": "dbb13cbe-fea4-4aec-879f-15cda81f5a27",
