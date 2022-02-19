@@ -2,13 +2,16 @@
   "name": "@exercism/wasm-hello-world",
   "description": "Exercism exercises in WebAssembly.",
   "author": "Sean McBride",
-  "private": true,
   "type": "module",
+  "private": true,
   "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/exercism/wasm",
     "directory": "exercises/practice/hello-world"
+  },
+  "jest": {
+    "maxWorkers": 1
   },
   "devDependencies": {
     "@exercism/babel-preset-javascript": "^0.1.2",

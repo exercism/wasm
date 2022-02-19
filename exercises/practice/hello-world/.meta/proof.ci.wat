@@ -1,5 +1,5 @@
 (module
-  (import "env" "linearMemory" (memory 1))
+  (memory (export "mem") 1)
 
   (data (i32.const 64) "Hello, World!")
   
