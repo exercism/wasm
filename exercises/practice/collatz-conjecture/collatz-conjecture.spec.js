@@ -1,18 +1,19 @@
-import { compileWat } from './compile-wat';
+import { compileWat, WasmRunner } from "wasm-lib";
 
 let wasmModule;
 let currentInstance;
 
 beforeAll(async () => {
   try {
-    const {buffer} = await compileWat("collatz-conjecture.wat");
+    const watPath = new URL("./collatz-conjecture.wat", import.meta.url);
+    const { buffer } = await compileWat(watPath);
     wasmModule = await WebAssembly.compile(buffer);
   } catch (err) {
     console.log(`Error compiling *.wat: ${err}`);
   }
 });
 
-describe('steps()', () => {
+describe("steps()", () => {
   beforeEach(async () => {
     currentInstance = null;
 
@@ -20,7 +21,7 @@ describe('steps()', () => {
       return Promise.reject();
     }
     try {
-      currentInstance = await WebAssembly.instantiate(wasmModule);
+      currentInstance = await new WasmRunner(wasmModule);
       return Promise.resolve();
     } catch (err) {
       console.log(`Error instantiating WebAssembly module: ${err}`);
@@ -28,27 +29,27 @@ describe('steps()', () => {
     }
   });
 
-  test('zero steps for one', () => {
+  test("zero steps for one", () => {
     expect(currentInstance.exports.steps(1)).toEqual(0);
   });
 
-  xtest('divide if even', () => {
+  xtest("divide if even", () => {
     expect(currentInstance.exports.steps(16)).toEqual(4);
   });
 
-  xtest('even and odd currentInstance.exports.steps', () => {
+  xtest("even and odd currentInstance.exports.steps", () => {
     expect(currentInstance.exports.steps(12)).toEqual(9);
   });
 
-  xtest('large number of even and odd steps', () => {
+  xtest("large number of even and odd steps", () => {
     expect(currentInstance.exports.steps(1000000)).toEqual(152);
   });
 
-  xtest('zero is an error', () => {
+  xtest("zero is an error", () => {
     expect(currentInstance.exports.steps(0)).toEqual(-1);
   });
 
-  xtest('negative value is an error', () => {
+  xtest("negative value is an error", () => {
     expect(currentInstance.exports.steps(-15)).toEqual(-1);
   });
 });
