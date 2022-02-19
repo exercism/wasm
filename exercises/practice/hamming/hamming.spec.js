@@ -5,21 +5,25 @@ let currentInstance;
 
 function compute(first, second) {
   const firstBufferOffset = 1024;
-  const firstBufferLength = 1024;
+  const firstBufferCapacity = 1024;
 
   const firstLengthEncoded = new TextEncoder().encode(first).length;
-  if (firstLengthEncoded > firstBufferLength) {
-    throw new Error("String is too large for buffer of size 128 bytes");
+  if (firstLengthEncoded > firstBufferCapacity) {
+    throw new Error(
+      `String is too large for buffer of size ${firstBufferCapacity} bytes`
+    );
   }
 
   currentInstance.set_mem_as_utf8(firstBufferOffset, firstLengthEncoded, first);
 
   const secondBufferOffset = 2048;
-  const secondBufferLength = 1024;
+  const secondBufferCapacity = 1024;
 
   const secondLengthEncoded = new TextEncoder().encode(second).length;
-  if (secondLengthEncoded > secondBufferLength) {
-    throw new Error("String is too large for buffer of size 128 bytes");
+  if (secondLengthEncoded > secondBufferCapacity) {
+    throw new Error(
+      `String is too large for buffer of size ${secondBufferCapacity} bytes`
+    );
   }
 
   currentInstance.set_mem_as_utf8(
