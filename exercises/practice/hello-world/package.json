@@ -30,6 +30,6 @@
     "lint": "eslint ."
   },
   "dependencies": {
-    "wasm-lib": "link:../../../../wasm-lib"
+    "wasm-lib": "exercism/wasm-lib#mvp"
   }
 }

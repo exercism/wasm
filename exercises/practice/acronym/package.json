@@ -25,7 +25,7 @@
     "wabt": "^1.0.26"
   },
   "dependencies": {
-    "wasm-lib": "link:../../../../wasm-lib"
+    "wasm-lib": "exercism/wasm-lib#mvp"
   },
   "scripts": {
     "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js ./*",
