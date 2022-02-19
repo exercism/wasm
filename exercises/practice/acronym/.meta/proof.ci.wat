@@ -1,5 +1,5 @@
 (module
-  (import "env" "linearMemory" (memory 1))
+  (memory (export "mem") 1)
 
   (global $apostrophe i32 (i32.const 39))
   (global $A i32 (i32.const 65))
