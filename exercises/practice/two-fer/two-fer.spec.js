@@ -1,43 +1,47 @@
-import { compileWat } from './compile-wat';
-import {TextDecoder, TextEncoder} from 'util';
+import { compileWat, WasmRunner } from "wasm-lib";
 
 let wasmModule;
 let currentInstance;
-let linearMemory;
-let textDecoder = new TextDecoder('utf8');
-let textEncoder = new TextEncoder('utf8');
 
 beforeAll(async () => {
   try {
-    const {buffer} = await compileWat("two-fer.wat", {multi_value: true, bulk_memory: true});
+    const watPath = new URL("./two-fer.wat", import.meta.url);
+    const { buffer } = await compileWat(watPath);
     wasmModule = await WebAssembly.compile(buffer);
   } catch (err) {
     console.log(`Error compiling *.wat: ${err}`);
   }
 });
 
-function twoFer(input = ""){
+function twoFer(input = "") {
   const inputOffset = 64;
-  const inputBuffer = new Uint8Array(linearMemory.buffer, inputOffset, input.length);
-  textEncoder.encodeInto(input, inputBuffer);
+  const inputBufferCapacity = 128;
+
+  const inputLengthEncoded = new TextEncoder().encode(input).length;
+  if (inputLengthEncoded > inputBufferCapacity) {
+    throw new Error("String is too large for buffer of size 128 bytes");
+  }
+
+  currentInstance.set_mem_as_utf8(inputOffset, inputLengthEncoded, input);
 
   // Pass offset and length to WebAssembly function
-  const [outputOffset, outputLength] = currentInstance.exports.twoFer(inputOffset, input.length);
+  const [outputOffset, outputLength] = currentInstance.exports.twoFer(
+    inputOffset,
+    input.length
+  );
 
   // Decode JS string from returned offset and length
-  const outputBuffer = new Uint8Array(linearMemory.buffer, outputOffset, outputLength);
-  return textDecoder.decode(outputBuffer);
+  return currentInstance.get_mem_as_utf8(outputOffset, outputLength);
 }
 
-describe('twoFer()', () => {
+describe("twoFer()", () => {
   beforeEach(async () => {
     currentInstance = null;
     if (!wasmModule) {
       return Promise.reject();
     }
     try {
-      linearMemory = new WebAssembly.Memory({initial: 1});
-      currentInstance = await WebAssembly.instantiate(wasmModule, {env: {linearMemory}});
+      currentInstance = await new WasmRunner(wasmModule);
       return Promise.resolve();
     } catch (err) {
       console.log(`Error instantiating WebAssembly module: ${err}`);
@@ -45,15 +49,15 @@ describe('twoFer()', () => {
     }
   });
 
-  test('no name given', () => {
-    expect(twoFer()).toEqual('One for you, one for me.');
+  test("no name given", () => {
+    expect(twoFer()).toEqual("One for you, one for me.");
   });
 
-  xtest('a name given', () => {
-    expect(twoFer('Alice')).toEqual('One for Alice, one for me.');
+  xtest("a name given", () => {
+    expect(twoFer("Alice")).toEqual("One for Alice, one for me.");
   });
 
-  xtest('another name given', () => {
-    expect(twoFer('Bob')).toEqual('One for Bob, one for me.');
+  xtest("another name given", () => {
+    expect(twoFer("Bob")).toEqual("One for Bob, one for me.");
   });
 });
