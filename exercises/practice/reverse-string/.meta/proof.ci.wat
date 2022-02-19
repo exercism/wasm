@@ -1,5 +1,5 @@
 (module
-  (import "env" "linearMemory" (memory 1))
+  (memory (export "mem") 1)
  
   (func (export "reverseString") (param $offset i32) (param $length i32) (result i32 i32)
     (local $temp i32)
