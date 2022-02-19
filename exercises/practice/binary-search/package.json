@@ -2,12 +2,16 @@
   "name": "@exercism/wasm-binary-search",
   "description": "Exercism exercises in WebAssembly.",
   "author": "Sean McBride",
+  "type": "module",
   "private": true,
   "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/exercism/wasm",
     "directory": "exercises/practice/binary-search"
+  },
+  "jest": {
+    "maxWorkers": 1
   },
   "devDependencies": {
     "@exercism/babel-preset-javascript": "^0.1.2",
@@ -20,10 +24,12 @@
     "jest": "^27.5.0",
     "wabt": "^1.0.26"
   },
-  "dependencies": {},
+  "dependencies": {
+    "wasm-lib": "link:../../../../wasm-lib"
+  },
   "scripts": {
-    "test": "jest ./*",
-    "watch": "jest --watch ./*",
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js ./*",
+    "watch": "node --experimental-vm-modules node_modules/jest/bin/jest.js --watch ./*",
     "lint": "eslint ."
   }
 }
