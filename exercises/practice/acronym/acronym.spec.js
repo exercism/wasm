@@ -16,13 +16,19 @@ beforeAll(async () => {
 
 function parse(input) {
   const inputBufferOffset = 64;
-  const inputBufferLength = 256;
-  currentInstance.set_mem_as_utf8(inputBufferOffset, inputBufferLength, input);
+  const inputBufferCapacity = 128;
+
+  const inputLengthEncoded = new TextEncoder().encode(input).length;
+  if (inputLengthEncoded > inputBufferCapacity) {
+    throw new Error("String is too large for of size 128 bytes");
+  }
+
+  currentInstance.set_mem_as_utf8(inputBufferOffset, inputLengthEncoded, input);
 
   // Pass offset and length to WebAssembly function
   const [outputOffset, outputLength] = currentInstance.exports.parse(
     inputBufferOffset,
-    inputBufferLength
+    input.length
   );
 
   // Decode JS string from returned offset and length
