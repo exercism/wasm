@@ -3,6 +3,7 @@
   "description": "Exercism exercises in WebAssembly.",
   "author": "Sean McBride",
   "private": true,
+  "type": "module",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -21,8 +22,11 @@
     "wabt": "^1.0.26"
   },
   "scripts": {
-    "test": "jest ./*",
-    "watch": "jest --watch ./*",
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js ./*",
+    "watch": "node --experimental-vm-modules node_modules/jest/bin/jest.js --watch ./*",
     "lint": "eslint ."
+  },
+  "dependencies": {
+    "wasm-lib": "link:../../../../wasm-lib"
   }
 }
