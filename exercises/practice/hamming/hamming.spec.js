@@ -9,7 +9,7 @@ function compute(first, second) {
 
   const firstLengthEncoded = new TextEncoder().encode(first).length;
   if (firstLengthEncoded > firstBufferLength) {
-    throw new Error("String is too large for of size 128 bytes");
+    throw new Error("String is too large for buffer of size 128 bytes");
   }
 
   currentInstance.set_mem_as_utf8(firstBufferOffset, firstLengthEncoded, first);
@@ -19,7 +19,7 @@ function compute(first, second) {
 
   const secondLengthEncoded = new TextEncoder().encode(second).length;
   if (secondLengthEncoded > secondBufferLength) {
-    throw new Error("String is too large for of size 128 bytes");
+    throw new Error("String is too large for buffer of size 128 bytes");
   }
 
   currentInstance.set_mem_as_utf8(

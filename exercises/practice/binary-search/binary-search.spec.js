@@ -21,7 +21,7 @@ function find(haystack = [], needle) {
   const i32Size = 4;
   const haystackLengthEncoded = haystack.length * i32Size;
   if (haystackLengthEncoded > inputBufferCapacity) {
-    throw new Error("String is too large for of size 128 bytes");
+    throw new Error("String is too large for buffer of size 128 bytes");
   }
 
   const inputBuffer = currentInstance.get_mem_as_i32(

@@ -20,7 +20,7 @@ function parse(input) {
 
   const inputLengthEncoded = new TextEncoder().encode(input).length;
   if (inputLengthEncoded > inputBufferCapacity) {
-    throw new Error("String is too large for of size 128 bytes");
+    throw new Error("String is too large for buffer of size 128 bytes");
   }
 
   currentInstance.set_mem_as_utf8(inputBufferOffset, inputLengthEncoded, input);
