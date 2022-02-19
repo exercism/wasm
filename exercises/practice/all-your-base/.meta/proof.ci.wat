@@ -1,5 +1,5 @@
 (module
-  (import "env" "linearMemory" (memory 1))
+  (memory (export "mem") 1)
   
   ;; Status codes returned as res[2]
   (global $ok i32 (i32.const 0))
