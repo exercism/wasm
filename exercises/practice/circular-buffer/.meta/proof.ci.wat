@@ -1,6 +1,4 @@
 (module
-  (import "env" "logInteger" (func $logInteger (param i32)))
-
   (memory 1)
   (global $head (mut i32) (i32.const -1))
   (global $tail (mut i32) (i32.const -1))
