@@ -1,4 +1,4 @@
-import { compileWat, WasmRunner } from "wasm-lib";
+import { compileWat, WasmRunner } from "@exercism/wasm-lib";
 
 let wasmModule;
 let currentInstance;
