@@ -29,6 +29,6 @@
     "lint": "eslint ."
   },
   "dependencies": {
-    "wasm-lib": "exercism/wasm-lib#mvp"
+    "@exercism/wasm-lib": "^0.1.0"
   }
 }

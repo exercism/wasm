@@ -22,7 +22,7 @@
     "jest": "^27.5.0"
   },
   "dependencies": {
-    "wasm-lib": "exercism/wasm-lib#mvp"
+    "@exercism/wasm-lib": "^0.1.0"
   },
   "scripts": {
     "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js ./*",
