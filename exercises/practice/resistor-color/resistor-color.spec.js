@@ -1,40 +1,39 @@
-import { compileWat } from './compile-wat';
-import {TextEncoder, TextDecoder} from 'util';
+import { compileWat, WasmRunner } from "@exercism/wasm-lib";
 
 let wasmModule;
 let currentInstance;
-let linearMemory;
-let textEncoder = new TextEncoder('utf8');
-let textDecoder = new TextDecoder('utf8');
 
 beforeAll(async () => {
   try {
-    const {buffer} = await compileWat("resistor-color.wat", {multi_value: true});
+    const watPath = new URL("./resistor-color.wat", import.meta.url);
+    const { buffer } = await compileWat(watPath);
     wasmModule = await WebAssembly.compile(buffer);
   } catch (err) {
     console.log(`Error compiling *.wat: ${err}`);
+    process.exit(1);
   }
 });
 
-function logMem(offset, length) {
-  const outputBuffer = new Uint8Array(linearMemory.buffer, offset, length);
-  const str = textDecoder.decode(outputBuffer);
-  console.log(`"${str}"`);
+function colorCode(input = "") {
+  const inputBufferOffset = 64;
+  const inputBufferCapacity = 128;
+
+  const inputLengthEncoded = new TextEncoder().encode(input).length;
+  if (inputLengthEncoded > inputBufferCapacity) {
+    throw new Error(
+      `String is too large for buffer of size ${inputBufferCapacity} bytes`
+    );
+  }
+
+  currentInstance.set_mem_as_utf8(inputBufferOffset, inputLengthEncoded, input);
+
+  return currentInstance.exports.colorCode(
+    inputBufferOffset,
+    inputLengthEncoded
+  );
 }
 
-function logInteger(num) {
-  console.log(`"${num}"`);
-}
-
-function colorCode(input = ""){
-  const inputOffset = 48;
-  const inputBuffer = new Uint8Array(linearMemory.buffer, inputOffset, input.length);
-  textEncoder.encodeInto(input, inputBuffer);
-
-  return currentInstance.exports.colorCode(inputOffset, input.length);
-}
-
-describe('ResistorColor', () => {
+describe("ResistorColor", () => {
   beforeEach(async () => {
     currentInstance = null;
 
@@ -42,8 +41,7 @@ describe('ResistorColor', () => {
       return Promise.reject();
     }
     try {
-      linearMemory = new WebAssembly.Memory({initial: 1});
-      currentInstance = await WebAssembly.instantiate(wasmModule, {env: {linearMemory, logMem, logInteger}});
+      currentInstance = await new WasmRunner(wasmModule);
       return Promise.resolve();
     } catch (err) {
       console.log(`Error instantiating WebAssembly module: ${err}`);
@@ -51,39 +49,36 @@ describe('ResistorColor', () => {
     }
   });
 
-  describe('Color codes', () => {
-    xtest('Black', () => {
-      expect(colorCode('black')).toEqual(0);
+  describe("Color codes", () => {
+    xtest("Black", () => {
+      expect(colorCode("black")).toEqual(0);
     });
 
-    xtest('White', () => {
-      expect(colorCode('white')).toEqual(9);
+    xtest("White", () => {
+      expect(colorCode("white")).toEqual(9);
     });
 
-    xtest('Orange', () => {
-      expect(colorCode('orange')).toEqual(3);
+    xtest("Orange", () => {
+      expect(colorCode("orange")).toEqual(3);
     });
   });
 
-  test('Colors', () => {
+  test("Colors", () => {
     const [offset, length] = currentInstance.exports.colors();
-
-    // Decode JS string from returned offset and length
-    const outputBuffer = new Uint8Array(linearMemory.buffer, offset, length);
-    const commaDelimited = textDecoder.decode(outputBuffer);
+    const commaDelimited = currentInstance.get_mem_as_utf8(offset, length);
     const colors = commaDelimited.split(",");
 
     expect(colors).toEqual([
-      'black',
-      'brown',
-      'red',
-      'orange',
-      'yellow',
-      'green',
-      'blue',
-      'violet',
-      'grey',
-      'white',
+      "black",
+      "brown",
+      "red",
+      "orange",
+      "yellow",
+      "green",
+      "blue",
+      "violet",
+      "grey",
+      "white",
     ]);
   });
 });

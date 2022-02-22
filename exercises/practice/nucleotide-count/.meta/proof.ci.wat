@@ -1,6 +1,6 @@
 
 (module
-  (import "env" "linearMemory" (memory 1))
+  (memory (export "mem") 1)
 
   ;; ASCII / UTF-7 / UTF-8 char codes
   (global $A i32 (i32.const 65))

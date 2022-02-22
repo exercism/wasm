@@ -1,5 +1,5 @@
 (module
-  (import "env" "linearMemory" (memory 1))
+  (memory (export "mem") 1)
 
   (global $G i32 (i32.const 71))
   (global $C i32 (i32.const 67))

@@ -1,6 +1,5 @@
 (module
-  (import "env" "linearMemory" (memory 1))
-  (import "env" "logInteger" (func $logInteger (param i32)))
+  (memory (export "mem") 1)
 
   (global $lowerACharCode i32 (i32.const 97))
   (global $lowerZCharCode i32 (i32.const 122))

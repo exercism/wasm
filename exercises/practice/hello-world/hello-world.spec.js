@@ -1,21 +1,19 @@
-import { compileWat } from './compile-wat';
-import {TextDecoder} from 'util';
+import { compileWat, WasmRunner } from "@exercism/wasm-lib";
 
 let wasmModule;
 let currentInstance;
-let linearMemory;
-let textDecoder = new TextDecoder('utf8');
 
 beforeAll(async () => {
   try {
-    const {buffer} = await compileWat("hello-world.wat", {multi_value: true});
+    const watPath = new URL("./hello-world.wat", import.meta.url);
+    const { buffer } = await compileWat(watPath);
     wasmModule = await WebAssembly.compile(buffer);
   } catch (err) {
     console.log(`Error compiling *.wat: ${err}`);
   }
 });
 
-describe('Hello World', () => {
+describe("Hello World", () => {
   beforeEach(async () => {
     currentInstance = null;
 
@@ -23,8 +21,7 @@ describe('Hello World', () => {
       return Promise.reject();
     }
     try {
-      linearMemory = new WebAssembly.Memory({initial: 1});
-      currentInstance = await WebAssembly.instantiate(wasmModule, {env: {linearMemory}});
+      currentInstance = await new WasmRunner(wasmModule);
       return Promise.resolve();
     } catch (err) {
       console.log(`Error instantiating WebAssembly module: ${err}`);
@@ -32,12 +29,11 @@ describe('Hello World', () => {
     }
   });
 
-  test('Say Hi!', () => {
+  test("Say Hi!", () => {
     expect(currentInstance).toBeTruthy();
     const [offset, length] = currentInstance.exports.hello();
     expect(length).toBe(13);
-    const buffer = new Uint8Array(linearMemory.buffer, offset, length);
-    const greeting = textDecoder.decode(buffer);
+    const greeting = currentInstance.get_mem_as_utf8(offset, length);
     expect(greeting).toBe("Hello, World!");
   });
 });

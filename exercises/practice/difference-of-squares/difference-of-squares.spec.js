@@ -1,19 +1,19 @@
-import { compileWat } from './compile-wat';
+import { compileWat, WasmRunner } from "@exercism/wasm-lib";
 
 let wasmModule;
 let currentInstance;
 
 beforeAll(async () => {
   try {
-    const {buffer} = await compileWat("difference-of-squares.wat");
+    const watPath = new URL("./difference-of-squares.wat", import.meta.url);
+    const { buffer } = await compileWat(watPath);
     wasmModule = await WebAssembly.compile(buffer);
   } catch (err) {
     console.log(`Error compiling *.wat: ${err}`);
   }
 });
 
-
-describe('difference-of-squares', () => {
+describe("difference-of-squares", () => {
   beforeEach(async () => {
     currentInstance = null;
 
@@ -21,7 +21,7 @@ describe('difference-of-squares', () => {
       return Promise.reject();
     }
     try {
-      currentInstance = await WebAssembly.instantiate(wasmModule);
+      currentInstance = await new WasmRunner(wasmModule);
       return Promise.resolve();
     } catch (err) {
       console.log(`Error instantiating WebAssembly module: ${err}`);
@@ -29,45 +29,44 @@ describe('difference-of-squares', () => {
     }
   });
 
-
-  describe('Square the sum of the numbers up to the given number', () => {
-    test('square of sum 1', () => {
+  describe("Square the sum of the numbers up to the given number", () => {
+    test("square of sum 1", () => {
       expect(currentInstance.exports.squareOfSum(1)).toBe(1);
     });
 
-    xtest('square of sum 5', () => {
+    xtest("square of sum 5", () => {
       expect(currentInstance.exports.squareOfSum(5)).toBe(225);
     });
 
-    xtest('square of sum 100', () => {
+    xtest("square of sum 100", () => {
       expect(currentInstance.exports.squareOfSum(100)).toBe(25502500);
     });
   });
 
-  describe('Sum the squares of the numbers up to the given number', () => {
-    xtest('sum of squares 1', () => {
+  describe("Sum the squares of the numbers up to the given number", () => {
+    xtest("sum of squares 1", () => {
       expect(currentInstance.exports.sumOfSquares(1)).toBe(1);
     });
 
-    xtest('sum of squares 5', () => {
+    xtest("sum of squares 5", () => {
       expect(currentInstance.exports.sumOfSquares(5)).toBe(55);
     });
 
-    xtest('sum of squares 100', () => {
+    xtest("sum of squares 100", () => {
       expect(currentInstance.exports.sumOfSquares(100)).toBe(338350);
     });
   });
 
-  describe('Subtract sum of squares from square of sums', () => {
-    xtest('difference of squares 1', () => {
+  describe("Subtract sum of squares from square of sums", () => {
+    xtest("difference of squares 1", () => {
       expect(currentInstance.exports.difference(1)).toBe(0);
     });
 
-    xtest('difference of squares 5', () => {
+    xtest("difference of squares 5", () => {
       expect(currentInstance.exports.difference(5)).toBe(170);
     });
 
-    xtest('difference of squares 100', () => {
+    xtest("difference of squares 100", () => {
       expect(currentInstance.exports.difference(100)).toBe(25164150);
     });
   });

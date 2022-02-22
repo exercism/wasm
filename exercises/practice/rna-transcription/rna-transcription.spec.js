@@ -1,15 +1,12 @@
-import { compileWat } from './compile-wat';
-import {TextDecoder, TextEncoder} from 'util';
+import { compileWat, WasmRunner } from "@exercism/wasm-lib";
 
 let wasmModule;
 let currentInstance;
-let linearMemory;
-let textDecoder = new TextDecoder('utf8');
-let textEncoder = new TextEncoder('utf8');
 
 beforeAll(async () => {
   try {
-    const {buffer} = await compileWat("rna-transcription.wat", {multi_value: true});
+    const watPath = new URL("./rna-transcription.wat", import.meta.url);
+    const { buffer } = await compileWat(watPath);
     wasmModule = await WebAssembly.compile(buffer);
   } catch (err) {
     console.log(`Error compiling *.wat: ${err}`);
@@ -17,29 +14,38 @@ beforeAll(async () => {
   }
 });
 
-function toRna(input){
-  const inputOffset = 64;
-  const inputBuffer = new Uint8Array(linearMemory.buffer, inputOffset, input.length);
-  textEncoder.encodeInto(input, inputBuffer);
+function toRna(input) {
+  const inputBufferOffset = 64;
+  const inputBufferCapacity = 128;
+
+  const inputLengthEncoded = new TextEncoder().encode(input).length;
+  if (inputLengthEncoded > inputBufferCapacity) {
+    throw new Error(
+      `String is too large for buffer of size ${inputBufferCapacity} bytes`
+    );
+  }
+
+  currentInstance.set_mem_as_utf8(inputBufferOffset, inputLengthEncoded, input);
 
   // Pass offset and length to WebAssembly function
-  const [outputOffset, outputLength] = currentInstance.exports.toRna(inputOffset, input.length);
+  const [outputOffset, outputLength] = currentInstance.exports.toRna(
+    inputBufferOffset,
+    input.length
+  );
   expect(outputLength).toEqual(input.length);
 
   // Decode JS string from returned offset and length
-  const outputBuffer = new Uint8Array(linearMemory.buffer, outputOffset, outputLength);
-  return textDecoder.decode(outputBuffer);
+  return currentInstance.get_mem_as_utf8(outputOffset, outputLength);
 }
 
-describe('Transcription', () => {
+describe("Transcription", () => {
   beforeEach(async () => {
     currentInstance = null;
     if (!wasmModule) {
       return Promise.reject();
     }
     try {
-      linearMemory = new WebAssembly.Memory({initial: 1});
-      currentInstance = await WebAssembly.instantiate(wasmModule, {env: {linearMemory}});
+      currentInstance = await new WasmRunner(wasmModule);
       return Promise.resolve();
     } catch (err) {
       console.log(`Error instantiating WebAssembly module: ${err}`);
@@ -47,27 +53,27 @@ describe('Transcription', () => {
     }
   });
 
-  test('empty rna sequence', () => {
-    expect(toRna('')).toEqual('');
+  test("empty rna sequence", () => {
+    expect(toRna("")).toEqual("");
   });
 
-  xtest('transcribes cytosine to guanine', () => {
-    expect(toRna('C')).toEqual('G');
+  xtest("transcribes cytosine to guanine", () => {
+    expect(toRna("C")).toEqual("G");
   });
 
-  xtest('transcribes guanine to cytosine', () => {
-    expect(toRna('G')).toEqual('C');
+  xtest("transcribes guanine to cytosine", () => {
+    expect(toRna("G")).toEqual("C");
   });
 
-  xtest('transcribes thymine to adenine', () => {
-    expect(toRna('T')).toEqual('A');
+  xtest("transcribes thymine to adenine", () => {
+    expect(toRna("T")).toEqual("A");
   });
 
-  xtest('transcribes adenine to uracil', () => {
-    expect(toRna('A')).toEqual('U');
+  xtest("transcribes adenine to uracil", () => {
+    expect(toRna("A")).toEqual("U");
   });
 
-  xtest('transcribes all dna nucleotides to their rna complements', () => {
-    expect(toRna('ACGTGGTCTTAA')).toEqual('UGCACCAGAAUU');
+  xtest("transcribes all dna nucleotides to their rna complements", () => {
+    expect(toRna("ACGTGGTCTTAA")).toEqual("UGCACCAGAAUU");
   });
 });

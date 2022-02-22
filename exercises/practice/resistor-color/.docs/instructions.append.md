@@ -1,3 +1,7 @@
+## Reserved Memory
+
+Bytes 64-189 of the linear memory are reserved for the input string.
+
 # Instructions append
 
 WebAssembly does not have the concept of arrays. For the colors test, return a comma-delimited buffer of characters in the form:

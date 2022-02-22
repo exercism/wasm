@@ -1,11 +1,12 @@
-import { compileWat } from './compile-wat';
+import { compileWat, WasmRunner } from "@exercism/wasm-lib";
 
 let wasmModule;
 let currentInstance;
 
 beforeAll(async () => {
   try {
-    const {buffer} = await compileWat("triangle.wat");
+    const watPath = new URL("./triangle.wat", import.meta.url);
+    const { buffer } = await compileWat(watPath);
     wasmModule = await WebAssembly.compile(buffer);
   } catch (err) {
     console.log(`Error compiling *.wat: ${err}`);
@@ -13,7 +14,7 @@ beforeAll(async () => {
   }
 });
 
-describe('Triangle', () => {
+describe("Triangle", () => {
   beforeEach(async () => {
     currentInstance = null;
 
@@ -21,7 +22,7 @@ describe('Triangle', () => {
       return Promise.reject();
     }
     try {
-      currentInstance = await WebAssembly.instantiate(wasmModule);
+      currentInstance = await new WasmRunner(wasmModule);
       return Promise.resolve();
     } catch (err) {
       console.log(`Error instantiating WebAssembly module: ${err}`);
@@ -29,84 +30,84 @@ describe('Triangle', () => {
     }
   });
 
-  describe('equilateral triangle', () => {
-    test('all sides are equal', () => {
+  describe("equilateral triangle", () => {
+    test("all sides are equal", () => {
       expect(currentInstance.exports.isEquilateral(2, 2, 2)).toBe(1);
     });
 
-    xtest('any side is unequal', () => {
+    xtest("any side is unequal", () => {
       expect(currentInstance.exports.isEquilateral(2, 3, 2)).toBe(0);
     });
 
-    xtest('no sides are equal', () => {
+    xtest("no sides are equal", () => {
       expect(currentInstance.exports.isEquilateral(5, 4, 6)).toBe(0);
     });
 
-    xtest('all zero sides is not a triangle', () => {
+    xtest("all zero sides is not a triangle", () => {
       expect(currentInstance.exports.isEquilateral(0, 0, 0)).toBe(0);
     });
 
-    xtest('sides may be floats', () => {
+    xtest("sides may be floats", () => {
       expect(currentInstance.exports.isEquilateral(0.5, 0.5, 0.5)).toBe(1);
     });
   });
 
-  describe('isosceles triangle', () => {
-    xtest('last two sides are equal', () => {
+  describe("isosceles triangle", () => {
+    xtest("last two sides are equal", () => {
       expect(currentInstance.exports.isIsosceles(3, 4, 4)).toBe(1);
     });
 
-    xtest('first two sides are equal', () => {
+    xtest("first two sides are equal", () => {
       expect(currentInstance.exports.isIsosceles(4, 4, 3)).toBe(1);
     });
 
-    xtest('first and last sides are equal', () => {
+    xtest("first and last sides are equal", () => {
       expect(currentInstance.exports.isIsosceles(4, 3, 4)).toBe(1);
     });
 
-    xtest('equilateral triangles are also isosceles', () => {
+    xtest("equilateral triangles are also isosceles", () => {
       expect(currentInstance.exports.isIsosceles(4, 4, 4)).toBe(1);
     });
 
-    xtest('no sides are equal', () => {
+    xtest("no sides are equal", () => {
       expect(currentInstance.exports.isIsosceles(2, 3, 4)).toBe(0);
     });
 
-    xtest('first triangle inequality violation', () => {
+    xtest("first triangle inequality violation", () => {
       expect(currentInstance.exports.isIsosceles(1, 1, 3)).toBe(0);
     });
 
-    xtest('second triangle inequality violation', () => {
+    xtest("second triangle inequality violation", () => {
       expect(currentInstance.exports.isIsosceles(1, 3, 1)).toBe(0);
     });
 
-    xtest('third triangle inequality violation', () => {
+    xtest("third triangle inequality violation", () => {
       expect(currentInstance.exports.isIsosceles(3, 1, 1)).toBe(0);
     });
 
-    xtest('sides may be floats', () => {
+    xtest("sides may be floats", () => {
       expect(currentInstance.exports.isIsosceles(0.5, 0.4, 0.5)).toBe(1);
     });
   });
 
-  describe('scalene triangle', () => {
-    xtest('no sides are equal', () => {
+  describe("scalene triangle", () => {
+    xtest("no sides are equal", () => {
       expect(currentInstance.exports.isScalene(5, 4, 6)).toBe(1);
     });
 
-    xtest('all sides are equal', () => {
+    xtest("all sides are equal", () => {
       expect(currentInstance.exports.isScalene(4, 4, 4)).toBe(0);
     });
 
-    xtest('two sides are equal', () => {
+    xtest("two sides are equal", () => {
       expect(currentInstance.exports.isScalene(4, 4, 3)).toBe(0);
     });
 
-    xtest('may not violate triangle inequality', () => {
+    xtest("may not violate triangle inequality", () => {
       expect(currentInstance.exports.isScalene(7, 3, 2)).toBe(0);
     });
 
-    xtest('sides may be floats', () => {
+    xtest("sides may be floats", () => {
       expect(currentInstance.exports.isScalene(0.5, 0.4, 0.6)).toBe(1);
     });
   });
