@@ -25,7 +25,7 @@ It will display _two_ versions (if it detects your OS. Otherwise, select your OS
 If your `node -v` version matches one of these, you're good.
 If it doesn't, we recommend that you use Node.js LTS.
 If you're worried upgrading might break something on your system, you can continue as if everything is fine;
-we might not be able to provide support when something unexpected happens.
+we might not be able to provide support when something unexpected happens though.
 
 ### If Node.js is not installed
 
