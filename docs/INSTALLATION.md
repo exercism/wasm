@@ -44,7 +44,7 @@ Both options support Windows, macOS, and Linux. If you don't know what to do, us
 After the installer is done, or the package manager has completed, or the binary has been copied and the instructions have been followed, it's good to test if everything is alright.
 
 1. Open up a _terminal_ (`Terminal`, `cmd`, `Powershell`, `bash`, ...)
-1. `node -v`
+1. Run `node -v`
 
 The version should match the one on the website.
 
