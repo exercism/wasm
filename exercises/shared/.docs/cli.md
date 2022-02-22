@@ -2,7 +2,7 @@
 
 ## Submitting the solution
 
-Once none of the tests are skipped and they are all passing, you can submit your solution using `exercism submit numbers.wat`.
+Once none of the tests are skipped and they are all passing, you can submit your solution using `exercism submit <exercise-name>.wat`.
 
 ## Submitting Incomplete Solutions
 
