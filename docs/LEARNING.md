@@ -12,7 +12,7 @@ Most WebAssembly resources on the web focus on high level concepts and jump imme
 - [Stanford CS242 on WebAssembly](https://stanford-cs242.github.io/f18/lectures/04-1-webassembly-practice.html)
 - [Advent of Code in WAT](https://www.wasm.builders/bkolobara/advent-of-code-2021-in-hand-written-webassembly-introduction-1nch)
 
-### WAT Videos
+### Videos
 
 - [Video - Raw Wasm](https://www.youtube.com/watch?v=qEq3F9Z8z6w&list=PL6ed-L7Ni0yRnaN8-l2wfA0u3ILmyJMkz&index=7)
 - [Video - Chris Hay WebAssembly Series](https://www.youtube.com/playlist?list=PL5Dc_611BqV2NXJpSaOa1neQCwRLCGEIC)
