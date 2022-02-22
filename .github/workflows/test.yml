@@ -38,4 +38,4 @@ jobs:
         run: npm ci
 
       - name: Run tests for all exercises
-        run: ./scripts/test-known-solutions.sh
+        run: ./bin/test

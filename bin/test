@@ -2,8 +2,8 @@
 
 # Synopsis:
 # Test the track's exercises.
-# 
-# At a minimum, this file must check if the example/exemplar solution of each 
+#
+# At a minimum, this file must check if the example/exemplar solution of each
 # Practice/Concept Exercise passes the exercise's tests.
 #
 # To check this, you usually have to (temporarily) replace the exercise's solution files
@@ -18,18 +18,31 @@
 # Example:
 # ./bin/test
 
-# Verify the Concept Exercises
-for concept_exercise_dir in ./exercises/concept/*/; do
-    if [ -d $concept_exercise_dir ]; then
-        echo "Checking $(basename "${concept_exercise_dir}") exercise..."
-        # TODO: run command to verify that the exemplar solution passes the tests
-    fi
+for exercise_dir in ./exercises/*/*; do
+    exercise_name=$(basename "$exercise_dir")
+
+    # Save original files to restore after running unit tests
+    cp "${exercise_dir}/${exercise_name}.wat" "${exercise_dir}/${exercise_name}.wat.old"
+    cp "${exercise_dir}/${exercise_name}.spec.js" "${exercise_dir}/${exercise_name}.spec.js.old"
+
+    # Overwrite the exercise *.wat source with a known solution
+    cp "${exercise_dir}/.meta/proof.ci.wat" "${exercise_dir}/${exercise_name}.wat"
+
+    # Enable all Jest unit tests
+    sed -i s/xtest/test/ "${exercise_dir}/${exercise_name}.spec.js"
 done
 
-# Verify the Practice Exercises
-for practice_exercise_dir in ./exercises/practice/*/; do
-    if [ -d $practice_exercise_dir ]; then
-        echo "Checking $(basename "${practice_exercise_dir}") exercise..."
-        # TODO: run command to verify that the example solution passes the tests
-    fi
+npm test
+declare -i jest_exit_code=$?
+
+for exercise_dir in ./exercises/*/*; do
+    exercise_name=$(basename "$exercise_dir")
+
+    # Restore the original *.wat source
+    mv "${exercise_dir}/${exercise_name}.wat.old" "${exercise_dir}/${exercise_name}.wat"
+
+    # Enable the original Jest test spec
+    mv "${exercise_dir}/${exercise_name}.spec.js.old" "${exercise_dir}/${exercise_name}.spec.js"
 done
+
+exit $jest_exit_code
