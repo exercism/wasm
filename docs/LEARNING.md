@@ -17,6 +17,6 @@ Most WebAssembly resources on the web focus on high level concepts and jump imme
 - [Video - Raw Wasm](https://www.youtube.com/watch?v=qEq3F9Z8z6w&list=PL6ed-L7Ni0yRnaN8-l2wfA0u3ILmyJMkz&index=7)
 - [Video - Chris Hay WebAssembly Series](https://www.youtube.com/playlist?list=PL5Dc_611BqV2NXJpSaOa1neQCwRLCGEIC)
 
-### WAT Books
+### Books
 
 - [Book - The Art of WebAssembly](https://www.amazon.com/Art-WebAssembly-Portable-High-Performance-Applications/dp/1718501447)
