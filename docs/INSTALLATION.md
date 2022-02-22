@@ -9,7 +9,7 @@ Many machines come pre-installed with [Node.js][web-nodejs] or might have been i
 So before we do anything, we should check if it's already installed:
 
 1. Open up a _terminal_ (`Terminal`, `cmd`, `Powershell`, `bash`, ...)
-1. `node -v`
+1. Run `node -v`
 
 If [Node.js][web-nodejs] is installed, a version is displayed.
 Write this version down.
