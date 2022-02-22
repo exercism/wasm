@@ -1,21 +1,7 @@
 # Help
 
-<!-- TODO: write document
+To get help if you're having trouble, you can use one of the following resources:
 
-  This document should contain track-specific instructions on how to get help when
-  the student is stuck.
-
-  The instructions should be short and to the point.
-
-  You could link to resources like Gitter channels, forums or mailing lists:
-  whatever can help a student become unstuck.
-
-  This document should **not** link to Exercism-wide (track-agnostic) help resources,
-  as those resources will automatically be included in the HELP.md file.
-
-  The links in this document can overlap with those in docs/LEARNING.md or docs/RESOURCES.md
-
-  When a student downloads an exercise via the CLI, this file's contents are
-  included into the HELP.md file.
-
-  See https://exercism.org/docs/building/tracks/shared-files for more information. -->
+- [Gitter](https://gitter.im/exercism/support) is Exercism's Gitter room; go here to get support and ask questions if you face any issues with downloading or submitting your exercises.
+- [/r/WebAssembly](https://www.reddit.com/r/WebAssembly/) is the WebAssembly subreddit.
+- [Github issue tracker](https://github.com/exercism/wasm/issues) is where we track our development and maintenance of Javascript exercises in exercism. But if none of the above links help you, feel free to post an issue here.

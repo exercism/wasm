@@ -1,15 +1,31 @@
 # Tests
 
-<!-- TODO: write document
+Execute the tests with:
 
-  This document should describe everything related to running tests in the track.
+```shell
+npm run test
+```
 
-  If your track uses skipped tests, this document can explain why thet is used and
-  how to unskip tests.
+You can also run Jest in "watch" mode, which will re-run your tests automatically when you save changes to the code or test module:
 
-  This document can also link to the testing framework documentation.
+```shell
+npm run watch
+```
 
-  The contents of this document are displayed on the track's documentation
-  page at `https://exercism.org/docs/tracks/<track>/tests`.
+## Understanding Skip Tests
 
-  See https://exercism.org/docs/building/tracks/docs for more information. -->
+The skip method instructs the test suite to not run a test, this function could be used also under the aliases: `it.skip(name, fn)` or `xit(name, fn)` or `xtest(name, fn)`
+
+- Why they are skipped ?
+
+To enable users to concentrate on one test at a time and enable one by one as they evolve the solution.
+
+- How to enable them ?
+
+Change `xtest` to `test`.
+
+```javascript
+test("title cased phrases", () => {
+  expect(Acronyms.parse("Portable Network Graphics")).toEqual("PNG");
+});
+```

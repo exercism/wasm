@@ -1,14 +1,5 @@
 # About
 
-<!-- TODO: write document
+[WebAssembly](https://webassembly.org/) is a binary instruction format for a stack-based virtual machine. It is a W3C standard that ships in all major browsers and features streaming compilation and convenient interoperability with JavaScript. [Most compiled languages](https://github.com/appcypher/awesome-wasm-langs) can now generate WebAssembly binaries, enabling client-side execution of languages other than JavaScript. Additionally, [many server-side runtimes](https://github.com/appcypher/awesome-wasm-runtimes) and cloud services execute WebAssembly, many of which support the emerging [WebAssembly Systems Interface](https://wasi.dev/).https://wasi.dev/
 
-  This document contains a short introduction to the language.
-
-  The introduction should be relatively brief and touch upon what
-  makes the language interesting (and possibly unique). The goal
-  is to help students decide if they want to join this track.
-
-  The contents of this document are displayed on the track page,
-  provided the student has not joined the track.
-
-  See https://exercism.org/docs/building/tracks/docs for more information. -->
+The focus of this track is on writing WebAssembly Text Format (\*.wat) files by hand in order to gain familiarity with the virtual machine, Instruction Set Architecture, and module abstraction provided by the core specification. While most production deployments of WebAssembly are compiled from higher-level languages, many developers depend on relatively heavy-weight frameworks that abstract away the WebAssembly virtual machine via heavyweight JavaScript glue code and generate relatively large, multi-megabyte binaries that result in slower startup-times. A deeper understanding of WebAssembly enables the creation of smaller modules and gives you total control over how your module interacts with the surrounding host environment. You might be surprised what can be accomplished with [a few kilobytes of WebAssembly written by hand](https://github.com/binji/raw-wasm)!

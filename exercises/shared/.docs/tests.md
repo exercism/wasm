@@ -1,15 +1,44 @@
 # Tests
 
-<!-- TODO: write document
+## Setup
 
-  This document should contain instructions on how to run the exercise's tests.
+Go through the setup [instructions for WebAssembly][docs-exercism-wasm] to install the necessary dependencies.
 
-  The instructions should be short and to the point.
+## Requirements
 
-  The docs/TESTS.md file can contain a more verbose description on how to run tests.
+Install assignment dependencies:
 
-  When a student downloads an exercise via the CLI, this file's contents are
-  included into the HELP.md file.
+```shell
+# Using npm
+npm install
 
-  See https://exercism.org/docs/building/tracks/shared-files for more information.
--->
+# Alternatively using yarn
+yarn
+```
+
+## Making the test suite pass
+
+All exercises come with a test suite to help you validate your solution before submitting.
+You can execute these tests by opening a command prompt in the exercise's directory, and then running:
+
+```bash
+# Using npm
+npm test
+
+# Alternatively using yarn
+yarn test
+```
+
+In some test suites all tests but the first have been skipped.
+
+Once you get a test passing, you can enable the next one by changing `xtest` to `test`.
+
+## Writing custom tests
+
+If you wish to write additional, custom, tests, create a new file `custom.spec.js`, and submit it with your solution together with the new file:
+
+```shell
+exercism submit numbers.wat custom.spec.js
+```
+
+[docs-exercism-wasm]: https://exercism.org/docs/tracks/wasm/installation
