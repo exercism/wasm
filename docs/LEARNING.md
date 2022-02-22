@@ -4,7 +4,7 @@
 
 Most WebAssembly resources on the web focus on high level concepts and jump immediately to building a WebAssembly module in a higher level language. Here are a handful of resources that cover the Text Format as used in this track.
 
-### WAT Websites
+### Websites
 
 - [MDN: Understanding the WebAssembly Text Format](https://developer.mozilla.org/en-US/docs/WebAssembly/Understanding_the_text_format)
 - [rsms: Introduction to WebAssembly](https://rsms.me/wasm-intro)
