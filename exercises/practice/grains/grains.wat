@@ -1,6 +1,7 @@
 (module
+  ;; squareNum is signed
   ;; Result is unsigned
-  (func $sqaure (export "square") (param $squareNum i64) (result i64)
+  (func $square (export "square") (param $squareNum i32) (result i64)
     (i64.const 42)
   )
 
