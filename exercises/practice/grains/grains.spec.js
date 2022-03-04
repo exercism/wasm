@@ -31,61 +31,61 @@ describe("Grains", () => {
 
   describe("returns the number of grains on the square", () => {
     test("grains on square 1", () => {
-      let resultSigned = currentInstance.exports.square(1n);
+      let resultSigned = currentInstance.exports.square(1);
       let resultUnsigned = BigInt.asUintN(64, resultSigned);
       expect(resultUnsigned).toEqual(1n);
     });
 
     xtest("grains on square 2", () => {
-      let resultSigned = currentInstance.exports.square(2n);
+      let resultSigned = currentInstance.exports.square(2);
       let resultUnsigned = BigInt.asUintN(64, resultSigned);
       expect(resultUnsigned).toEqual(2n);
     });
 
     xtest("grains on square 3", () => {
-      let resultSigned = currentInstance.exports.square(3n);
+      let resultSigned = currentInstance.exports.square(3);
       let resultUnsigned = BigInt.asUintN(64, resultSigned);
       expect(resultUnsigned).toEqual(4n);
     });
 
     xtest("grains on square 4", () => {
-      let resultSigned = currentInstance.exports.square(4n);
+      let resultSigned = currentInstance.exports.square(4);
       let resultUnsigned = BigInt.asUintN(64, resultSigned);
       expect(resultUnsigned).toEqual(8n);
     });
 
     xtest("grains on square 16", () => {
-      let resultSigned = currentInstance.exports.square(16n);
+      let resultSigned = currentInstance.exports.square(16);
       let resultUnsigned = BigInt.asUintN(64, resultSigned);
       expect(resultUnsigned).toEqual(32768n);
     });
 
     xtest("grains on square 32", () => {
-      let resultSigned = currentInstance.exports.square(32n);
+      let resultSigned = currentInstance.exports.square(32);
       let resultUnsigned = BigInt.asUintN(64, resultSigned);
       expect(resultUnsigned).toEqual(2147483648n);
     });
 
     xtest("grains on square 64", () => {
-      let resultSigned = currentInstance.exports.square(64n);
+      let resultSigned = currentInstance.exports.square(64);
       let resultUnsigned = BigInt.asUintN(64, resultSigned);
       expect(resultUnsigned).toEqual(9223372036854775808n);
     });
 
     xtest("square 0 has no value", () => {
-      let resultSigned = currentInstance.exports.square(0n);
+      let resultSigned = currentInstance.exports.square(0);
       let resultUnsigned = BigInt.asUintN(64, resultSigned);
       expect(resultUnsigned).toEqual(0n);
     });
 
     xtest("negative square has no value", () => {
-      let resultSigned = currentInstance.exports.square(-1n);
+      let resultSigned = currentInstance.exports.square(-1);
       let resultUnsigned = BigInt.asUintN(64, resultSigned);
       expect(resultUnsigned).toEqual(0n);
     });
 
     xtest("square greater than 64 has no value", () => {
-      let resultSigned = currentInstance.exports.square(65n);
+      let resultSigned = currentInstance.exports.square(65);
       let resultUnsigned = BigInt.asUintN(64, resultSigned);
       expect(resultUnsigned).toEqual(0n);
     });
