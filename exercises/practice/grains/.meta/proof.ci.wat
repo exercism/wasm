@@ -1,6 +1,7 @@
 (module
   (global $squareCount i32 (i32.const 64))
   
+  ;; squareNum is signed
   ;; Result is unsigned
   (func $square (export "square") (param $squareNum i32) (result i64)
     (if (i32.or
