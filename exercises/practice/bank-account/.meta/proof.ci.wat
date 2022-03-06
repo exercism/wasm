@@ -43,7 +43,7 @@
   )
 
   ;; returns balance on success, -1 if account closed
-  (func (export "balance") (param $amount i32) (result i32)
+  (func (export "balance") (result i32)
     (if (i32.eqz (global.get $open)) (then (return (i32.const -1))))
 
     (global.get $balance)

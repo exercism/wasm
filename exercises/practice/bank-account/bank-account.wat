@@ -20,7 +20,7 @@
   )
 
   ;; returns balance on success, -1 if account closed
-  (func (export "balance") (param $amount i32) (result i32)
+  (func (export "balance") (result i32)
     (i32.const 42)
   )
 )
