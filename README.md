@@ -1,4 +1,4 @@
-# Exercism Web Assembly Track
+# Exercism WebAssembly Track
 
 [![configlet](https://github.com/exercism/wasm/workflows/configlet/badge.svg)](https://github.com/exercism/wasm/actions?query=workflow%3Aconfiglet) [![tests](https://github.com/exercism/wasm/workflows/test/badge.svg)](https://github.com/exercism/wasm/actions?query=workflow%3Atest)
 
