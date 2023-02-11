@@ -1,9 +1,15 @@
 {
   "authors": [],
   "files": {
-    "solution": ["resistor-color.wat"],
-    "test": ["resistor-color.spec.js"],
-    "example": [".meta/proof.ci.wat"]
+    "solution": [
+      "resistor-color.wat"
+    ],
+    "test": [
+      "resistor-color.spec.js"
+    ],
+    "example": [
+      ".meta/proof.ci.wat"
+    ]
   },
   "blurb": "Convert a resistor band's color to its numeric representation.",
   "source": "Maud de Vries, Erik Schierboom",
