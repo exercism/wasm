@@ -168,6 +168,13 @@
         "prerequisites": [],
         "difficulty": 2
       }, {
+        "slug": "pop-count",
+        "name": "Pop Count",
+        "uuid": "233fde6a-79d9-4d90-8f94-2a0519352a5c",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 4
+      }, {
         "slug": "pangram",
         "name": "Pangram",
         "uuid": "53d9f022-03df-464f-8838-c8aaff76fa0c",
