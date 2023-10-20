@@ -1,6 +1,11 @@
 (module
   (memory (export "mem") 1)
 
+  (global $A i32 (i32.const 65))
+  (global $Z i32 (i32.const 90))
+  (global $a i32 (i32.const 97))
+  (global $z i32 (i32.const 122))
+
   (func $wrap (param $low i32) (param $high i32) (param $value i32) (param $shiftKey i32) (result i32)
       (local $newValue i32)
       (local.set $newValue (local.get $value))
@@ -63,8 +68,8 @@
       ;; shift upper case
       (local.set $value
         (call $wrap 
-          (i32.const 65) 
-          (i32.const 90) 
+          (global.get $A)
+          (global.get $Z)
           (i32.load8_u (local.get $index))
           (local.get $shiftKey)
         )
@@ -73,8 +78,8 @@
       ;; shift lower case
       (local.set $value
         (call $wrap 
-          (i32.const 97) 
-          (i32.const 122) 
+          (global.get $a)
+          (global.get $z)
           (local.get $value)
           (local.get $shiftKey)
         )
