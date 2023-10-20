@@ -49,6 +49,13 @@
         "prerequisites": [],
         "difficulty": 3
       }, {
+        "slug": "square-root",
+        "name": "Square Root",
+        "uuid": "fe3e2504-d952-4295-a3f8-c61c61621f98",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 4
+      }, {
         "slug": "grains",
         "name": "Grains",
         "uuid": "67d810e3-1784-43f2-a56f-64ab496cb42f",
