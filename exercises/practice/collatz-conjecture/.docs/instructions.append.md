@@ -1,3 +1,3 @@
 # Instructions append
 
-If `n` is not a positive integer, stop the program from being executed further and return -1 indicating an error condition.
+If `n` is _not_ a positive integer, don't continue executing and return `-1` to indicate an error condition.
