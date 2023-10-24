@@ -1,3 +1,5 @@
+# Instruction append
+
 ## Reserved Addresses
 
-No linear memory is requires for this exercise.
+No linear memory is required for this exercise.

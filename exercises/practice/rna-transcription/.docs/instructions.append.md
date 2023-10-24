@@ -1,5 +1,7 @@
+# Instruction append
+
 ## Reserved Memory
 
-Bytes 64-189 of the linear memory are reserved for the input string.
+The buffer for the input string uses bytes 64-189 of linear memory.
 
 The input string can be modified in place if desired.
