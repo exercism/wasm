@@ -109,7 +109,7 @@ We provide logging functions to interpret a range of addresses within linear mem
   (data (i32.const 64) "Goodbye, Mars!")
   (func $main
     ;; Logs "Goodbye, Mars!" to console
-    (call $log_mem_as_utf8 (i32.const 64) (i32.const 14)
+    (call $log_mem_as_utf8 (i32.const 64) (i32.const 14))
   )
 )
 ```
