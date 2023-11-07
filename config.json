@@ -5,7 +5,7 @@
   "status": {
     "concept_exercises": false,
     "test_runner": true,
-    "representer": false,
+    "representer": true,
     "analyzer": false
   },
   "blurb": "WebAssembly is the Assembly Language of the Web. Its level of abstraction is similar to native assembly languages, but it targets an abstract stack-based virtual machine. While primarily intended as a compilation target for higher level languages, WebAssembly's textual representation can be written by hand. Such *.wat files frequently use S-Expressions, giving them a LISP-like appearance.",
