@@ -11,6 +11,9 @@
     ],
     "example": [
       ".meta/proof.ci.wat"
+    ],
+    "invalidator": [
+      "package.json"
     ]
   },
   "blurb": "Given a DNA strand, return its RNA Complement Transcription.",

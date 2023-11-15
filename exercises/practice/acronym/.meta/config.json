@@ -11,6 +11,9 @@
     ],
     "example": [
       ".meta/proof.ci.wat"
+    ],
+    "invalidator": [
+      "package.json"
     ]
   },
   "blurb": "Convert a long phrase to its acronym",
