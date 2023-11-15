@@ -9,7 +9,7 @@ beforeAll(async () => {
     const { buffer } = await compileWat(watPath);
     wasmModule = await WebAssembly.compile(buffer);
   } catch (err) {
-    console.log(`Error compiling *.wat: ${err}`);
+    console.log(`Error compiling *.wat: \n${err}`);
     process.exit(1);
   }
 });

@@ -9,7 +9,7 @@ beforeAll(async () => {
     const { buffer } = await compileWat(watPath);
     wasmModule = await WebAssembly.compile(buffer);
   } catch (err) {
-    console.log(`Error compiling *.wat: ${err}`);
+    console.log(`Error compiling *.wat: \n${err}`);
     process.exit(1);
   }
 });
@@ -25,7 +25,7 @@ function rotate(text, shiftKey) {
     );
   }
 
-  currentInstance.set_mem_as_utf8(inputBufferOffset, inputLengthEncoded, text)
+  currentInstance.set_mem_as_utf8(inputBufferOffset, inputLengthEncoded, text);
 
   const [outputOffset, outputLength] = currentInstance.exports.rotate(
     inputBufferOffset,
@@ -90,6 +90,8 @@ describe("Rotational Cipher", () => {
   });
 
   xtest("rotate all letters", () => {
-    expect(rotate("The quick brown fox jumps over the lazy dog.", 13)).toEqual("Gur dhvpx oebja sbk whzcf bire gur ynml qbt.");
+    expect(rotate("The quick brown fox jumps over the lazy dog.", 13)).toEqual(
+      "Gur dhvpx oebja sbk whzcf bire gur ynml qbt."
+    );
   });
 });
