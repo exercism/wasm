@@ -30,6 +30,6 @@
     "lint": "eslint ."
   },
   "dependencies": {
-    "@exercism/wasm-lib": "^0.1.0"
+    "@exercism/wasm-lib": "^0.2.0"
   }
 }
