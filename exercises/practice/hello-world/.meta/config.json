@@ -11,6 +11,9 @@
     ],
     "example": [
       ".meta/proof.ci.wat"
+    ],
+    "invalidator": [
+      "package.json"
     ]
   },
   "blurb": "The classical introductory exercise. Just say \"Hello, World!\"",

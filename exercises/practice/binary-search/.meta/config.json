@@ -11,6 +11,9 @@
     ],
     "example": [
       ".meta/proof.ci.wat"
+    ],
+    "invalidator": [
+      "package.json"
     ]
   },
   "blurb": "Implement a binary search algorithm.",

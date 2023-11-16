@@ -11,6 +11,9 @@
     ],
     "example": [
       ".meta/proof.ci.wat"
+    ],
+    "invalidator": [
+      "package.json"
     ]
   },
   "blurb": "Create a sentence of the form \"One for X, one for me.\".",
