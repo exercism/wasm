@@ -1,3 +1,8 @@
+;;
+;; Note to CLI Users: Read 'exercises/shared/.docs/debug.md' for instructions
+;; on how to log various types of data to the console.
+;;
+
 (module
   ;; The name prefixed with $ is used to internally refer to functions via the call instruction
   ;; The string in the export instruction is the name of the export made available to the

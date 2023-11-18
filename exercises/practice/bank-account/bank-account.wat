@@ -1,3 +1,8 @@
+;;
+;; Note to CLI Users: Read 'exercises/shared/.docs/debug.md' for instructions
+;; on how to log various types of data to the console.
+;;
+
 (module
   ;; returns 0 on success, -1 on failure
   (func (export "open") (result i32)
