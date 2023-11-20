@@ -1,8 +1,3 @@
-;;
-;; Note to CLI Users: Read 'exercises/shared/.docs/debug.md' for instructions
-;; on how to log various types of data to the console.
-;;
-
 (module
   ;;
   ;; Calculate the square of the sum of the first N natural numbers

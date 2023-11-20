@@ -1,8 +1,3 @@
-;;
-;; Note to CLI Users: Read 'exercises/shared/.docs/debug.md' for instructions
-;; on how to log various types of data to the console.
-;;
-
 (module
   ;;
   ;; count the number of 1 bits in the binary representation of a number
