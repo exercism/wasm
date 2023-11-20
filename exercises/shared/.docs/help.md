@@ -5,7 +5,7 @@ To get help if you're having trouble, you can use one of the following resources
 - [/r/WebAssembly](https://www.reddit.com/r/WebAssembly/) is the WebAssembly subreddit.
 - [Github issue tracker](https://github.com/exercism/wasm/issues) is where we track our development and maintenance of Javascript exercises in exercism. But if none of the above links help you, feel free to post an issue here.
 
-# How to Debug
+## How to Debug
 
 Unlike many languages, WebAssembly code does not automatically have access to global resources such as the console. Such functionality instead must be provided as imports.
 
@@ -19,11 +19,11 @@ The `log_mem_*` functions expect to be able to access the linear memory of your 
 (memory (export "mem") 1)
 ```
 
-# Logging Locals and Globals
+## Logging Locals and Globals
 
 We provide logging functions for each of the primitive WebAssembly types. This is useful for logging global and local variables.
 
-## log_i32_s - Log a 32-bit signed integer to console
+### log_i32_s - Log a 32-bit signed integer to console
 
 ```wasm
 (module
@@ -35,7 +35,7 @@ We provide logging functions for each of the primitive WebAssembly types. This i
 )
 ```
 
-## log_i32_u - Log a 32-bit unsigned integer to console
+### log_i32_u - Log a 32-bit unsigned integer to console
 
 ```wasm
 (module
@@ -47,7 +47,7 @@ We provide logging functions for each of the primitive WebAssembly types. This i
 )
 ```
 
-## log_i64_s - Log a 64-bit signed integer to console
+### log_i64_s - Log a 64-bit signed integer to console
 
 ```wasm
 (module
@@ -59,7 +59,7 @@ We provide logging functions for each of the primitive WebAssembly types. This i
 )
 ```
 
-## log_i64_u - Log a 64-bit unsigned integer to console
+### log_i64_u - Log a 64-bit unsigned integer to console
 
 ```wasm
 (module
@@ -71,7 +71,7 @@ We provide logging functions for each of the primitive WebAssembly types. This i
 )
 ```
 
-## log_f32 - Log a 32-bit floating point number to console
+### log_f32 - Log a 32-bit floating point number to console
 
 ```wasm
 (module
@@ -83,7 +83,7 @@ We provide logging functions for each of the primitive WebAssembly types. This i
 )
 ```
 
-## log_f64 - Log a 64-bit floating point number to console
+### log_f64 - Log a 64-bit floating point number to console
 
 ```wasm
 (module
@@ -95,7 +95,7 @@ We provide logging functions for each of the primitive WebAssembly types. This i
 )
 ```
 
-# Logging from Linear Memory
+## Logging from Linear Memory
 
 WebAssembly Linear Memory is a byte-addressable array of values. This serves as the equivalent of virtual memory for WebAssembly programs
 
@@ -107,7 +107,7 @@ We provide logging functions to interpret a range of addresses within linear mem
 (memory (export "mem") 1)
 ```
 
-## log_mem_as_utf8 - Log a sequence of UTF8 characters to console
+### log_mem_as_utf8 - Log a sequence of UTF8 characters to console
 
 ```wasm
 (module
@@ -121,7 +121,7 @@ We provide logging functions to interpret a range of addresses within linear mem
 )
 ```
 
-## log_mem_as_i8 - Log a sequence of signed 8-bit integers to console
+### log_mem_as_i8 - Log a sequence of signed 8-bit integers to console
 
 ```wasm
 (module
@@ -135,7 +135,7 @@ We provide logging functions to interpret a range of addresses within linear mem
 )
 ```
 
-## log_mem_as_u8 - Log a sequence of unsigned 8-bit integers to console
+### log_mem_as_u8 - Log a sequence of unsigned 8-bit integers to console
 
 ```wasm
 (module
@@ -149,7 +149,7 @@ We provide logging functions to interpret a range of addresses within linear mem
 )
 ```
 
-## log_mem_as_i16 - Log a sequence of signed 16-bit integers to console
+### log_mem_as_i16 - Log a sequence of signed 16-bit integers to console
 
 ```wasm
 (module
@@ -165,7 +165,7 @@ We provide logging functions to interpret a range of addresses within linear mem
 )
 ```
 
-## log_mem_as_u16 - Log a sequence of unsigned 16-bit integers to console
+### log_mem_as_u16 - Log a sequence of unsigned 16-bit integers to console
 
 ```wasm
 (module
@@ -181,7 +181,7 @@ We provide logging functions to interpret a range of addresses within linear mem
 )
 ```
 
-## log_mem_as_i32 - Log a sequence of signed 32-bit integers to console
+### log_mem_as_i32 - Log a sequence of signed 32-bit integers to console
 
 ```wasm
 (module
@@ -197,7 +197,7 @@ We provide logging functions to interpret a range of addresses within linear mem
 )
 ```
 
-## log_mem_as_u32 - Log a sequence of unsigned 32-bit integers to console
+### log_mem_as_u32 - Log a sequence of unsigned 32-bit integers to console
 
 ```wasm
 (module
@@ -213,7 +213,7 @@ We provide logging functions to interpret a range of addresses within linear mem
 )
 ```
 
-## log_mem_as_i64 - Log a sequence of signed 64-bit integers to console
+### log_mem_as_i64 - Log a sequence of signed 64-bit integers to console
 
 ```wasm
 (module
@@ -229,7 +229,7 @@ We provide logging functions to interpret a range of addresses within linear mem
 )
 ```
 
-## log_mem_as_u64 - Log a sequence of unsigned 64-bit integers to console
+### log_mem_as_u64 - Log a sequence of unsigned 64-bit integers to console
 
 ```wasm
 (module
@@ -245,7 +245,7 @@ We provide logging functions to interpret a range of addresses within linear mem
 )
 ```
 
-## log_mem_as_u64 - Log a sequence of 32-bit floating point numbers to console
+### log_mem_as_u64 - Log a sequence of 32-bit floating point numbers to console
 
 ```wasm
 (module
@@ -261,7 +261,7 @@ We provide logging functions to interpret a range of addresses within linear mem
 )
 ```
 
-## log_mem_as_f64 - Log a sequence of 64-bit floating point numbers to console
+### log_mem_as_f64 - Log a sequence of 64-bit floating point numbers to console
 
 ```wasm
 (module
