@@ -1,12 +1,13 @@
 (module
-  (memory 1)
+  ;; Cap the memory at a single 64KiB page
+  (memory 1 1)
   ;; Add globals here!
 
   ;;
   ;; Initialize a circular buffer of i32s with a given capacity
   ;;
-  ;; @param {i32} newCapacity - capacity of the circular buffer between 0 and 1024
-  ;;                            in order to fit in a single WebAssembly page
+  ;; @param {i32} newCapacity - capacity of the circular buffer between 0 and 16,384
+  ;;                            in order to fit in a single 64KiB WebAssembly page
   ;;
   ;; @returns {i32} 0 on success or -1 on error
   ;; 

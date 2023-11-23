@@ -5,13 +5,17 @@
   (global $capacity (mut i32) (i32.const 0))
   (global $i32Size i32 (i32.const 4))
 
-
-  ;; capacity: the number of elements to store
-  ;; elementSize: the size of the element to store in bytes
-  ;; Does not support resizing circular buffer. Wipes all data
+  ;;
+  ;; Initialize a circular buffer of i32s with a given capacity
+  ;;
+  ;; @param {i32} newCapacity - capacity of the circular buffer between 0 and 16,384
+  ;;                            in order to fit in a single 64KiB WebAssembly page
+  ;;
+  ;; @returns {i32} 0 on success or -1 on error
+  ;; 
   (func (export "init") (param $newCapacity i32) (result i32)
     ;; a WebAssembly page is 4096 bytes, so up to 1024 i32s
-    (if (i32.gt_s (local.get $newCapacity) (i32.const 1024)) (then
+    (if (i32.gt_s (local.get $newCapacity) (i32.const 16384)) (then
       (return (i32.const -1))
     ))
 
@@ -21,11 +25,21 @@
     (i32.const 0)
   )
 
+  ;;
+  ;; Clear the circular buffer
+  ;;
   (func (export "clear")
     (global.set $head (i32.const -1))
     (global.set $tail (i32.const -1))
   )
 
+  ;; 
+  ;; Add an element to the circular buffer
+  ;;
+  ;; @param {i32} elem - element to add to the circular buffer
+  ;;
+  ;; @returns {i32} 0 on success or -1 if full
+  ;;
   (func (export "write") (param $elem i32) (result i32)
     (local $temp i32)
     ;; Table has capacity of zero
@@ -52,6 +66,14 @@
     (i32.const 0)
   )
 
+  ;; 
+  ;; Add an element to the circular buffer, overwriting the oldest element
+  ;; if the buffer is full
+  ;;
+  ;; @param {i32} elem - element to add to the circular buffer
+  ;;
+  ;; @returns {i32} 0 on success or -1 if full (capacity of zero)
+  ;;
   (func (export "forceWrite") (param $elem i32) (result i32)
     (local $temp i32)
     ;; Table has capacity of zero
@@ -78,7 +100,12 @@
     (i32.const 0)
   )
 
-  ;; Go-style error handling type (i32,i32)
+  ;;
+  ;; Read the oldest element from the circular buffer, if not empty
+  ;;
+  ;; @returns {i32} element on success or -1 if empty
+  ;; @returns {i32} status code set to 0 on success or -1 if empty
+  ;;
   (func (export "read") (result i32 i32)
     (local $result i32)
 

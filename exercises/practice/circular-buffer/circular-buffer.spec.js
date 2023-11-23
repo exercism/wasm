@@ -143,4 +143,15 @@ describe("CircularBuffer", () => {
     expect(currentInstance.exports.read()).toEqual([4, 0]);
     expect(currentInstance.exports.read()).toEqual([-1, -1]);
   });
+
+  xtest("Should be able to grow up to a full 64KiB page", () => {
+    expect(currentInstance.exports.init(16384)).toEqual(0);
+    for (let i = 0; i < 16384; i++) {
+      expect(currentInstance.exports.write(1024)).toEqual(0);
+    }
+  });
+
+  xtest("init should fail if greater than full 64KiB page", () => {
+    expect(currentInstance.exports.init(16385)).toEqual(-1);
+  });
 });
