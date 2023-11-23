@@ -1,5 +1,5 @@
 (module
-  (memory 1)
+  (memory 1 1)
   (global $head (mut i32) (i32.const -1))
   (global $tail (mut i32) (i32.const -1))
   (global $capacity (mut i32) (i32.const 0))
