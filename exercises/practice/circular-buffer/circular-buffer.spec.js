@@ -147,7 +147,7 @@ describe("CircularBuffer", () => {
   xtest("Should be able to grow up to a full 64KiB page", () => {
     expect(currentInstance.exports.init(16384)).toEqual(0);
     for (let i = 0; i < 16384; i++) {
-      expect(currentInstance.exports.write(1024)).toEqual(0);
+      expect(currentInstance.exports.write(i)).toEqual(0);
     }
   });
 
