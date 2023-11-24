@@ -14,7 +14,7 @@
   ;; @returns {i32} 0 on success or -1 on error
   ;; 
   (func (export "init") (param $newCapacity i32) (result i32)
-    ;; a WebAssembly page is 4096 bytes, so up to 1024 i32s
+    ;; a WebAssembly page is 64KiB, so up to 16384 i32s
     (if (i32.gt_s (local.get $newCapacity) (i32.const 16384)) (then
       (return (i32.const -1))
     ))
