@@ -1,5 +1,9 @@
 (module
-  (memory 1 1)
+  ;; a WebAssembly page is 64KiB, so each page holds up to 16384 i32s
+  ;; Our linear memory is one page by default, but it is permitted to grow
+  ;; up to four pages via use of the memory.grow instruction, which can hold
+  ;; up to 65536 i32s.
+  (memory (export "mem") 1 4)
   (global $head (mut i32) (i32.const -1))
   (global $tail (mut i32) (i32.const -1))
   (global $capacity (mut i32) (i32.const 0))
@@ -8,21 +12,31 @@
   ;;
   ;; Initialize a circular buffer of i32s with a given capacity
   ;;
-  ;; @param {i32} newCapacity - capacity of the circular buffer between 0 and 16,384
-  ;;                            in order to fit in a single 64KiB WebAssembly page
+  ;; @param {i32} newCapacity - capacity of the circular buffer between 0 and 65,536
+  ;;                            in order to fit in four 64KiB WebAssembly pages.
   ;;
   ;; @returns {i32} 0 on success or -1 on error
   ;; 
   (func (export "init") (param $newCapacity i32) (result i32)
-    ;; a WebAssembly page is 64KiB, so up to 16384 i32s
-    (if (i32.gt_s (local.get $newCapacity) (i32.const 16384)) (then
-      (return (i32.const -1))
-    ))
+    ;; a WebAssembly page is 64KiB, so each page holds up to 16384 i32s
+    ;; Our linear memory can grow up to four pages, so we can hold up to 65536 i32s
+    (if (i32.or 
+      (i32.lt_s (local.get $newCapacity) (i32.const 0)) 
+      (i32.gt_s (local.get $newCapacity) (i32.const 65536))) (then
+        (return (i32.const -1))))
 
     (global.set $head (i32.const -1))
     (global.set $tail (i32.const -1))
     (global.set $capacity (local.get $newCapacity))
-    (i32.const 0)
+
+    ;; We do not need to grow the memory if the new capacity is less than 16384
+    (if (result i32) (i32.le_s (local.get $newCapacity) (i32.const 16384)) (then
+      (i32.const 0)
+    ) (else 
+      ;; memory.grow returns old size on success or -1 on failure
+      (memory.grow (i32.div_s (i32.sub (local.get $newCapacity) (i32.const 1)) (i32.const 16384)))
+      (if (result i32) (i32.ne (i32.const -1)) (i32.const 0) (i32.const -1))
+    ))
   )
 
   ;;

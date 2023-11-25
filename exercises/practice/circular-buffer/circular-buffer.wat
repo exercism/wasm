@@ -1,13 +1,16 @@
 (module
-  ;; Cap the memory at a single 64KiB page
-  (memory 1 1)
+  ;; a WebAssembly page is 64KiB, so each page holds up to 16384 i32s
+  ;; Our linear memory is one page by default, but it is permitted to grow
+  ;; up to four pages via use of the memory.grow instruction, which can hold
+  ;; up to 65536 i32s.
+  (memory (export "mem") 1 4)
   ;; Add globals here!
 
   ;;
   ;; Initialize a circular buffer of i32s with a given capacity
   ;;
-  ;; @param {i32} newCapacity - capacity of the circular buffer between 0 and 16,384
-  ;;                            in order to fit in a single 64KiB WebAssembly page
+  ;; @param {i32} newCapacity - capacity of the circular buffer between 0 and 65,536
+  ;;                            in order to fit in four 64KiB WebAssembly pages.
   ;;
   ;; @returns {i32} 0 on success or -1 on error
   ;; 
