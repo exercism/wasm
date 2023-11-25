@@ -1,3 +1,6 @@
+;; based on algorithm at
+;; https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes
+
 (module
   (memory (export "mem") 1)
 
@@ -7,6 +10,8 @@
     (i32.mul (local.get 0) (global.get $i32Size)))
 
 
+  ;; create a sequence of integers, stored at the
+  ;; corresponding memory offset
   (func $initialize-work-array (param $limit i32)
     (local $i i32)
     (local.set $i (i32.const 2))
@@ -18,6 +23,7 @@
           (br $A)))))
 
 
+  ;; mark multiples of primes as non-prime
   (func $mark-multiples (param $limit i32)
     (local $i i32) (local $j i32) (local $p i32) (local $sqrt i32)
     (local.set $sqrt (i32.trunc_f32_u (f32.sqrt (f32.convert_i32_u (local.get $limit)))))
@@ -38,6 +44,8 @@
         (br $B)))))
 
 
+  ;; find the resulting prime numbers, and 
+  ;; store sequentially starting at memory offset 0
   (func $collect-primes (param $limit i32) (result i32)
     (local $len i32) (local $i i32) (local $n i32)
     (local.set $i (i32.const 2))
@@ -64,7 +72,7 @@
   ;;
   (func (export "primes") (param $limit i32) (result i32 i32)
     (local $length i32)
-    (if (i32.lt_u (local.get $limit) (i32.const 2)) 
+    (if (i32.lt_s (local.get $limit) (i32.const 2)) 
       (then (return (i32.const 0) (i32.const 0))))
     (call $initialize-work-array (local.get $limit))
     (call $mark-multiples (local.get $limit))
