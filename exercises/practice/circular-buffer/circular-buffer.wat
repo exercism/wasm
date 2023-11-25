@@ -1,8 +1,8 @@
 (module
-  ;; a WebAssembly page is 64KiB, so each page holds up to 16384 i32s
-  ;; Our linear memory is one page by default, but it is permitted to grow
-  ;; up to four pages via use of the memory.grow instruction, which can hold
-  ;; up to 65536 i32s.
+  ;; Linear memory is allocated one page by default.
+  ;; A page is 64KiB, and that can hold up to 16384 i32s.
+  ;; We will permit memory to grow to a maximum of four pages.
+  ;; The maximum capacity of our buffer is 65536 i32s.
   (memory (export "mem") 1 4)
   ;; Add globals here!
 
