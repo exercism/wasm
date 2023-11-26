@@ -13,7 +13,7 @@
   )
 
   ;;
-  ;; Calculate the sum of grains of wheat acrosss all squares of the chessboard
+  ;; Calculate the sum of grains of wheat across all squares of the chessboard
   ;;
   ;; @returns {i64} - The number of grains of wheat on the entire chessboard.
   ;;                  The result is unsigned.
