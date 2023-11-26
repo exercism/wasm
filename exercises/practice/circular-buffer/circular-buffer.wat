@@ -1,12 +1,16 @@
 (module
-  (memory 1)
+  ;; Linear memory is allocated one page by default.
+  ;; A page is 64KiB, and that can hold up to 16384 i32s.
+  ;; We will permit memory to grow to a maximum of four pages.
+  ;; The maximum capacity of our buffer is 65536 i32s.
+  (memory (export "mem") 1 4)
   ;; Add globals here!
 
   ;;
   ;; Initialize a circular buffer of i32s with a given capacity
   ;;
-  ;; @param {i32} newCapacity - capacity of the circular buffer between 0 and 1024
-  ;;                            in order to fit in a single WebAssembly page
+  ;; @param {i32} newCapacity - capacity of the circular buffer between 0 and 65,536
+  ;;                            in order to fit in four 64KiB WebAssembly pages.
   ;;
   ;; @returns {i32} 0 on success or -1 on error
   ;; 
