@@ -31,6 +31,10 @@ function convert(digits = [], inputBase, outputBase) {
     outputBase
   );
 
+  if (rc !== 0) {
+    return [[], rc];
+  }
+
   const outputBuffer = currentInstance.get_mem_as_i32(
     outputOffset,
     outputLength
