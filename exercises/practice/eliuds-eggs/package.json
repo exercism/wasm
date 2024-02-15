@@ -1,5 +1,5 @@
 {
-  "name": "@exercism/wasm-pop-count",
+  "name": "@exercism/wasm-eliuds-eggs",
   "description": "Exercism exercises in WebAssembly.",
   "type": "module",
   "private": true,
@@ -7,7 +7,7 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/exercism/wasm",
-    "directory": "exercises/practice/pop-count"
+    "directory": "exercises/practice/eliuds-eggs"
   },
   "jest": {
     "maxWorkers": 1
