@@ -68,17 +68,8 @@
       )
     )
 
-    ;; Use some space to store info about the brackets we come across
-    (call $initBracketStack
-      (i32.add
-        (i32.add
-          (local.get $text)
-          (local.get $length)
-        )
-        ;; Put some separation between our text content
-        (i32.const 2)
-      )
-    )
+    ;; Reuse the input string space to store info about the brackets.
+    (call $initBracketStack (local.get $text))
 
     (block $checkBlock
       (loop $checkLoop
