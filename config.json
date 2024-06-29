@@ -15,17 +15,10 @@
     "indent_size": 2,
     "highlightjs_language": "wasm"
   },
-  "files": {
-    "solution": [],
-    "test": [],
-    "example": [],
-    "exemplar": []
-  },
   "test_runner": {
     "average_run_time": 16
   },
   "exercises": {
-    "concept": [],
     "practice": [
       {
         "slug": "darts",
@@ -34,223 +27,254 @@
         "practices": [],
         "prerequisites": [],
         "difficulty": 3
-      }, {
+      },
+      {
         "slug": "hello-world",
         "name": "Hello World",
         "uuid": "8eae71ff-c56c-4f1c-affa-47c88fadfab8",
         "practices": [],
         "prerequisites": [],
         "difficulty": 1
-      }, {
+      },
+      {
         "slug": "collatz-conjecture",
         "name": "Collatz Conjecture",
         "uuid": "84a5d81b-f410-42d8-a7a1-d740d3957830",
         "practices": [],
         "prerequisites": [],
         "difficulty": 3
-      }, {
+      },
+      {
         "slug": "square-root",
         "name": "Square Root",
         "uuid": "fe3e2504-d952-4295-a3f8-c61c61621f98",
         "practices": [],
         "prerequisites": [],
         "difficulty": 4
-      }, {
+      },
+      {
         "slug": "grains",
         "name": "Grains",
         "uuid": "67d810e3-1784-43f2-a56f-64ab496cb42f",
         "practices": [],
         "prerequisites": [],
         "difficulty": 5
-      }, {
+      },
+      {
         "slug": "difference-of-squares",
         "name": "Difference of Squares",
         "uuid": "943f4eee-a1c6-4011-a014-515be8b1dc65",
         "practices": [],
         "prerequisites": [],
         "difficulty": 3
-      }, {
+      },
+      {
         "slug": "leap",
         "name": "Leap",
         "uuid": "d0573ad4-ef4d-42bf-97b8-268e2377feb4",
         "practices": [],
         "prerequisites": [],
         "difficulty": 1
-      }, {
+      },
+      {
         "slug": "resistor-color",
         "name": "Resistor Color",
         "uuid": "0751e431-d3a7-44bc-8718-4bc10baec4ca",
         "practices": [],
         "prerequisites": [],
         "difficulty": 4
-      }, {
+      },
+      {
         "slug": "reverse-string",
         "name": "Reverse String",
         "uuid": "1ea9b20b-6a9d-43b2-b781-1206744ca4c1",
         "practices": [],
         "prerequisites": [],
         "difficulty": 2
-      }, {
+      },
+      {
         "slug": "two-fer",
         "name": "Two Fer",
         "uuid": "f1d7f95e-e8c1-464a-99ab-c5a1395cb9a4",
         "practices": [],
         "prerequisites": [],
         "difficulty": 1
-      }, {
+      },
+      {
         "slug": "bank-account",
         "name": "Bank Account",
         "uuid": "c8f71259-13b0-4e89-acf1-4cfe16b31718",
         "practices": [],
         "prerequisites": [],
         "difficulty": 1
-      }, {
+      },
+      {
         "slug": "circular-buffer",
         "name": "Circular Buffer",
         "uuid": "db61cc68-40d8-47a7-838e-508784153a10",
         "practices": [],
         "prerequisites": [],
         "difficulty": 8
-      }, {
+      },
+      {
         "slug": "acronym",
         "name": "Acronym",
         "uuid": "086ecf2c-9356-4d09-9391-0ae4035a34f1",
         "practices": [],
         "prerequisites": [],
         "difficulty": 2
-      }, {
+      },
+      {
         "slug": "all-your-base",
         "name": "All Your Base",
         "uuid": "e201215c-169c-487c-8b50-47fa6a395906",
         "practices": [],
         "prerequisites": [],
         "difficulty": 5
-      }, {
+      },
+      {
         "slug": "binary-search",
         "name": "Binary Search",
         "uuid": "7c569e5d-bb00-44b8-8adc-34253790c19b",
         "practices": [],
         "prerequisites": [],
         "difficulty": 6
-      }, {
+      },
+      {
         "slug": "triangle",
         "name": "Triangle",
         "uuid": "ed3ca73a-a0f0-46b8-8013-8b6d20758c8f",
         "practices": [],
         "prerequisites": [],
         "difficulty": 2
-      }, {
+      },
+      {
         "slug": "nucleotide-count",
         "name": "Nucleotide Count",
         "uuid": "dbb13cbe-fea4-4aec-879f-15cda81f5a27",
         "practices": [],
         "prerequisites": [],
         "difficulty": 1
-      }, {
+      },
+      {
         "slug": "armstrong-numbers",
         "name": "Armstrong Numbers",
         "uuid": "8dff76c0-68a7-4181-859c-8e86cc1d3be4",
         "practices": [],
         "prerequisites": [],
         "difficulty": 1
-      }, {
+      },
+      {
         "slug": "rna-transcription",
         "name": "Rna Transcription",
         "uuid": "c54c9479-5ee1-43fa-906c-5f3a6c041485",
         "practices": [],
         "prerequisites": [],
         "difficulty": 3
-      }, {
+      },
+      {
         "slug": "raindrops",
         "name": "Raindrops",
         "uuid": "5bb7a61c-c942-4d80-87fb-a06fed959854",
         "practices": [],
         "prerequisites": [],
         "difficulty": 3
-      }, {
+      },
+      {
         "slug": "hamming",
         "name": "Hamming",
         "uuid": "257096af-21dc-47ed-a00f-dd17a7d03c76",
         "practices": [],
         "prerequisites": [],
         "difficulty": 2
-      }, {
+      },
+      {
         "slug": "eliuds-eggs",
         "name": "Eliud's Eggs",
         "uuid": "233fde6a-79d9-4d90-8f94-2a0519352a5c",
         "practices": [],
         "prerequisites": [],
         "difficulty": 4
-      }, {
+      },
+      {
         "slug": "pangram",
         "name": "Pangram",
         "uuid": "53d9f022-03df-464f-8838-c8aaff76fa0c",
         "practices": [],
         "prerequisites": [],
         "difficulty": 2
-      }, {
+      },
+      {
         "slug": "rotational-cipher",
         "name": "Rotational Cipher",
-        "uuid" : "039a7a86-d954-4bb6-a144-93b2eb17b016",
-        "practices" : [],
+        "uuid": "039a7a86-d954-4bb6-a144-93b2eb17b016",
+        "practices": [],
         "prerequisites": [],
         "difficulty": 4
-      }, {
+      },
+      {
         "slug": "sieve",
         "name": "Sieve of Eratosthenes",
-        "uuid" : "99498715-4615-4aa8-83a7-6cb0a32bd721",
-        "practices" : [],
+        "uuid": "99498715-4615-4aa8-83a7-6cb0a32bd721",
+        "practices": [],
         "prerequisites": [],
         "difficulty": 6
+      },
+      {
+        "slug": "run-length-encoding",
+        "name": "Run-Length Encoding",
+        "uuid": "3ce411fd-a8d5-4030-b8f8-7ba934227ce1",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 8
       }
     ]
   },
-  "concepts": [],
   "key_features": [
     {
-      "icon": "fun",
       "title": "Simple Syntax",
-      "content": "Simpler than native assembly languages, offering a good onramp to systems programming."
+      "content": "Simpler than native assembly languages, offering a good onramp to systems programming.",
+      "icon": "fun"
     },
     {
-      "icon": "fast",
       "title": "Fast",
-      "content": "Optimized for fast (just-in-time) compilation to native code and raw execution speed."
+      "content": "Optimized for fast (just-in-time) compilation to native code and raw execution speed.",
+      "icon": "fast"
     },
     {
-      "icon": "cross-platform",
       "title": "Cross-platform",
-      "content": "Libraries reuse across languages and ecosystems. Executables run on desktops and servers."
+      "content": "Libraries reuse across languages and ecosystems. Executables run on desktops and servers.",
+      "icon": "cross-platform"
     },
     {
-      "icon": "community",
       "title": "Designed by a committee",
-      "content": "A vendor-neutral W3C standard with numerous contributors from research labs and industry."
+      "content": "A vendor-neutral W3C standard with numerous contributors from research labs and industry.",
+      "icon": "community"
     },
     {
-      "icon": "evolving",
       "title": "Ever-evolving",
-      "content": "While a core MVP is production-ready, numerous proposals will expand WebAssembly in the future."
+      "content": "While a core MVP is production-ready, numerous proposals will expand WebAssembly in the future.",
+      "icon": "evolving"
     },
     {
-      "icon": "interop",
       "title": "JavaScript Interopability",
-      "content": "WebAssembly is a first-class citizen of the web with excellent interoperability with JavaScript."
+      "content": "WebAssembly is a first-class citizen of the web with excellent interoperability with JavaScript.",
+      "icon": "interop"
     }
   ],
   "tags": [
+    "execution_mode/compiled",
     "paradigm/imperative",
     "paradigm/procedural",
+    "platform/android",
+    "platform/ios",
+    "platform/linux",
+    "platform/mac",
+    "platform/web",
+    "platform/windows",
+    "runtime/wasmtime",
     "typing/static",
     "typing/weak",
-    "execution_mode/compiled",
-    "platform/windows",
-    "platform/mac",
-    "platform/linux",
-    "platform/ios",
-    "platform/android",
-    "platform/web",
-    "runtime/wasmtime",
     "used_for/artificial_intelligence",
     "used_for/backends",
     "used_for/cross_platform_development",
