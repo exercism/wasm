@@ -18,6 +18,17 @@
   "test_runner": {
     "average_run_time": 16
   },
+  "files": {
+    "solution": [
+      "%{kebab_slug}.wat"
+    ],
+    "test": [
+      "%{kebab_slug}.spec.js"
+    ],
+    "example": [
+      ".meta/proof.ci.wat"
+    ]
+  },
   "exercises": {
     "practice": [
       {
@@ -216,6 +227,14 @@
         "slug": "sieve",
         "name": "Sieve of Eratosthenes",
         "uuid": "99498715-4615-4aa8-83a7-6cb0a32bd721",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 6
+      },
+      {
+        "slug": "matching-brackets",
+        "name": "Matching Brackets",
+        "uuid": "45892c58-05f0-4dc4-ac7d-99babf8d3006",
         "practices": [],
         "prerequisites": [],
         "difficulty": 6
