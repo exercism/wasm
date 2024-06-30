@@ -6,6 +6,7 @@
   ;; @returns {i32} the maximum value
   ;;
   (func (export "maximumValue") (param $itemsCount i32) (param $capacity i32) (result i32)
-    (return (call $maximumValue (i32.const 0) (local.get $itemsCount) (local.get $capacity)))
+    ;; Please implement the maximumValue function.
+    (return (i32.const 0))
   )
 )
