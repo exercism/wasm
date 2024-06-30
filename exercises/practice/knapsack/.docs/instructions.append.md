@@ -1,5 +1,7 @@
 # Instructions append
 
+## WebAssembly-specific Notes
+
 The items are passed through linear memory, with the first item at offset 0.
 Each item is represented as a pair of 32-bit integers.
 The first number in the pair is the weight and the second is the value.
