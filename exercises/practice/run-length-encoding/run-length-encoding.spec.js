@@ -57,84 +57,84 @@ describe("RunLengthEncoding", () => {
     expect(actual).toEqual(expected);
   });
 
-  test("encode single characters only are encoded without count", () => {
+  xtest("encode single characters only are encoded without count", () => {
     expect(currentInstance).toBeTruthy();
     const expected = "XYZ";
     const actual = invoke("encode", "XYZ");
     expect(actual).toEqual(expected);
   });
 
-  test("encode string with no single characters", () => {
+  xtest("encode string with no single characters", () => {
     expect(currentInstance).toBeTruthy();
     const expected = "2A3B4C";
     const actual = invoke("encode", "AABBBCCCC");
     expect(actual).toEqual(expected);
   });
 
-  test("encode single characters mixed with repeated characters", () => {
+  xtest("encode single characters mixed with repeated characters", () => {
     expect(currentInstance).toBeTruthy();
     const expected = "12WB12W3B24WB";
     const actual = invoke("encode", "WWWWWWWWWWWWBWWWWWWWWWWWWBBBWWWWWWWWWWWWWWWWWWWWWWWWB");
     expect(actual).toEqual(expected);
   });
 
-  test("encode multiple whitespace mixed in string", () => {
+  xtest("encode multiple whitespace mixed in string", () => {
     expect(currentInstance).toBeTruthy();
     const expected = "2 hs2q q2w2 ";
     const actual = invoke("encode", "  hsqq qww  ");
     expect(actual).toEqual(expected);
   });
 
-  test("encode lowercase characters", () => {
+  xtest("encode lowercase characters", () => {
     expect(currentInstance).toBeTruthy();
     const expected = "2a3b4c";
     const actual = invoke("encode", "aabbbcccc");
     expect(actual).toEqual(expected);
   });
 
-  test("decode empty string", () => {
+  xtest("decode empty string", () => {
     expect(currentInstance).toBeTruthy();
     const expected = "";
     const actual = invoke("decode", "");
     expect(actual).toEqual(expected);
   });
 
-  test("decode single characters only", () => {
+  xtest("decode single characters only", () => {
     expect(currentInstance).toBeTruthy();
     const expected = "XYZ";
     const actual = invoke("decode", "XYZ");
     expect(actual).toEqual(expected);
   });
 
-  test("decode string with no single characters", () => {
+  xtest("decode string with no single characters", () => {
     expect(currentInstance).toBeTruthy();
     const expected = "AABBBCCCC";
     const actual = invoke("decode", "2A3B4C");
     expect(actual).toEqual(expected);
   });
 
-  test("decode single characters with repeated characters", () => {
+  xtest("decode single characters with repeated characters", () => {
     expect(currentInstance).toBeTruthy();
     const expected = "WWWWWWWWWWWWBWWWWWWWWWWWWBBBWWWWWWWWWWWWWWWWWWWWWWWWB";
     const actual = invoke("decode", "12WB12W3B24WB");
     expect(actual).toEqual(expected);
   });
 
-  test("decode multiple whitespace mixed in string", () => {
+  xtest("decode multiple whitespace mixed in string", () => {
     expect(currentInstance).toBeTruthy();
     const expected = "  hsqq qww  ";
     const actual = invoke("decode", "2 hs2q q2w2 ");
     expect(actual).toEqual(expected);
   });
 
-  test("decode lowercase string", () => {
+  xtest("decode lowercase string", () => {
     expect(currentInstance).toBeTruthy();
     const expected = "aabbbcccc";
     const actual = invoke("decode", "2a3b4c");
     expect(actual).toEqual(expected);
   });
 
-  test("encode followed by decode gives original string", () => {
+  xtest("encode followed by decode gives original string", () => {
     expect(currentInstance).toBeTruthy();
     const input = "zzz ZZ  zZ";
     const output = invoke("decode", invoke("encode", input));
