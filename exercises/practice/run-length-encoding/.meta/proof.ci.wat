@@ -197,30 +197,23 @@
 
   (func $consumeNumber (param $inputOffset i32) (result i32 i32)
     (local $inputPointer i32)
-    (local $outputPointer i32)
-    (local $digitsCount i32)
+    (local $number i32)
 
     (local.set $inputPointer (local.get $inputOffset))
-    (local.set $outputPointer (i32.const 320))
-    (local.set $digitsCount (i32.const 0))
+    (local.set $number (i32.const 0))
 
     loop $LOOP
-      (i32.store
-        (local.get $outputPointer)
-        (call $codePointToDigit (i32.load8_u (local.get $inputPointer))))
-      (local.set $digitsCount
+      (local.set $number
         (i32.add
-          (local.get $digitsCount)
-          (i32.const 1)))
+          (i32.mul
+            (local.get $number)
+            (i32.const 10))
+          (call $codePointToDigit (i32.load8_u (local.get $inputPointer)))))
 
       (local.set $inputPointer
         (i32.add
           (local.get $inputPointer)
           (i32.const 1)))
-      (local.set $outputPointer
-        (i32.add
-          (local.get $outputPointer)
-          (i32.const 4)))
 
       (call $isDigit (local.get $inputPointer))
       if
@@ -229,58 +222,8 @@
     end
 
     (return
-      (call $digitsToNumber (i32.const 320) (local.get $digitsCount))
+      (local.get $number)
       (local.get $inputPointer))
-  )
-
-  (func $digitsToNumber (param $inputOffset i32) (param $inputLength i32) (result i32)
-    (local $currentPower i32)
-    (local $inputPointer i32)
-    (local $number i32)
-
-    (local.set $currentPower
-      (i32.sub
-        (local.get $inputLength)
-        (i32.const 1)))
-    (local.set $inputPointer (local.get $inputOffset))
-    (local.set $number (i32.const 0))
-
-    loop $LOOP
-      (local.set $number
-        (i32.add
-          (local.get $number)
-          (i32.mul
-            (i32.load
-              (i32.add
-                (local.get $inputOffset)
-                (i32.mul
-                  (i32.sub
-                    (local.get $inputPointer)
-                    (local.get $inputOffset))
-                  (i32.const 4))))
-            (call $pow (i32.const 10)
-                       (local.get $currentPower)))))
-
-      (local.set $currentPower
-        (i32.sub
-          (local.get $currentPower)
-          (i32.const 1)))
-      (local.set $inputPointer
-        (i32.add
-          (local.get $inputPointer)
-          (i32.const 1)))
-
-      (i32.lt_u
-        (local.get $inputPointer)
-        (i32.add
-          (local.get $inputOffset)
-          (local.get $inputLength)))
-      if
-        br $LOOP
-      end
-    end
-
-    (return (local.get $number))
   )
 
   (func $pow (param $base i32) (param $power i32) (result i32)
