@@ -2,6 +2,9 @@
   "authors": [
     "SimaDovakin"
   ],
+  "contributors": [
+    "keiravillekode"
+  ],
   "files": {
     "solution": [
       "run-length-encoding.wat"
