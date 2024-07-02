@@ -1,0 +1,22 @@
+{
+  "authors": [
+    "SimaDovakin"
+  ],
+  "contributors": [
+    "keiravillekode"
+  ],
+  "files": {
+    "solution": [
+      "run-length-encoding.wat"
+    ],
+    "test": [
+      "run-length-encoding.spec.js"
+    ],
+    "example": [
+      ".meta/proof.ci.wat"
+    ]
+  },
+  "blurb": "Implement run-length encoding and decoding.",
+  "source": "Wikipedia",
+  "source_url": "https://en.wikipedia.org/wiki/Run-length_encoding"
+}
