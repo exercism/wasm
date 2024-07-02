@@ -1,4 +1,6 @@
 (module
+  (memory (export "mem") 1)
+
   (func $maximumValue (param $itemsOffset i32) (param $itemsCount i32) (param $capacity i32) (result i32)
     (local $itemWeight i32)
     (local $itemValue i32)

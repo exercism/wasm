@@ -1,4 +1,6 @@
 (module
+  (memory (export "mem") 1)
+
   ;; Determine the maximum total value that can be carried
   ;;
   ;; @param {i32} itemsCount - The number of items
