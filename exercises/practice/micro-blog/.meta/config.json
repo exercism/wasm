@@ -1,0 +1,26 @@
+{
+  "authors": [
+    "keiravillekode"
+  ],
+  "files": {
+    "solution": [
+      "micro-blog.wat"
+    ],
+    "test": [
+      "micro-blog.spec.js"
+    ],
+    "example": [
+      ".meta/proof.ci.wat"
+    ],
+    "invalidator": [
+      "package.json"
+    ]
+  },
+  "blurb": "Given an input string, truncate it to 5 characters.",
+  "custom": {
+    "version.tests.compatibility": "jest-27",
+    "flag.tests.task-per-describe": false,
+    "flag.tests.may-run-long": false,
+    "flag.tests.includes-optional": false
+  }
+}
