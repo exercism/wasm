@@ -47,7 +47,6 @@ describe("matching brackets", () => {
   });
 
   test("paired square brackets", () => {
-    console.log(isPaired("[]"));
     expect(isPaired("[]")).toBeTruthy();
   });
 
