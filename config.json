@@ -72,6 +72,14 @@
         "difficulty": 5
       },
       {
+        "slug": "luhn",
+        "name": "Luhn",
+        "uuid": "ea924bf8-a870-47a3-8f26-a35cf62ed7eb",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 5
+      },
+      {
         "slug": "difference-of-squares",
         "name": "Difference of Squares",
         "uuid": "943f4eee-a1c6-4011-a014-515be8b1dc65",
