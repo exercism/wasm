@@ -1,5 +1,5 @@
 {
-  "name": "@exercism/wasm-acronym",
+  "name": "@exercism/wasm-sieve",
   "description": "Exercism exercises in WebAssembly.",
   "author": "Sean McBride",
   "type": "module",
@@ -8,7 +8,7 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/exercism/wasm",
-    "directory": "exercises/practice/acronym"
+    "directory": "exercises/practice/sieve"
   },
   "jest": {
     "maxWorkers": 1
