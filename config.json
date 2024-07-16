@@ -248,6 +248,14 @@
         "difficulty": 4
       },
       {
+        "slug": "largest-series-product",
+        "name": "Largest Series Product",
+        "uuid": "2534388c-96ef-45f7-a4e2-eb830dfb9c66",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 5
+      },
+      {
         "slug": "sieve",
         "name": "Sieve of Eratosthenes",
         "uuid": "99498715-4615-4aa8-83a7-6cb0a32bd721",
