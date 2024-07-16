@@ -48,6 +48,14 @@
         "difficulty": 1
       },
       {
+        "slug": "micro-blog",
+        "name": "Micro Blog",
+        "uuid": "45dc52f5-2e84-4a52-8272-bb4b1e36b43b",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
+      },
+      {
         "slug": "collatz-conjecture",
         "name": "Collatz Conjecture",
         "uuid": "84a5d81b-f410-42d8-a7a1-d740d3957830",
