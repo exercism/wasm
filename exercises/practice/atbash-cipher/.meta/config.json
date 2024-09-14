@@ -1,0 +1,28 @@
+{
+  "authors": [
+    "keiravillekode"
+  ],
+  "files": {
+    "solution": [
+      "atbash-cipher.wat"
+    ],
+    "test": [
+      "atbash-cipher.spec.js"
+    ],
+    "example": [
+      ".meta/proof.ci.wat"
+    ],
+    "invalidator": [
+      "package.json"
+    ]
+  },
+  "blurb": "Create an implementation of the atbash cipher, an ancient encryption system created in the Middle East.",
+  "source": "Wikipedia",
+  "source_url": "https://en.wikipedia.org/wiki/Atbash",
+  "custom": {
+    "version.tests.compatibility": "jest-27",
+    "flag.tests.task-per-describe": false,
+    "flag.tests.may-run-long": false,
+    "flag.tests.includes-optional": false
+  }
+}
