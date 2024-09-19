@@ -56,6 +56,14 @@
         "difficulty": 2
       },
       {
+        "slug": "bob",
+        "name": "Bob",
+        "uuid": "86d6375c-d791-431b-8440-d47fe31d48a5",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3
+      },
+      {
         "slug": "collatz-conjecture",
         "name": "Collatz Conjecture",
         "uuid": "84a5d81b-f410-42d8-a7a1-d740d3957830",
