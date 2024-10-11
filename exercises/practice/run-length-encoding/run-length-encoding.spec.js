@@ -29,7 +29,7 @@ function invoke(funcName, input) {
 
   const [ outputOffset, outputLength ] = currentInstance.exports[funcName](
     inputBufferOffset,
-    input.length
+    inputLengthEncoded
   );
 
   return currentInstance.get_mem_as_utf8(outputOffset, outputLength);

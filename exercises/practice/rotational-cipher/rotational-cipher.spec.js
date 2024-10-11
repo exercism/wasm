@@ -29,7 +29,7 @@ function rotate(text, shiftKey) {
 
   const [outputOffset, outputLength] = currentInstance.exports.rotate(
     inputBufferOffset,
-    text.length,
+    inputLengthEncoded,
     shiftKey
   );
   expect(outputLength).toEqual(text.length);

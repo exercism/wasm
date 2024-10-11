@@ -30,7 +30,7 @@ function reverseString(input) {
   // Pass offset and length to WebAssembly function
   const [outputOffset, outputLength] = currentInstance.exports.reverseString(
     inputBufferOffset,
-    input.length
+    inputLengthEncoded
   );
   expect(outputLength).toEqual(inputLengthEncoded);
 
