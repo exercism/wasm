@@ -1,7 +1,7 @@
 (module
   (memory (export "mem") 1)
 
-  (data $names (i32.const 195) "a  b  clover,  f  grass,   j  k  l  m  n  o  p  q  radishes,   violets, y  z")
+  (data $names (i32.const 195) "     6clover,    5grass,                          8radishes,  7violets, ")
 
   (global $cloverLength i32 (i32.const 8))
   (global $grassLength i32 (i32.const 7))
@@ -16,23 +16,34 @@
   (global $V i32 (i32.const 86))
 
   (func $appendPlant (param $destOffset i32) (param $plant i32) (result i32)
+    (local $plantOffset i32)
     (local $plantLength i32)
-    (if (i32.eq (local.get $plant) (global.get $C)) (then
-      (local.set $plantLength (global.get $cloverLength))
-    ))
-    (if (i32.eq (local.get $plant) (global.get $G)) (then
-      (local.set $plantLength (global.get $grassLength))
-    ))
-    (if (i32.eq (local.get $plant) (global.get $R)) (then
-      (local.set $plantLength (global.get $radishesLength))
-    ))
-    (if (i32.eq (local.get $plant) (global.get $V)) (then
-      (local.set $plantLength (global.get $violetsLength))
-    ))
+
+    (local.set
+      $plantOffset
+      (i32.mul
+        (i32.const 3)
+        (local.get $plant)
+      )
+    )
+
+    (local.set
+      $plantLength
+      (i32.sub
+        (i32.load8_u
+          (i32.sub
+            (local.get $plantOffset)
+            (i32.const 1)
+          )
+        )
+        ;; We convert a digit like '6' to a number like 8, to allow for the comma and space.
+        (i32.const 46)
+      )
+    )
 
     (memory.copy
       (local.get $destOffset)
-      (i32.mul (i32.const 3) (local.get $plant))
+      (local.get $plantOffset)
       (local.get $plantLength)
     )
 
