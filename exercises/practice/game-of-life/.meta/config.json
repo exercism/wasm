@@ -10,7 +10,7 @@
         "game-of-life.spec.js"
       ],
       "example": [
-        ".meta/game-of-life.wat"
+        ".meta/proof.ci.wat"
       ],
       "invalidator": [
         "package.json"

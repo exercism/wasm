@@ -304,6 +304,14 @@
         "difficulty": 6
       },
       {
+        "slug": "game-of-life",
+        "name": "Game Of Life",
+        "uuid": "d6f05d17-49b9-42de-b2fa-d2cc7c5ca11f",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 7
+      },
+      {
         "slug": "minesweeper",
         "name": "Minesweeper",
         "uuid": "8db919e4-52a1-44e4-b93a-02df342a4396",
