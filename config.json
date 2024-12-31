@@ -296,6 +296,14 @@
         "difficulty": 5
       },
       {
+        "slug": "roman-numerals",
+        "name": "Roman Numerals",
+        "uuid": "0a966ccb-5161-41e5-a5ce-f3ce84b4f1b0",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 5
+      },
+      {
         "slug": "sieve",
         "name": "Sieve of Eratosthenes",
         "uuid": "99498715-4615-4aa8-83a7-6cb0a32bd721",
