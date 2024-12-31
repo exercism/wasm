@@ -32,12 +32,20 @@
   "exercises": {
     "practice": [
       {
-        "slug": "darts",
-        "name": "Darts",
-        "uuid": "276fc3b9-6951-4db4-9732-996af3f86feb",
+        "slug": "armstrong-numbers",
+        "name": "Armstrong Numbers",
+        "uuid": "8dff76c0-68a7-4181-859c-8e86cc1d3be4",
         "practices": [],
         "prerequisites": [],
-        "difficulty": 3
+        "difficulty": 1
+      },
+      {
+        "slug": "bank-account",
+        "name": "Bank Account",
+        "uuid": "c8f71259-13b0-4e89-acf1-4cfe16b31718",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1
       },
       {
         "slug": "hello-world",
@@ -48,9 +56,73 @@
         "difficulty": 1
       },
       {
+        "slug": "leap",
+        "name": "Leap",
+        "uuid": "d0573ad4-ef4d-42bf-97b8-268e2377feb4",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1
+      },
+      {
+        "slug": "nucleotide-count",
+        "name": "Nucleotide Count",
+        "uuid": "dbb13cbe-fea4-4aec-879f-15cda81f5a27",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1
+      },
+      {
+        "slug": "two-fer",
+        "name": "Two Fer",
+        "uuid": "f1d7f95e-e8c1-464a-99ab-c5a1395cb9a4",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1
+      },
+      {
+        "slug": "acronym",
+        "name": "Acronym",
+        "uuid": "086ecf2c-9356-4d09-9391-0ae4035a34f1",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
+      },
+      {
+        "slug": "hamming",
+        "name": "Hamming",
+        "uuid": "257096af-21dc-47ed-a00f-dd17a7d03c76",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
+      },
+      {
         "slug": "micro-blog",
         "name": "Micro Blog",
         "uuid": "45dc52f5-2e84-4a52-8272-bb4b1e36b43b",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
+      },
+      {
+        "slug": "pangram",
+        "name": "Pangram",
+        "uuid": "53d9f022-03df-464f-8838-c8aaff76fa0c",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
+      },
+      {
+        "slug": "reverse-string",
+        "name": "Reverse String",
+        "uuid": "1ea9b20b-6a9d-43b2-b781-1206744ca4c1",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
+      },
+      {
+        "slug": "triangle",
+        "name": "Triangle",
+        "uuid": "ed3ca73a-a0f0-46b8-8013-8b6d20758c8f",
         "practices": [],
         "prerequisites": [],
         "difficulty": 2
@@ -72,36 +144,12 @@
         "difficulty": 3
       },
       {
-        "slug": "isbn-verifier",
-        "name": "Isbn Verifier",
-        "uuid": "952efb86-f0a3-432a-8751-614c431d9021",
+        "slug": "darts",
+        "name": "Darts",
+        "uuid": "276fc3b9-6951-4db4-9732-996af3f86feb",
         "practices": [],
         "prerequisites": [],
-        "difficulty": 4
-      },
-      {
-        "slug": "square-root",
-        "name": "Square Root",
-        "uuid": "fe3e2504-d952-4295-a3f8-c61c61621f98",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 4
-      },
-      {
-        "slug": "grains",
-        "name": "Grains",
-        "uuid": "67d810e3-1784-43f2-a56f-64ab496cb42f",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 5
-      },
-      {
-        "slug": "luhn",
-        "name": "Luhn",
-        "uuid": "ea924bf8-a870-47a3-8f26-a35cf62ed7eb",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 5
+        "difficulty": 3
       },
       {
         "slug": "difference-of-squares",
@@ -112,25 +160,65 @@
         "difficulty": 3
       },
       {
-        "slug": "leap",
-        "name": "Leap",
-        "uuid": "d0573ad4-ef4d-42bf-97b8-268e2377feb4",
+        "slug": "isogram",
+        "name": "Isogram",
+        "uuid": "b292a9c5-7628-4bc4-b156-df2460eb44ae",
         "practices": [],
         "prerequisites": [],
-        "difficulty": 1
+        "difficulty": 3
       },
       {
-        "slug": "kindergarten-garden",
-        "name": "Kindergarten Garden",
-        "uuid": "a4df662d-57a0-42be-991e-3d086e643484",
+        "slug": "raindrops",
+        "name": "Raindrops",
+        "uuid": "5bb7a61c-c942-4d80-87fb-a06fed959854",
         "practices": [],
         "prerequisites": [],
-        "difficulty": 6
+        "difficulty": 3
+      },
+      {
+        "slug": "rna-transcription",
+        "name": "Rna Transcription",
+        "uuid": "c54c9479-5ee1-43fa-906c-5f3a6c041485",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3
+      },
+      {
+        "slug": "atbash-cipher",
+        "name": "Atbash Cipher",
+        "uuid": "99359b0a-0671-41e0-8e36-aaca387a89b5",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 4
+      },
+      {
+        "slug": "eliuds-eggs",
+        "name": "Eliud's Eggs",
+        "uuid": "233fde6a-79d9-4d90-8f94-2a0519352a5c",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 4
+      },
+      {
+        "slug": "isbn-verifier",
+        "name": "Isbn Verifier",
+        "uuid": "952efb86-f0a3-432a-8751-614c431d9021",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 4
       },
       {
         "slug": "perfect-numbers",
         "name": "Perfect Numbers",
         "uuid": "0978dd36-069b-4570-8436-a3005d8f5dae",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 4
+      },
+      {
+        "slug": "phone-number",
+        "name": "Phone Number",
+        "uuid": "8a147f05-ebfe-4e64-8402-a642655591f3",
         "practices": [],
         "prerequisites": [],
         "difficulty": 4
@@ -152,44 +240,20 @@
         "difficulty": 4
       },
       {
-        "slug": "reverse-string",
-        "name": "Reverse String",
-        "uuid": "1ea9b20b-6a9d-43b2-b781-1206744ca4c1",
+        "slug": "rotational-cipher",
+        "name": "Rotational Cipher",
+        "uuid": "039a7a86-d954-4bb6-a144-93b2eb17b016",
         "practices": [],
         "prerequisites": [],
-        "difficulty": 2
+        "difficulty": 4
       },
       {
-        "slug": "two-fer",
-        "name": "Two Fer",
-        "uuid": "f1d7f95e-e8c1-464a-99ab-c5a1395cb9a4",
+        "slug": "square-root",
+        "name": "Square Root",
+        "uuid": "fe3e2504-d952-4295-a3f8-c61c61621f98",
         "practices": [],
         "prerequisites": [],
-        "difficulty": 1
-      },
-      {
-        "slug": "bank-account",
-        "name": "Bank Account",
-        "uuid": "c8f71259-13b0-4e89-acf1-4cfe16b31718",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 1
-      },
-      {
-        "slug": "circular-buffer",
-        "name": "Circular Buffer",
-        "uuid": "db61cc68-40d8-47a7-838e-508784153a10",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 8
-      },
-      {
-        "slug": "acronym",
-        "name": "Acronym",
-        "uuid": "086ecf2c-9356-4d09-9391-0ae4035a34f1",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 2
+        "difficulty": 4
       },
       {
         "slug": "all-your-base",
@@ -200,113 +264,25 @@
         "difficulty": 5
       },
       {
-        "slug": "binary-search",
-        "name": "Binary Search",
-        "uuid": "7c569e5d-bb00-44b8-8adc-34253790c19b",
+        "slug": "grains",
+        "name": "Grains",
+        "uuid": "67d810e3-1784-43f2-a56f-64ab496cb42f",
         "practices": [],
         "prerequisites": [],
-        "difficulty": 6
-      },
-      {
-        "slug": "triangle",
-        "name": "Triangle",
-        "uuid": "ed3ca73a-a0f0-46b8-8013-8b6d20758c8f",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 2
-      },
-      {
-        "slug": "nucleotide-count",
-        "name": "Nucleotide Count",
-        "uuid": "dbb13cbe-fea4-4aec-879f-15cda81f5a27",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 1
-      },
-      {
-        "slug": "armstrong-numbers",
-        "name": "Armstrong Numbers",
-        "uuid": "8dff76c0-68a7-4181-859c-8e86cc1d3be4",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 1
-      },
-      {
-        "slug": "rna-transcription",
-        "name": "Rna Transcription",
-        "uuid": "c54c9479-5ee1-43fa-906c-5f3a6c041485",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 3
-      },
-      {
-        "slug": "raindrops",
-        "name": "Raindrops",
-        "uuid": "5bb7a61c-c942-4d80-87fb-a06fed959854",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 3
-      },
-      {
-        "slug": "hamming",
-        "name": "Hamming",
-        "uuid": "257096af-21dc-47ed-a00f-dd17a7d03c76",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 2
-      },
-      {
-        "slug": "atbash-cipher",
-        "name": "Atbash Cipher",
-        "uuid": "99359b0a-0671-41e0-8e36-aaca387a89b5",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 4
-      },
-      {
-        "slug": "eliuds-eggs",
-        "name": "Eliud's Eggs",
-        "uuid": "233fde6a-79d9-4d90-8f94-2a0519352a5c",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 4
-      },
-      {
-        "slug": "pangram",
-        "name": "Pangram",
-        "uuid": "53d9f022-03df-464f-8838-c8aaff76fa0c",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 2
-      },
-      {
-        "slug": "isogram",
-        "name": "Isogram",
-        "uuid": "b292a9c5-7628-4bc4-b156-df2460eb44ae",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 3
-      },
-      {
-        "slug": "phone-number",
-        "name": "Phone Number",
-        "uuid": "8a147f05-ebfe-4e64-8402-a642655591f3",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 4
-      },
-      {
-        "slug": "rotational-cipher",
-        "name": "Rotational Cipher",
-        "uuid": "039a7a86-d954-4bb6-a144-93b2eb17b016",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 4
+        "difficulty": 5
       },
       {
         "slug": "largest-series-product",
         "name": "Largest Series Product",
         "uuid": "2534388c-96ef-45f7-a4e2-eb830dfb9c66",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 5
+      },
+      {
+        "slug": "luhn",
+        "name": "Luhn",
+        "uuid": "ea924bf8-a870-47a3-8f26-a35cf62ed7eb",
         "practices": [],
         "prerequisites": [],
         "difficulty": 5
@@ -320,9 +296,17 @@
         "difficulty": 5
       },
       {
-        "slug": "sieve",
-        "name": "Sieve of Eratosthenes",
-        "uuid": "99498715-4615-4aa8-83a7-6cb0a32bd721",
+        "slug": "binary-search",
+        "name": "Binary Search",
+        "uuid": "7c569e5d-bb00-44b8-8adc-34253790c19b",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 6
+      },
+      {
+        "slug": "kindergarten-garden",
+        "name": "Kindergarten Garden",
+        "uuid": "a4df662d-57a0-42be-991e-3d086e643484",
         "practices": [],
         "prerequisites": [],
         "difficulty": 6
@@ -336,6 +320,30 @@
         "difficulty": 6
       },
       {
+        "slug": "sieve",
+        "name": "Sieve of Eratosthenes",
+        "uuid": "99498715-4615-4aa8-83a7-6cb0a32bd721",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 6
+      },
+      {
+        "slug": "circular-buffer",
+        "name": "Circular Buffer",
+        "uuid": "db61cc68-40d8-47a7-838e-508784153a10",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 8
+      },
+      {
+        "slug": "knapsack",
+        "name": "Knapsack",
+        "uuid": "ab83ccd8-1b28-41ab-b24a-d1da9297ce28",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 8
+      },
+      {
         "slug": "minesweeper",
         "name": "Minesweeper",
         "uuid": "8db919e4-52a1-44e4-b93a-02df342a4396",
@@ -347,14 +355,6 @@
         "slug": "run-length-encoding",
         "name": "Run-Length Encoding",
         "uuid": "3ce411fd-a8d5-4030-b8f8-7ba934227ce1",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 8
-      },
-      {
-        "slug": "knapsack",
-        "name": "Knapsack",
-        "uuid": "ab83ccd8-1b28-41ab-b24a-d1da9297ce28",
         "practices": [],
         "prerequisites": [],
         "difficulty": 8
