@@ -256,6 +256,14 @@
         "difficulty": 2
       },
       {
+        "slug": "atbash-cipher",
+        "name": "Atbash Cipher",
+        "uuid": "99359b0a-0671-41e0-8e36-aaca387a89b5",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 4
+      },
+      {
         "slug": "eliuds-eggs",
         "name": "Eliud's Eggs",
         "uuid": "233fde6a-79d9-4d90-8f94-2a0519352a5c",
