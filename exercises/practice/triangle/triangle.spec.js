@@ -99,8 +99,16 @@ describe("Triangle", () => {
       expect(currentInstance.exports.isScalene(4, 4, 4)).toBe(0);
     });
 
-    xtest("two sides are equal", () => {
+    xtest("first and second sides are equal", () => {
       expect(currentInstance.exports.isScalene(4, 4, 3)).toBe(0);
+    });
+
+    xtest("first and third sides are equal", () => {
+      expect(currentInstance.exports.isScalene(3, 4, 3)).toBe(0);
+    });
+
+    xtest("second and third sides are equal", () => {
+      expect(currentInstance.exports.isScalene(4, 3, 3)).toBe(0);
     });
 
     xtest("may not violate triangle inequality", () => {

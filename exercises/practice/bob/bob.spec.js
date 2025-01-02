@@ -172,12 +172,6 @@ describe("Bob", () => {
     expect(actual).toEqual(expected);
   });
 
-  xtest("multiple line question", () => {
-    const expected = "Whatever.";
-    const actual = response("\nDoes this cryogenic chamber make me look fat?\nNo.");
-    expect(actual).toEqual(expected);
-  });
-
   xtest("starting with whitespace", () => {
     const expected = "Whatever.";
     const actual = response("         hmmmmmmm...");
@@ -199,6 +193,12 @@ describe("Bob", () => {
   xtest("non-question ending with whitespace", () => {
     const expected = "Whatever.";
     const actual = response("This is a statement ending with whitespace      ");
+    expect(actual).toEqual(expected);
+  });
+
+  xtest("multiple line question", () => {
+    const expected = "Sure.";
+    const actual = response("\nDoes this cryogenic chamber make\n me look fat?");
     expect(actual).toEqual(expected);
   });
 });
