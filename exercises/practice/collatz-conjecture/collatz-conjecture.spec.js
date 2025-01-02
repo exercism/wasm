@@ -38,7 +38,7 @@ describe("steps()", () => {
     expect(currentInstance.exports.steps(16)).toEqual(4);
   });
 
-  xtest("even and odd currentInstance.exports.steps", () => {
+  xtest("even and odd steps", () => {
     expect(currentInstance.exports.steps(12)).toEqual(9);
   });
 
