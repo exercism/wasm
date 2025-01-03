@@ -30,7 +30,7 @@ function countNucleotides(input) {
   // Pass offset and length to WebAssembly function
   return currentInstance.exports.countNucleotides(
     inputBufferOffset,
-    input.length
+    inputLengthEncoded
   );
 }
 

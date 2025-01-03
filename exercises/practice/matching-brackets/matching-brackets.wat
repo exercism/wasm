@@ -1,7 +1,7 @@
 (module
   (memory (export "mem") 1)
 
-  ;; Determines of the brackets in a string is balanced.
+  ;; Determines if the brackets in a string are balanced.
   ;;
   ;; @param {i32} text - the offset where the text string begins in memory
   ;; @param {i32} length - the length of the text

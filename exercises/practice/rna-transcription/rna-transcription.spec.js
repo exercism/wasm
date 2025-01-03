@@ -30,7 +30,7 @@ function toRna(input) {
   // Pass offset and length to WebAssembly function
   const [outputOffset, outputLength] = currentInstance.exports.toRna(
     inputBufferOffset,
-    input.length
+    inputLengthEncoded
   );
   expect(outputLength).toEqual(input.length);
 
