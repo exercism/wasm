@@ -1,0 +1,28 @@
+{
+  "authors": [
+    "keiravillekode"
+  ],
+  "files": {
+    "solution": [
+      "scrabble-score.wat"
+    ],
+    "test": [
+      "scrabble-score.spec.js"
+    ],
+    "example": [
+      ".meta/proof.ci.wat"
+    ],
+    "invalidator": [
+      "package.json"
+    ]
+  },
+  "blurb": "Given a word, compute the Scrabble score for that word.",
+  "source": "Inspired by the Extreme Startup game",
+  "source_url": "https://github.com/rchatley/extreme_startup",
+  "custom": {
+    "version.tests.compatibility": "jest-27",
+    "flag.tests.task-per-describe": false,
+    "flag.tests.may-run-long": false,
+    "flag.tests.includes-optional": false
+  }
+}
