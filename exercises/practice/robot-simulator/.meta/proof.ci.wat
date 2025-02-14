@@ -1,6 +1,10 @@
 (module
 	(memory (export "mem") 1)
 
+	(global $Advance i32 (i32.const 65))
+	(global $Left i32 (i32.const 76))
+	(global $Right i32 (i32.const 82))
+
 	;;
 	;; evaluate robot placement after running instructions
 	;;
@@ -20,15 +24,15 @@
 		(loop $instructions
 			(local.set $instruction (i32.load8_u
 				(i32.add (local.get $offset) (local.get $pos))))
-			(if (i32.eq (local.get $instruction) (i32.const 65)) (then ;; A
+			(if (i32.eq (local.get $instruction) (global.get $Advance)) (then
 				(local.set $x (i32.add (local.get $x) (i32.rem_s
 					(i32.sub (i32.const 2) (local.get $direction)) (i32.const 2))))
 				(local.set $y (i32.add (local.get $y) (i32.rem_s
 					(i32.sub (i32.const 1) (local.get $direction)) (i32.const 2)))))
-			(else (if (i32.eq (local.get $instruction) (i32.const 76)) (then ;; L
+			(else (if (i32.eq (local.get $instruction) (global.get $Left)) (then
 				(local.set $direction (i32.rem_u (i32.add (local.get $direction)
 					(i32.const 3)) (i32.const 4))))
-			(else (if (i32.eq (local.get $instruction) (i32.const 82)) (then ;; R
+			(else (if (i32.eq (local.get $instruction) (global.get $Right)) (then ;; R
 				(local.set $direction (i32.rem_u (i32.add (local.get $direction)
 					(i32.const 1)) (i32.const 4))))
 			(else (return (i32.const -1) (local.get $x) (local.get $y))))))))

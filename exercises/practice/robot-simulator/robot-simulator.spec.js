@@ -1,4 +1,3 @@
-import { describe, expect, test, xtest } from '@jest/globals';
 import { compileWat, WasmRunner } from "@exercism/wasm-lib";
 
 let wasmModule;
@@ -51,7 +50,7 @@ class Robot {
         if (!input) { return; }
 
         const inputBufferOffset = 64;
-        const inputBufferCapacity = 128;
+        const inputBufferCapacity = 256;
 
         const inputLengthEncoded = new TextEncoder().encode(input).length;
         if (inputLengthEncoded > inputBufferCapacity) {
