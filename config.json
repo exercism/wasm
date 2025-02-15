@@ -336,6 +336,14 @@
         "difficulty": 6
       },
       {
+        "slug": "robot-simulator",
+        "name": "Robot Simulator",
+        "uuid": "af31c3d6-95e2-4817-aaea-4bac4e71e647",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 5
+      },
+      {
         "slug": "circular-buffer",
         "name": "Circular Buffer",
         "uuid": "db61cc68-40d8-47a7-838e-508784153a10",
