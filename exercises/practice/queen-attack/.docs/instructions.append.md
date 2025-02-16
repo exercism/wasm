@@ -3,7 +3,7 @@
 A queen must be placed on a valid position on the board.
 Two queens cannot share the same position.
 
-If a position has not been given, the queens are at their [default starting positions](https://en.wikipedia.org/wiki/Rules_of_chess#Initial_setup). That's the 1st rank (row 7) for the white queen and the 8th rank (row 0) for the black queen. Both queens start in the d file (column 3).
+The queens shown below are at their [default starting positions](https://en.wikipedia.org/wiki/Rules_of_chess#Initial_setup). That's the 1st rank (row 7) for the white queen and the 8th rank (row 0) for the black queen. Both queens start in the d file (column 3).
 
 ```text
   a b c d e f g h
