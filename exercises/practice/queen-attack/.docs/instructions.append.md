@@ -37,8 +37,8 @@ The function will receive only a single unsigned 32bit number as argument. Both 
 
 So the aforementioned positions white D1 and black D8 would result in the numbers white column 3, white row 7, black column 3, black row 0; as binary number, this would be expressed as
 
-`00000011 00000111 00000011 0000000`
+`00000011 00000111 00000011 00000000`
 
-So the `$positions` argument would be 25395584.
+So the `$positions` argument would be 50791168.
 
 You can use integer division or bit shifting and division remainder or bitwise and to get at every one value.
