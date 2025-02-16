@@ -1,6 +1,29 @@
+# Instructions append
+
+A queen must be placed on a valid position on the board.
+Two queens cannot share the same position.
+
+If a position has not been given, the queens are at their [default starting positions](https://en.wikipedia.org/wiki/Rules_of_chess#Initial_setup). That's the 1st rank (row 7) for the white queen and the 8th rank (row 0) for the black queen. Both queens start in the d file (column 3).
+
+```text
+  a b c d e f g h
+8 _ _ _ B _ _ _ _ 8
+7 _ _ _ _ _ _ _ _ 7
+6 _ _ _ _ _ _ _ _ 6
+5 _ _ _ _ _ _ _ _ 5
+4 _ _ _ _ _ _ _ _ 4
+3 _ _ _ _ _ _ _ _ 3
+2 _ _ _ _ _ _ _ _ 2
+1 _ _ _ W _ _ _ _ 1
+  a b c d e f g h
+```
+
 # Positions argument
 
-The function will receive only a single unsigned 32bit number as argument which contains both the black and white columns and rows as a number from 0 to 7:
+The function will receive only a single unsigned 32bit number as argument. Both rows and columns are encoded into it:
+
+- The chess notation files a..h become zero-indexed columns 0..7
+- The chess notation ranks 8..1 become zero-indexed rows 0..7
 
 ```
 [            32bit             ]
@@ -12,10 +35,10 @@ The function will receive only a single unsigned 32bit number as argument which 
    +---------------------------- white column
 ```
 
-So the positions white C2 and black E7 would result in the numbers white column 2, white row 1, black column 4, black row 6; as binary number, this would be expressed as
+So the aforementioned positions white D1 and black D8 would result in the numbers white column 3, white row 7, black column 3, black row 0; as binary number, this would be expressed as
 
-00000010 00000001 00000100 0000110 
+`00000011 00000111 00000011 0000000`
 
-So the `$positions` argument would be 16810502.
+So the `$positions` argument would be 25395584.
 
 You can use integer division or bit shifting and division remainder or bitwise and to get at every one value.
