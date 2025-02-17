@@ -144,6 +144,14 @@
         "difficulty": 3
       },
       {
+        "slug": "complex-numbers",
+        "name": "Complex Numbers",
+        "uuid": "5591f4e1-6f72-415e-a789-12eebd712f9a",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 4
+      },
+      {
         "slug": "darts",
         "name": "Darts",
         "uuid": "276fc3b9-6951-4db4-9732-996af3f86feb",
