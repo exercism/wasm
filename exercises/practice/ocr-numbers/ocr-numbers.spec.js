@@ -30,7 +30,7 @@ beforeEach(async () => {
 
 function convert(input) {
     const inputBufferOffset = 64;
-    const inputBufferCapacity = 256;
+    const inputBufferCapacity = 128;
 
     const inputLengthEncoded = new TextEncoder().encode(input).length;
     if (inputLengthEncoded > inputBufferCapacity) {
