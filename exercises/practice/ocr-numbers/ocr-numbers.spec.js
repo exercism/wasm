@@ -52,7 +52,7 @@ function convert(input) {
 }
 
 describe('ocr', () => {
-  xtest('recognizes zero', () => {
+  test('recognizes zero', () => {
     expect(
       // prettier-ignore
       convert(
@@ -232,7 +232,7 @@ describe('ocr', () => {
     ).toBe('1234567890');
   });
 
-  test('converts 123 456 789', () => {
+  xtest('converts 123 456 789', () => {
     expect(
       // prettier-ignore
       convert(
