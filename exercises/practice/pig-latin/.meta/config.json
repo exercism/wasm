@@ -1,0 +1,28 @@
+{
+  "authors": [
+    "atk"
+  ],
+  "files": {
+    "solution": [
+      "pig-latin.wat"
+    ],
+    "test": [
+      "pig-latin.spec.js"
+    ],
+    "example": [
+      ".meta/proof.ci.wat"
+    ],
+    "invalidator": [
+      "package.json"
+    ]
+  },
+  "blurb": "Implement a program that translates from English to Pig Latin.",
+  "source": "The Pig Latin exercise at Test First Teaching by Ultrasaurus",
+  "source_url": "https://github.com/ultrasaurus/test-first-teaching/blob/master/learn_ruby/pig_latin/",
+  "custom": {
+    "version.tests.compatibility": "jest-27",
+    "flag.tests.task-per-describe": false,
+    "flag.tests.may-run-long": false,
+    "flag.tests.includes-optional": false
+  }
+}
