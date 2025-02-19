@@ -368,6 +368,14 @@
         "difficulty": 8
       },
       {
+        "slug": "ocr-numbers",
+        "name": "OCR Numbers",
+        "uuid": "5bacd600-5030-4bef-9dbe-4bbd807b3d23",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 8
+      },
+      {
         "slug": "minesweeper",
         "name": "Minesweeper",
         "uuid": "8db919e4-52a1-44e4-b93a-02df342a4396",
