@@ -44,7 +44,7 @@ function convert(input) {
     // Pass offset and length to WebAssembly function
     const [outputOffset, outputLength] = currentInstance.exports.convert(
         inputBufferOffset,
-        input.length
+        inputLengthEncoded
     );
 
     // Decode JS string from returned offset and length
