@@ -384,6 +384,14 @@
         "difficulty": 6
       },
       {
+        "slug": "pig-latin",
+        "name": "Pig Latin",
+        "uuid": "96fae126-c097-4946-9ae0-4e604b93e582",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 7
+      },
+      {
         "slug": "knapsack",
         "name": "Knapsack",
         "uuid": "ab83ccd8-1b28-41ab-b24a-d1da9297ce28",
