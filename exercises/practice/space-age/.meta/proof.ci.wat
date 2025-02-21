@@ -1,7 +1,7 @@
 (module
   (memory 1)
 
-  ;; 7 * f64 orbital periods
+  ;; 8 * f64 orbital periods
   (data (i32.const 0) "\2d\bd\ec\8d\10\d4\ce\3f\ec\3d\09\2a\b2\af\e3\3f\00\00\00\00\00\00\f0\3f\1d\cd\ec\4e\d2\17\fe\3f\fd\13\5c\ac\a8\b9\27\40\81\06\9b\3a\8f\72\3d\40\61\c4\3e\01\14\01\55\40\77\15\52\7e\52\99\64\40")
 
   (global (export "mercury") i32 (i32.const 0))
