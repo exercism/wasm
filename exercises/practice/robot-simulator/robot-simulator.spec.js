@@ -68,7 +68,6 @@ class Robot {
             inputBufferOffset,
             inputLengthEncoded
         );
-        console.log(bearing, x, y);
         if (bearing === -1) throw new InvalidInputError(`invalid instructions in ${input}`)
         this.place({ direction: directions[bearing], x, y });
     }

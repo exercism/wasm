@@ -16,7 +16,6 @@ beforeAll(async () => {
 
 class ResistorColorTrio {
     constructor([first, second, third]) {
-        console.log(first, second, third);
         const firstBufferOffset = 1024;
         const firstBufferCapacity = 1024;
 
