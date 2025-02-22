@@ -1,0 +1,27 @@
+{
+  "authors": [
+    "atk"
+  ],
+  "files": {
+    "solution": [
+      "clock.wat"
+    ],
+    "test": [
+      "clock.spec.js"
+    ],
+    "example": [
+      ".meta/proof.ci.wat"
+    ],
+    "invalidator": [
+      "package.json"
+    ]
+  },
+  "blurb": "Implement a clock that handles times without dates.",
+  "source": "Pairing session with Erin Drummond",
+  "custom": {
+    "version.tests.compatibility": "jest-27",
+    "flag.tests.task-per-describe": false,
+    "flag.tests.may-run-long": false,
+    "flag.tests.includes-optional": false
+  }
+}
