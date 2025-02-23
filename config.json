@@ -141,7 +141,7 @@
         "uuid": "9b389aab-2d46-4187-bb01-c107b9e4199b",
         "practices": [],
         "prerequisites": [],
-        "difficulty": 6
+        "difficulty": 5
       },
       {
         "slug": "collatz-conjecture",
