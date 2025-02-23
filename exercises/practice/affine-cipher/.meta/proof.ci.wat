@@ -1,7 +1,6 @@
 (module
   (memory (export "mem") 1)
 
-  (global $notCoprimeError i32 (i32.const -1))
   (global $outputOffset i32 (i32.const 512))
   (global $letters i32 (i32.const 26))
   (global $toLower i32 (i32.const 32))
@@ -40,7 +39,7 @@
     (local $char i32)
     (local $outputLength i32)
     (if (i32.eqz (call $isCoprime (local.get $keyA))) (then
-      (return (global.get $outputOffset) (global.get $notCoprimeError))))
+      (return (i32.const 0) (i32.const 0))))
     (loop $chars
       ;; if we already have another block of 5 characters, add a space
       (if (i32.mul (local.get $outputLength)
@@ -92,7 +91,7 @@
     (local $outputLength i32)
     (local $mmi i32)
     (if (i32.eqz (call $isCoprime (local.get $keyA))) (then
-      (return (global.get $outputOffset) (global.get $notCoprimeError))))
+      (return (i32.const 0) (i32.const 0))))
     ;; find modular multiplicative inverse of $keyA
     (loop $find_mmi
       (local.set $mmi (i32.add (local.get $mmi) (i32.const 1)))

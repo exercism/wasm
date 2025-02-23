@@ -16,6 +16,9 @@ beforeAll(async () => {
 
 function codec(func) {
   return function(input, key) {
+    if (!input)
+      throw new Error(`nothing to ${func}`);
+    
     const inputBufferOffset = 64;
     const inputBufferCapacity = 256;
 
@@ -36,7 +39,7 @@ function codec(func) {
       key.b
     );
 
-    if (outputLength === -1)
+    if (outputLength === 0)
       throw new Error('a and m must be coprime.')
 
     // Decode JS string from returned offset and length

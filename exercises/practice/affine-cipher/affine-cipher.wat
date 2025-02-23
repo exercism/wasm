@@ -1,8 +1,6 @@
 (module
   (memory (export "mem") 1)
 
-  (global $notCoprimeError i32 (i32.const -1))
-
   ;;
   ;; encode text with affine cipher
   ;;
@@ -15,7 +13,7 @@
   ;;
   (func (export "encode") (param $inputOffset i32) (param $inputLength i32)
     (param $keyA i32) (param $keyB i32) (result i32 i32)
-    (i32.const 0) (global.get $notCoprimeError)
+    (i32.const 0) (i32.const 0)
   )
 
   ;;
@@ -30,6 +28,6 @@
   ;;
   (func (export "decode") (param $inputOffset i32) (param $inputLength i32)
     (param $keyA i32) (param $keyB i32) (result i32 i32)
-    (i32.const 0) (global.get $notCoprimeError)
+    (i32.const 0) (i32.const 0)
   )
 )
