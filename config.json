@@ -328,6 +328,14 @@
         "difficulty": 5
       },
       {
+        "slug": "affine-cipher",
+        "name": "Affine Cipher",
+        "uuid": "35033950-35d5-45a2-bd22-99682330af8b",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 6
+      },
+      {
         "slug": "binary-search",
         "name": "Binary Search",
         "uuid": "7c569e5d-bb00-44b8-8adc-34253790c19b",
