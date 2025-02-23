@@ -5,7 +5,7 @@ let currentInstance;
 
 beforeAll(async () => {
   try {
-    const watPath = new URL("./affice-cipher.wat", import.meta.url);
+    const watPath = new URL("./affine-cipher.wat", import.meta.url);
     const { buffer } = await compileWat(watPath);
     wasmModule = await WebAssembly.compile(buffer);
   } catch (err) {
