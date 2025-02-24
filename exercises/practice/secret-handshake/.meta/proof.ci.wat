@@ -4,10 +4,10 @@
 
   (global $outputOffset i32 (i32.const 64))
   (global $reverse i32 (i32.const 16))
-  (global $comma i32 (i32.const 44))
+  (global $commaSpace i32 (i32.const 8236))
 
   ;;
-  ;; compile a comma-separated list of commands to perform the secret handshake from the secret number
+  ;; Output the list of commands to perform the secret handshake as a string, using a comma and a space as separators.
   ;;
   ;; @param {i32} number - the secret number that defines the handshake
   ;;
@@ -24,10 +24,10 @@
     ) (else (local.set $step (i32.const 1))))
     (loop $steps
       (if (i32.and (local.get $number) (i32.shl (i32.const 1) (local.get $commandIndex))) (then
-        ;; add comma after previous commands
+        ;; add comma + space after previous commands
         (if (local.get $outputLength) (then
-          (i32.store8 (i32.add (global.get $outputOffset) (local.get $outputLength)) (global.get $comma))
-          (local.set $outputLength (i32.add (local.get $outputLength) (i32.const 1)))))
+          (i32.store16 (i32.add (global.get $outputOffset) (local.get $outputLength)) (global.get $commaSpace))
+          (local.set $outputLength (i32.add (local.get $outputLength) (i32.const 2)))))
         ;; get index and length of current part
         (local.set $part (i32.load16_u (i32.shl (local.get $commandIndex) (i32.const 1))))
         (memory.copy 

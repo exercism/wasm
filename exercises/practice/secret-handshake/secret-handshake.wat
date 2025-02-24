@@ -2,7 +2,7 @@
   (memory (export "mem") 1)
 
   ;;
-  ;; compile a comma-separated list of commands to perform the secret handshake from the secret number
+  ;; Output the list of commands to perform the secret handshake as a string, using a comma and a space as separators.
   ;;
   ;; @param {i32} number - the secret number that defines the handshake
   ;;

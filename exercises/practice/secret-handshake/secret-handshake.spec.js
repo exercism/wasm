@@ -1,4 +1,3 @@
-import { test as xtest } from '@jest/globals';
 import { compileWat, WasmRunner } from "@exercism/wasm-lib";
 
 let wasmModule;
@@ -6,7 +5,7 @@ let currentInstance;
 
 beforeAll(async () => {
   try {
-    const watPath = new URL("./.meta/proof.ci.wat", import.meta.url);
+    const watPath = new URL("./secret-handshake.wat", import.meta.url);
     const { buffer } = await compileWat(watPath);
     wasmModule = await WebAssembly.compile(buffer);
   } catch (err) {
@@ -18,7 +17,7 @@ beforeAll(async () => {
 const commands = (number) => {
   const [outputOffset, outputLength] = currentInstance.exports.commands(number);
   const output = currentInstance.get_mem_as_utf8(outputOffset, outputLength);
-  return output ? output.split(',') : [];
+  return output ? output.split(', ') : [];
 }
 
 describe('Secret Handshake', () => {
