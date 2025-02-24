@@ -304,6 +304,14 @@
         "difficulty": 5
       },
       {
+        "slug": "diamond",
+        "name": "Diamond",
+        "uuid": "97eadf6f-beb9-4c34-8344-d866888d2164",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 5
+      },
+      {
         "slug": "grains",
         "name": "Grains",
         "uuid": "67d810e3-1784-43f2-a56f-64ab496cb42f",
