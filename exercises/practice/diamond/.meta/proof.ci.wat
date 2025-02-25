@@ -1,5 +1,4 @@
 (module
-  (import "console" "log_i32_u" (func $log_i32_u (param i32)))
   (memory (export "mem") 1)
 
   (global $outputOffset i32 (i32.const 0))
