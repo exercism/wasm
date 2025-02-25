@@ -55,8 +55,7 @@
                              (local.get $endVerse)))
     )
 
-    (return (global.get $OUTPUT) (i32.sub (i32.sub (local.get $dest)
-                                                   (i32.const 1))
+    (return (global.get $OUTPUT) (i32.sub (local.get $dest)
                                           (global.get $OUTPUT)))
   )
 )
