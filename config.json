@@ -384,6 +384,14 @@
         "difficulty": 6
       },
       {
+        "slug": "rational-numbers",
+        "name": "Rational Numbers",
+        "uuid": "c755ff54-cf97-4453-83cb-a3df4b2b6a86",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 6
+      },
+      {
         "slug": "sieve",
         "name": "Sieve of Eratosthenes",
         "uuid": "99498715-4615-4aa8-83a7-6cb0a32bd721",
