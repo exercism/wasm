@@ -2,7 +2,7 @@
   (memory (export "mem") 1)
   
   ;;
-  ;; Count the rectangles in a grid with lines delimited by line breaks
+  ;; Count the rectangles in a grid with lines each ending with line breaks
   ;;
   ;; @param {i32} inputOffset - offset of the grid in linear memory
   ;; @param {i32} inputLength - length of the grid in linear memory

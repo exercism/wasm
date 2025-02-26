@@ -15,7 +15,7 @@ beforeAll(async () => {
 });
 
 function count(input) {
-  input = input.join('\n');
+  input = input.join('\n') + '\n';
 
   const inputBufferOffset = 64;
   const inputBufferCapacity = 256;
