@@ -32,7 +32,7 @@ function count(input) {
   // Pass offset and length to WebAssembly function
   const rectangleCount = currentInstance.exports.count(
     inputBufferOffset,
-    input.length
+    inputLengthEncoded
   );
 
   // Decode JS string from returned offset and length
