@@ -136,6 +136,14 @@
         "difficulty": 3
       },
       {
+        "slug": "house",
+        "name": "House",
+        "uuid": "9b389aab-2d46-4187-bb01-c107b9e4199b",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 5
+      },
+      {
         "slug": "collatz-conjecture",
         "name": "Collatz Conjecture",
         "uuid": "84a5d81b-f410-42d8-a7a1-d740d3957830",
