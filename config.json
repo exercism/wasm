@@ -304,6 +304,14 @@
         "difficulty": 4
       },
       {
+        "slug": "sublist",
+        "name": "Sublist",
+        "uuid": "dc0f853c-d3ec-4da6-9394-8d31576a6bce",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 4
+      },
+      {
         "slug": "all-your-base",
         "name": "All Your Base",
         "uuid": "e201215c-169c-487c-8b50-47fa6a395906",
