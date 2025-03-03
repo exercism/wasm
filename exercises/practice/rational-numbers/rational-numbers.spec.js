@@ -1,3 +1,4 @@
+import { test as xtest } from "@jest/globals";
 import { compileWat, WasmRunner } from "@exercism/wasm-lib";
 
 let wasmModule;
@@ -5,7 +6,9 @@ let currentInstance;
 
 beforeAll(async () => {
   try {
-    const watPath = new URL("./rational-numbers.wat", import.meta.url);
+    //const watPath = new URL("./rational-numbers.wat", import.meta.url);
+    const watPath = new URL("./.meta/proof.ci.wat", import.meta.url);
+    
     const { buffer } = await compileWat(watPath);
     wasmModule = await WebAssembly.compile(buffer);
   } catch (err) {
@@ -233,6 +236,11 @@ describe('Exponentiation of a rational number', () => {
     const expected = new Rational(1, 1);
     expect(new Rational(-1, 2).exprational(0)).toEqual(expected);
   });
+
+  xtest('Raise a positive rational number to a negative integer power', () => {
+    const expected = new Rational(8, 125);
+    expect(new Rational(5, 2).exprational(-3)).toEqual(expected);
+  });
 });
 
 describe('Exponentiation of a real number to a rational number', () => {
@@ -242,13 +250,19 @@ describe('Exponentiation of a real number to a rational number', () => {
   });
 
   xtest('Raise a real number to a negative rational number', () => {
-    expect(new Rational(-1, 2).expreal(9)).toBeCloseTo(0.33, 2);
+    const expected = 0.33;
+    expect(new Rational(-1, 2).expreal(9)).toBeCloseTo(expected, 2);
   });
 
   xtest('Raise a real number to a zero rational number', () => {
     const expected = 1.0;
     expect(new Rational(0, 1).expreal(2)).toBeCloseTo(expected, 2);
   });
+
+  xtest('Raise a real number to a real number', () => {
+    const expected = 0.49;
+    expect(new Rational(2, 3).expreal(0.343)).toBeCloseTo(expected, 2);
+  })
 });
 
 describe('Reduction to lowest terms', () => {

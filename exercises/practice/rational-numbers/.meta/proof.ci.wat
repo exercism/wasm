@@ -1,6 +1,5 @@
 (module
-  (global $precision f64 (f64.const 26))
-
+  (import "console" "log_f64" (func $log_f64 (param f64)))
   ;;
   ;; Find the greatest common denominator of two numbers
   ;;
@@ -37,6 +36,7 @@
   (func $exp (param $num f64) (result f64)
     (local $product f64)
     (local $sum f64)
+    (local $prev f64)
     (local $fac f64)
     (local $step f64)
     (local.set $sum (f64.add (f64.const 1.0) (local.get $num)))
@@ -44,11 +44,12 @@
     (local.set $step (f64.const 3.0))
     (local.set $fac (f64.const 2.0))
     (loop $series
+      (local.set $prev (local.get $sum))
       (local.set $product (f64.mul (local.get $product) (local.get $num)))
       (local.set $sum (f64.add (local.get $sum) (f64.div (local.get $product) (local.get $fac))))
       (local.set $fac (f64.mul (local.get $fac) (local.get $step)))
       (local.set $step (f64.add (local.get $step) (f64.const 1.0)))
-    (br_if $series (f64.lt (local.get $step) (global.get $precision))))
+    (br_if $series (f64.ne (local.get $sum) (local.get $prev))))
     (local.get $sum)
   )
 
@@ -60,20 +61,23 @@
   ;; @returns {f64} - the logarithm log(num)
   ;;
   (func $log (param $num f64) (result f64)
-    (local $sum f64)
-    (local $square f64)
-    (local $product f64)
     (local $step f64)
-    (local.set $sum (f64.div (f64.sub (local.get $num) (f64.const 1)) (f64.add (local.get $num) (f64.const 1))))
-    (local.set $square (f64.mul (local.get $sum) (local.get $sum)))
-    (local.set $product (local.get $sum))
-    (local.set $step (f64.const 3.0))
+    (local $term f64)
+    (local $prev f64)
+    (local $ratio f64)
+    (local $total f64)
+    (if (f64.eq (local.get $num) (f64.const 0)) (then (return (f64.const 0))))
+    (local.set $step (f64.const 1.0))
+    (local.set $term (f64.div (f64.sub (local.get $num) (f64.const 1)) (f64.add (local.get $num) (f64.const 1))))
+    (local.set $ratio (f64.mul (local.get $term) (local.get $term)))
+    (local.set $total (local.get $term))
     (loop $series
-      (local.set $product (f64.mul (local.get $product) (local.get $square)))
-      (local.set $sum (f64.add (local.get $sum) (f64.div (local.get $product) (local.get $step))))
+      (local.set $prev (local.get $total))
+      (local.set $term (f64.mul (local.get $ratio) (local.get $term)))
       (local.set $step (f64.add (local.get $step) (f64.const 2)))
-    (br_if $series (f64.lt (local.get $step) (f64.mul (global.get $precision) (f64.const 10)))))
-    (f64.mul (local.get $sum) (f64.const 2))
+      (local.set $total (f64.add (local.get $total) (f64.div (local.get $term) (local.get $step))))
+    (br_if $series (f64.ne (local.get $prev) (local.get $total))))
+    (f64.mul (local.get $total) (f64.const 2))
   )
 
   ;;
@@ -85,6 +89,7 @@
   ;; @result {f64} exponent
   ;;
   (func $powf (param $x f64) (param $y f64) (result f64)
+    (if (f64.eq (local.get $x) (f64.const 0)) (then (return (f64.const 0.0))))
     (call $exp (f64.mul (local.get $y) (call $log (local.get $x))))
   )
 
@@ -180,9 +185,9 @@
   ;;
   ;; @returns {(i32,i32)} - numerator and denominator of the result
   ;;
-  (func (export "exprational") (param $numerator i32) (param $denominator i32) (param $exp i32) (result i32 i32)
-    (if (i32.lt_s (local.get $exp) (i32.const 0))
-      (then (local.set $exp (i32.sub (i32.const 0) (local.get $exp)))))
+  (func $exprational (export "exprational") (param $numerator i32) (param $denominator i32) (param $exp i32) (result i32 i32)
+    (if (i32.lt_s (local.get $exp) (i32.const 0)) (then (return
+      (call $exprational (local.get $denominator) (local.get $numerator) (i32.sub (i32.const 0) (local.get $exp))))))
     (call $powi (local.get $numerator) (local.get $exp))
     (call $powi (local.get $denominator) (local.get $exp))
   )
@@ -196,13 +201,11 @@
   ;;
   ;; @returns {f64} - floating point result
   ;;
-  (func (export "expreal") (param $numerator i32) (param $denominator i32) (param $exp i32) (result f64)
-    (call $powf (call $powf (f64.convert_i32_u (local.get $exp))
+  (func (export "expreal") (param $numerator i32) (param $denominator i32) (param $exp f64) (result f64)
+    (call $powf (call $powf (local.get $exp)
       (f64.div (f64.const 1) (f64.convert_i32_s (local.get $denominator))))
       (f64.convert_i32_s (local.get $numerator)))
   )
-
-  ;;  (exp ** (1 / this.denominator)) ** this.numerator;
 
   ;;
   ;; Reduce a rational number
