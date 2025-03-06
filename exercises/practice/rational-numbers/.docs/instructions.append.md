@@ -4,7 +4,7 @@ The exponentiation of rational numbers with a real number requires calculating n
 
 However, you can also express `x ^ y` as `x ^ y = exp(y * log(x))`.
 
-And fortunately, one can use different series to calculate the exponential and the logarithm.
+And fortunately, one can use different series to calculate the exponential and the natural logarithm.
 
 ## Exponential function
 
@@ -28,7 +28,7 @@ There is also another Taylor Series to calculate the natural logarithm:
 log(x) = (x - 1) - (x - 1) ^ 2 / 2 + (x  - 1) ^ 3 / 3 - (x - 1) ^ 4 / 4 ... + (x - 1) ^ n / n
 ```
 
-It is only accurate between +/-1. However, `ln(x * 10 ^ n) = ln(x) + n * ln10`, with `ln10` being approximately `2.30258509`.
+It is only accurate for `x` between 0 and 2. However we can also use `log(x) = - log(1 / x)`
 
 ## Integer exponentiation
 
