@@ -4,8 +4,8 @@
   ;;
   ;; Lyrics to 'This is the House that Jack Built'.
   ;;
-  ;; @param {i32} startVerse - The initial reverse to recite
-  ;; @param {i32} endVerse - The final reverse to recite
+  ;; @param {i32} startVerse - The initial verse to recite
+  ;; @param {i32} endVerse - The final verse to recite
   ;;
   ;; @returns {(i32,i32)} - Offset and length of result string
   ;;                        in linear memory.
