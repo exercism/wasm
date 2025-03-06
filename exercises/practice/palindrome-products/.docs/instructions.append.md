@@ -8,7 +8,7 @@ Return value:
 [u32 $product] [u32 $factorsOffset] [u32 $factorsLength]
 
 Memory at $factorsOffset
-[u32 factor1_1] [u32 factor1_2] [u32 factor2_1] [u32 factor2_2]
+[u32 firstFactor] [u32 firstCofactor] [u32 secondFactor] [u32 secondCofactor] ...
 ```
 
 For the largest one-digit palindrome product, it would look like this:
