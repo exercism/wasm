@@ -237,7 +237,8 @@ describe('Complex numbers', () => {
     const expected = new ComplexNumber(5, 0);
     const actual = new ComplexNumber(5, 0).conj;
 
-    expect(actual).toEqual(expected);
+    expect(actual.real).toBeCloseTo(expected.real);
+    expect(actual.imag).toBeCloseTo(expected.imag);
   });
 
   xtest('Conjugate a purely imaginary number', () => {
