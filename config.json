@@ -128,6 +128,14 @@
         "difficulty": 2
       },
       {
+        "slug": "clock",
+        "name": "Clock",
+        "uuid": "a8a3657a-b490-4af8-be28-ac5df2c3f43b",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
+      },
+      {
         "slug": "bob",
         "name": "Bob",
         "uuid": "86d6375c-d791-431b-8440-d47fe31d48a5",
@@ -136,36 +144,12 @@
         "difficulty": 3
       },
       {
-        "slug": "twelve-days",
-        "name": "Twelve Days",
-        "uuid": "fd218a7d-3c39-473b-a71b-ff984ea58b86",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 5
-      },
-      {
-        "slug": "house",
-        "name": "House",
-        "uuid": "9b389aab-2d46-4187-bb01-c107b9e4199b",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 5
-      },
-      {
         "slug": "collatz-conjecture",
         "name": "Collatz Conjecture",
         "uuid": "84a5d81b-f410-42d8-a7a1-d740d3957830",
         "practices": [],
         "prerequisites": [],
         "difficulty": 3
-      },
-      {
-        "slug": "complex-numbers",
-        "name": "Complex Numbers",
-        "uuid": "5591f4e1-6f72-415e-a789-12eebd712f9a",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 8
       },
       {
         "slug": "darts",
@@ -320,6 +304,22 @@
         "difficulty": 4
       },
       {
+        "slug": "twelve-days",
+        "name": "Twelve Days",
+        "uuid": "fd218a7d-3c39-473b-a71b-ff984ea58b86",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 5
+      },
+      {
+        "slug": "house",
+        "name": "House",
+        "uuid": "9b389aab-2d46-4187-bb01-c107b9e4199b",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 5
+      },
+      {
         "slug": "all-your-base",
         "name": "All Your Base",
         "uuid": "e201215c-169c-487c-8b50-47fa6a395906",
@@ -363,6 +363,22 @@
         "slug": "roman-numerals",
         "name": "Roman Numerals",
         "uuid": "0a966ccb-5161-41e5-a5ce-f3ce84b4f1b0",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 5
+      },
+      {
+        "slug": "yacht",
+        "name": "Yacht",
+        "uuid": "6f22fe65-7d7e-440f-b2a1-89dc592aac36",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 5
+      },
+      {
+        "slug": "robot-simulator",
+        "name": "Robot Simulator",
+        "uuid": "af31c3d6-95e2-4817-aaea-4bac4e71e647",
         "practices": [],
         "prerequisites": [],
         "difficulty": 5
@@ -416,22 +432,6 @@
         "difficulty": 6
       },
       {
-        "slug": "robot-simulator",
-        "name": "Robot Simulator",
-        "uuid": "af31c3d6-95e2-4817-aaea-4bac4e71e647",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 5
-      },
-      {
-        "slug": "circular-buffer",
-        "name": "Circular Buffer",
-        "uuid": "db61cc68-40d8-47a7-838e-508784153a10",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 8
-      },
-      {
         "slug": "queen-attack",
         "name": "Queen Attack",
         "uuid": "b1b0e448-be17-4bca-a04a-bf87308b651a",
@@ -462,6 +462,22 @@
         "practices": [],
         "prerequisites": [],
         "difficulty": 7
+      },
+      {
+        "slug": "complex-numbers",
+        "name": "Complex Numbers",
+        "uuid": "5591f4e1-6f72-415e-a789-12eebd712f9a",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 8
+      },
+      {
+        "slug": "circular-buffer",
+        "name": "Circular Buffer",
+        "uuid": "db61cc68-40d8-47a7-838e-508784153a10",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 8
       },
       {
         "slug": "knapsack",
@@ -502,14 +518,6 @@
         "practices": [],
         "prerequisites": [],
         "difficulty": 8
-      },
-      {
-        "slug": "clock",
-        "name": "Clock",
-        "uuid": "a8a3657a-b490-4af8-be28-ac5df2c3f43b",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 2
       }
     ]
   },
