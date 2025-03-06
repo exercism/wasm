@@ -440,6 +440,14 @@
         "difficulty": 6
       },
       {
+        "slug": "palindrome-products",
+        "name": "Palindrome Products",
+        "uuid": "96a3edc8-2421-4fb0-b3d1-fb65f48f8230",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 7
+      },
+      {
         "slug": "pig-latin",
         "name": "Pig Latin",
         "uuid": "96fae126-c097-4946-9ae0-4e604b93e582",
