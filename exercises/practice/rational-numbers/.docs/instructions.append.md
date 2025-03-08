@@ -2,9 +2,9 @@
 
 The exponentiation of rational numbers with a real number requires calculating number to the power of a non-integer, a functionality that is not natively available in WebAssembly.
 
-However, you can also express `x ^ y` as `x ^ y = exp(y * log(x))`.
+However, you can also express `x ^ y` as `x ^ y = exp(y * ln(x))`.
 
-And fortunately, one can use different series to calculate the exponential and the logarithm.
+And fortunately, one can use different series to calculate the exponential and the natural logarithm.
 
 ## Exponential function
 
@@ -19,16 +19,16 @@ exp(x) ≃ 1 + x + x ^ 2 / 2! + x ^ 3 / 3! + x ^ 4 / 4! + ... + x ^ n / n!
 There are multiple ways to efficiently calculate a natural logarithm. One of them is a series based on an [Inverse Hyperbolic Tangent](https://en.wikipedia.org/wiki/Logarithm#Inverse_hyperbolic_tangent):
 
 ```
-log(x) / 2 ≃ y + y ^ 3 / 3 + y ^ 5 / 5 + ... + y ^ n / n where y = (x - 1) / (x + 1)
+ln(x) / 2 ≃ y + y ^ 3 / 3 + y ^ 5 / 5 + ... + y ^ n / n where y = (x - 1) / (x + 1)
 ```
 
 There is also another Taylor Series to calculate the natural logarithm:
 
 ```
-log(x) = (x - 1) - (x - 1) ^ 2 / 2 + (x  - 1) ^ 3 / 3 - (x - 1) ^ 4 / 4 ... + (x - 1) ^ n / n
+ln(x) = (x - 1) - (x - 1) ^ 2 / 2 + (x  - 1) ^ 3 / 3 - (x - 1) ^ 4 / 4 ... + (x - 1) ^ n / n
 ```
 
-It is only accurate between +/-1. However, `ln(x * 10 ^ n) = ln(x) + n * ln10`, with `ln10` being approximately `2.30258509`.
+It is only accurate for `x` between 0 and 2. However we can also use `ln(x) = - ln(1 / x)`
 
 ## Integer exponentiation
 
