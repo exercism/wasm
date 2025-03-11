@@ -1,6 +1,7 @@
 {
   "name": "@exercism/wasm-palindrome-products",
   "description": "Exercism exercises in WebAssembly.",
+  "version": "0.0.1",
   "author": "Alex Lohr",
   "type": "module",
   "private": true,

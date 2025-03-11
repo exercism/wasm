@@ -14,18 +14,15 @@ beforeAll(async () => {
   }
 });
 
-const pairs = (paired, item) => {
-  if (paired.at(-1)?.length === 1) {
-    paired.at(-1).push(item);
-  } else {
-    paired.push([item]);
-  }
-  return paired;
+const collectPairs = (items) => {
+  const itemsIterator = items[Symbol.iterator]();
+  return Array.from({ length: Math.ceil(items.length / 2) },
+    () => [itemsIterator.next().value, itemsIterator.next().value]);
 }
 const getPalindromeProduct = ({ func, minFactor, maxFactor }) => {
   const [value, factorsOffset, factorsLength] = currentInstance.exports[func](minFactor, maxFactor);
   if (value === -1 && factorsLength === 0) throw new Error('min must be <= max');
-  const factors = currentInstance.get_mem_as_u32(factorsOffset, factorsLength).reduce(pairs, []);
+  const factors = collectPairs(currentInstance.get_mem_as_u32(factorsOffset, factorsLength));
   return { value: value || null, factors };
 }
 const Palindromes = {
