@@ -392,6 +392,14 @@
         "difficulty": 5
       },
       {
+        "slug": "meetup",
+        "name": "Meetup",
+        "uuid": "5f859c2d-bf40-4d87-9dfd-bd434bb8e4ac",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 5
+      },
+      {
         "slug": "protein-translation",
         "name": "Protein Translation",
         "uuid": "0c71b134-ce1e-4deb-9a36-9215c9c7f6f3",
