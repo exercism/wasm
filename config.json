@@ -192,6 +192,14 @@
         "difficulty": 3
       },
       {
+        "slug": "anagram",
+        "name": "Anagram",
+        "uuid": "93cc0fba-0270-49d9-9ec3-62e721a1f64f",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 4
+      },
+      {
         "slug": "atbash-cipher",
         "name": "Atbash Cipher",
         "uuid": "99359b0a-0671-41e0-8e36-aaca387a89b5",
