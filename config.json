@@ -88,6 +88,14 @@
         "difficulty": 2
       },
       {
+        "slug": "clock",
+        "name": "Clock",
+        "uuid": "a8a3657a-b490-4af8-be28-ac5df2c3f43b",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
+      },
+      {
         "slug": "hamming",
         "name": "Hamming",
         "uuid": "257096af-21dc-47ed-a00f-dd17a7d03c76",
@@ -123,14 +131,6 @@
         "slug": "triangle",
         "name": "Triangle",
         "uuid": "ed3ca73a-a0f0-46b8-8013-8b6d20758c8f",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 2
-      },
-      {
-        "slug": "clock",
-        "name": "Clock",
-        "uuid": "a8a3657a-b490-4af8-be28-ac5df2c3f43b",
         "practices": [],
         "prerequisites": [],
         "difficulty": 2
@@ -312,22 +312,6 @@
         "difficulty": 4
       },
       {
-        "slug": "twelve-days",
-        "name": "Twelve Days",
-        "uuid": "fd218a7d-3c39-473b-a71b-ff984ea58b86",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 5
-      },
-      {
-        "slug": "house",
-        "name": "House",
-        "uuid": "9b389aab-2d46-4187-bb01-c107b9e4199b",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 5
-      },
-      {
         "slug": "all-your-base",
         "name": "All Your Base",
         "uuid": "e201215c-169c-487c-8b50-47fa6a395906",
@@ -352,6 +336,14 @@
         "difficulty": 5
       },
       {
+        "slug": "house",
+        "name": "House",
+        "uuid": "9b389aab-2d46-4187-bb01-c107b9e4199b",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 5
+      },
+      {
         "slug": "largest-series-product",
         "name": "Largest Series Product",
         "uuid": "2534388c-96ef-45f7-a4e2-eb830dfb9c66",
@@ -368,6 +360,14 @@
         "difficulty": 5
       },
       {
+        "slug": "robot-simulator",
+        "name": "Robot Simulator",
+        "uuid": "af31c3d6-95e2-4817-aaea-4bac4e71e647",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 5
+      },
+      {
         "slug": "roman-numerals",
         "name": "Roman Numerals",
         "uuid": "0a966ccb-5161-41e5-a5ce-f3ce84b4f1b0",
@@ -376,17 +376,17 @@
         "difficulty": 5
       },
       {
-        "slug": "yacht",
-        "name": "Yacht",
-        "uuid": "6f22fe65-7d7e-440f-b2a1-89dc592aac36",
+        "slug": "twelve-days",
+        "name": "Twelve Days",
+        "uuid": "fd218a7d-3c39-473b-a71b-ff984ea58b86",
         "practices": [],
         "prerequisites": [],
         "difficulty": 5
       },
       {
-        "slug": "robot-simulator",
-        "name": "Robot Simulator",
-        "uuid": "af31c3d6-95e2-4817-aaea-4bac4e71e647",
+        "slug": "yacht",
+        "name": "Yacht",
+        "uuid": "6f22fe65-7d7e-440f-b2a1-89dc592aac36",
         "practices": [],
         "prerequisites": [],
         "difficulty": 5
@@ -432,6 +432,14 @@
         "difficulty": 6
       },
       {
+        "slug": "queen-attack",
+        "name": "Queen Attack",
+        "uuid": "b1b0e448-be17-4bca-a04a-bf87308b651a",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 6
+      },
+      {
         "slug": "rational-numbers",
         "name": "Rational Numbers",
         "uuid": "c755ff54-cf97-4453-83cb-a3df4b2b6a86",
@@ -443,14 +451,6 @@
         "slug": "sieve",
         "name": "Sieve of Eratosthenes",
         "uuid": "99498715-4615-4aa8-83a7-6cb0a32bd721",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 6
-      },
-      {
-        "slug": "queen-attack",
-        "name": "Queen Attack",
-        "uuid": "b1b0e448-be17-4bca-a04a-bf87308b651a",
         "practices": [],
         "prerequisites": [],
         "difficulty": 6
@@ -480,17 +480,17 @@
         "difficulty": 7
       },
       {
-        "slug": "complex-numbers",
-        "name": "Complex Numbers",
-        "uuid": "5591f4e1-6f72-415e-a789-12eebd712f9a",
+        "slug": "circular-buffer",
+        "name": "Circular Buffer",
+        "uuid": "db61cc68-40d8-47a7-838e-508784153a10",
         "practices": [],
         "prerequisites": [],
         "difficulty": 8
       },
       {
-        "slug": "circular-buffer",
-        "name": "Circular Buffer",
-        "uuid": "db61cc68-40d8-47a7-838e-508784153a10",
+        "slug": "complex-numbers",
+        "name": "Complex Numbers",
+        "uuid": "5591f4e1-6f72-415e-a789-12eebd712f9a",
         "practices": [],
         "prerequisites": [],
         "difficulty": 8
@@ -504,17 +504,17 @@
         "difficulty": 8
       },
       {
-        "slug": "ocr-numbers",
-        "name": "OCR Numbers",
-        "uuid": "5bacd600-5030-4bef-9dbe-4bbd807b3d23",
+        "slug": "minesweeper",
+        "name": "Minesweeper",
+        "uuid": "8db919e4-52a1-44e4-b93a-02df342a4396",
         "practices": [],
         "prerequisites": [],
         "difficulty": 8
       },
       {
-        "slug": "minesweeper",
-        "name": "Minesweeper",
-        "uuid": "8db919e4-52a1-44e4-b93a-02df342a4396",
+        "slug": "ocr-numbers",
+        "name": "OCR Numbers",
+        "uuid": "5bacd600-5030-4bef-9dbe-4bbd807b3d23",
         "practices": [],
         "prerequisites": [],
         "difficulty": 8
