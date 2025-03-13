@@ -73,7 +73,7 @@
       },
       {
         "slug": "two-fer",
-        "name": "Two Fer",
+        "name": "Two-Fer",
         "uuid": "f1d7f95e-e8c1-464a-99ab-c5a1395cb9a4",
         "practices": [],
         "prerequisites": [],
@@ -185,7 +185,7 @@
       },
       {
         "slug": "rna-transcription",
-        "name": "Rna Transcription",
+        "name": "RNA Transcription",
         "uuid": "c54c9479-5ee1-43fa-906c-5f3a6c041485",
         "practices": [],
         "prerequisites": [],
@@ -217,7 +217,7 @@
       },
       {
         "slug": "isbn-verifier",
-        "name": "Isbn Verifier",
+        "name": "ISBN Verifier",
         "uuid": "952efb86-f0a3-432a-8751-614c431d9021",
         "practices": [],
         "prerequisites": [],
@@ -449,7 +449,7 @@
       },
       {
         "slug": "sieve",
-        "name": "Sieve of Eratosthenes",
+        "name": "Sieve",
         "uuid": "99498715-4615-4aa8-83a7-6cb0a32bd721",
         "practices": [],
         "prerequisites": [],
