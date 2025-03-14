@@ -7,7 +7,7 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/exercism/wasm",
-    "directory": "exercises/practice/bob"
+    "directory": "exercises/practice/bowling"
   },
   "jest": {
     "maxWorkers": 1
