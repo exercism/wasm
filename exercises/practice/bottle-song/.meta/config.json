@@ -1,0 +1,28 @@
+{
+  "authors": [
+    "keiravillekode"
+  ],
+  "files": {
+    "solution": [
+      "bottle-song.wat"
+    ],
+    "test": [
+      "bottle-song.spec.js"
+    ],
+    "example": [
+      ".meta/proof.ci.wat"
+    ],
+    "invalidator": [
+      "package.json"
+    ]
+  },
+  "blurb": "Produce the lyrics to the popular children's repetitive song: Ten Green Bottles.",
+  "source": "Wikipedia",
+  "source_url": "https://en.wikipedia.org/wiki/Ten_Green_Bottles",
+  "custom": {
+    "version.tests.compatibility": "jest-27",
+    "flag.tests.task-per-describe": false,
+    "flag.tests.may-run-long": false,
+    "flag.tests.includes-optional": false
+  }
+}
