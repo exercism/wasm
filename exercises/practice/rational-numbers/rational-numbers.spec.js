@@ -1,4 +1,3 @@
-import { test as xtest } from "@jest/globals";
 import { compileWat, WasmRunner } from "@exercism/wasm-lib";
 
 let wasmModule;
@@ -6,8 +5,7 @@ let currentInstance;
 
 beforeAll(async () => {
   try {
-    //const watPath = new URL("./rational-numbers.wat", import.meta.url);
-    const watPath = new URL("./.meta/proof.ci.wat", import.meta.url);
+    const watPath = new URL("./rational-numbers.wat", import.meta.url);
     
     const { buffer } = await compileWat(watPath);
     wasmModule = await WebAssembly.compile(buffer);
