@@ -6,7 +6,7 @@ let currentInstance;
 
 beforeAll(async () => {
   try {
-    const watPath = new URL("./.meta/proof.ci.wat", import.meta.url);
+    const watPath = new URL("./yacht.wat", import.meta.url);
     const { buffer } = await compileWat(watPath);
     wasmModule = await WebAssembly.compile(buffer);
   } catch (err) {
