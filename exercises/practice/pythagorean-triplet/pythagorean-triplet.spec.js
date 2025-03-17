@@ -1,4 +1,3 @@
-import { test as xtest } from '@jest/globals';
 import { compileWat, WasmRunner } from "@exercism/wasm-lib";
 
 let wasmModule;
@@ -6,7 +5,7 @@ let currentInstance;
 
 beforeAll(async () => {
   try {
-    const watPath = new URL("./.meta/proof.ci.wat", import.meta.url);
+    const watPath = new URL("./pythagorean-triplet.wat", import.meta.url);
     const { buffer } = await compileWat(watPath);
     wasmModule = await WebAssembly.compile(buffer);
   } catch (err) {
@@ -15,14 +14,10 @@ beforeAll(async () => {
   }
 });
 
-function triplets({ sum, minFactor, maxFactor }) {
+function triplets(sum) {
   const u32Size = 4;
 
-  const [outputOffset, outputLength] = currentInstance.exports.triplets(
-    sum,
-    minFactor ?? 1,
-    maxFactor ?? sum
-  );
+  const [outputOffset, outputLength] = currentInstance.exports.triplets(sum);
 
   // Decode JS string from returned offset and length
   return currentInstance.get_mem_as_u32(outputOffset, outputLength / u32Size)
@@ -34,8 +29,8 @@ function triplets({ sum, minFactor, maxFactor }) {
     );
 }
 
-function tripletsWithSum(sum, options = {}) {
-  return triplets({ ...options, sum }).map((triplet) =>
+function tripletsWithSum(sum) {
+  return triplets(sum).map((triplet) =>
     triplet.sort((a, b) => a - b),
   );
 }
@@ -90,16 +85,14 @@ describe('Triplet', () => {
     ]);
   });
 
-  xtest('returns triplets with no factor smaller than minimum factor', () => {
-    expect(tripletsWithSum(90, { minFactor: 10 })).toEqual([[15, 36, 39]]);
-  });
-
-  xtest('returns triplets with no factor larger than maximum factor', () => {
-    expect(tripletsWithSum(840, { maxFactor: 349 })).toEqual([[240, 252, 348]]);
-  });
-
   xtest('returns triplets with factors in range', () => {
-    expect(tripletsWithSum(840, { maxFactor: 352, minFactor: 150 })).toEqual([
+    expect(tripletsWithSum(840)).toEqual([
+      [ 40, 399, 401 ],
+      [ 56, 390, 394 ],
+      [ 105, 360, 375 ],
+      [ 120, 350, 370 ],
+      [ 140, 336, 364 ],
+      [ 168, 315, 357 ],
       [210, 280, 350],
       [240, 252, 348],
     ]);
@@ -107,7 +100,7 @@ describe('Triplet', () => {
 
   // This test doesn't run on our online test runner because it will time-out
   // with most implementations. It's up to you to test your solution locally.
-  test.skip(
+  xtest(
     'triplets for large number',
     () => {
       expect(tripletsWithSum(30000)).toEqual([

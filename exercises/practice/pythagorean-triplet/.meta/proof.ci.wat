@@ -7,17 +7,17 @@
   ;; Output pythagorean triplets for sum, minfactor and maxfactor
   ;;
   ;; @param {i32} $sum - sum of the triplets
-  ;; @param {i32} $minFactor - smallest allowed factor
-  ;; @param {i32} $maxFactor - largest allowed factor
   ;;
   ;; @returns {(i32.i32)} - offset and length of all triplets without delimiter as i32 numbers
   ;;
-  (func (export "triplets") (param $sum i32) (param $minFactor i32) (param $maxFactor i32) (result i32 i32)
+  (func (export "triplets") (param $sum i32) (result i32 i32)
     (local $a i32)
     (local $b i32)
     (local $c i32)
+    (local $maxFactor i32)
     (local $outputLength i32)
-    (local.set $a (local.get $minFactor))
+    (local.set $a (i32.const 1))
+    (local.set $maxFactor (i32.shr_u (local.get $sum) (i32.const 1)))
     (loop $_a
       (local.set $b (i32.add (local.get $a) (i32.const 1)))
       (loop $_b
