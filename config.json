@@ -104,6 +104,14 @@
         "difficulty": 2
       },
       {
+        "slug": "high-scores",
+        "name": "High Scores",
+        "uuid": "28df5726-ab8c-4750-99eb-5f19020e2186",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
+      },
+      {
         "slug": "micro-blog",
         "name": "Micro Blog",
         "uuid": "45dc52f5-2e84-4a52-8272-bb4b1e36b43b",
