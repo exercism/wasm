@@ -35,7 +35,6 @@ const translate = (input = "") => {
     throw new Error('Invalid codon');
   const output = currentInstance.get_mem_as_utf8(outputOffset, outputLength);
   
-  console.log(JSON.stringify(output));
   return output ? output.split("\n").filter(Boolean) : [];
 }
 
