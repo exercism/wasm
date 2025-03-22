@@ -16,7 +16,6 @@ beforeAll(async () => {
 
 function rows(n) {
   const [outputOffset, outputLength] = currentInstance.exports.rows(n);
-  console.log({outputOffset, outputLength});
   const output = currentInstance.get_mem_as_u32(outputOffset, outputLength);
   const outputIterator = output[Symbol.iterator]();
   return Array.from({ length: n }, (_, row) =>
