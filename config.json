@@ -512,6 +512,14 @@
         "difficulty": 6
       },
       {
+        "slug": "meetup",
+        "name": "Meetup",
+        "uuid": "5f859c2d-bf40-4d87-9dfd-bd434bb8e4ac",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 7
+      },
+      {
         "slug": "palindrome-products",
         "name": "Palindrome Products",
         "uuid": "96a3edc8-2421-4fb0-b3d1-fb65f48f8230",
