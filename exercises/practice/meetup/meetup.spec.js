@@ -15,10 +15,10 @@ beforeAll(async () => {
 });
 
 const meetup = (year, month, week, weekday) => {
-  const output = currentInstance.exports.meetup(
+  const [meetYear, meetMonth, meetDay] = currentInstance.exports.meetup(
     year, month, currentInstance.exports[week], currentInstance.exports[weekday]
   );
-  return new Date(...output);
+  return new Date(meetYear, meetMonth - 1, meetDay);
 }
 
 describe('Meetup', () => {
