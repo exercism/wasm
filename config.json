@@ -208,6 +208,14 @@
         "difficulty": 3
       },
       {
+        "slug": "series",
+        "name": "Series",
+        "uuid": "b4f0fdb0-d635-476a-af3a-29a7ca951665",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3
+      },
+      {
         "slug": "anagram",
         "name": "Anagram",
         "uuid": "93cc0fba-0270-49d9-9ec3-62e721a1f64f",
