@@ -528,6 +528,14 @@
         "difficulty": 6
       },
       {
+        "slug": "state-of-tic-tac-toe",
+        "name": "State of Tic-Tac-Toe",
+        "uuid": "f283a2ac-0be4-44d6-9f0f-39e32fd13877",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 6
+      },
+      {
         "slug": "meetup",
         "name": "Meetup",
         "uuid": "5f859c2d-bf40-4d87-9dfd-bd434bb8e4ac",
