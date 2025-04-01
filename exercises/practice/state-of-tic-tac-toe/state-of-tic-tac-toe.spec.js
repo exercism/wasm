@@ -24,7 +24,7 @@ const gamestates = {
 };
 
 export const gamestate = (board) => {
-  const input = board.join('\n');
+  const input = board.join('\n') + '\n';
   const inputBufferOffset = 64;
   const inputBufferCapacity = 128;
 
