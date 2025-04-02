@@ -1,0 +1,28 @@
+{
+  "authors": [
+    "atk"
+  ],
+  "files": {
+    "solution": [
+      "etl.wat"
+    ],
+    "test": [
+      "etl.spec.js"
+    ],
+    "example": [
+      ".meta/proof.ci.wat"
+    ],
+    "invalidator": [
+      "package.json"
+    ]
+  },
+  "blurb": "Change the data format for scoring a game to more easily add other languages.",
+  "source": "Based on an exercise by the JumpstartLab team for students at The Turing School of Software and Design.",
+  "source_url": "https://turing.edu",
+  "custom": {
+    "version.tests.compatibility": "jest-27",
+    "flag.tests.task-per-describe": false,
+    "flag.tests.may-run-long": false,
+    "flag.tests.includes-optional": false
+  }
+}
