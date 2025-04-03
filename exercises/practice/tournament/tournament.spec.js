@@ -52,7 +52,7 @@ describe('Tournament', () => {
 
   test('just the header if no input', () => {
     const tally = tournamentTally('');
-    const expected = 'Team                           | MP |  W |  D |  L |  P';
+    const expected = 'Team                           | MP |  W |  D |  L |  P\n';
     expect(tally).toEqual(expected);
   });
   xtest('a win is three points, a loss is zero points', () => {
@@ -60,7 +60,7 @@ describe('Tournament', () => {
     const expected =
       'Team                           | MP |  W |  D |  L |  P\n' +
       'Allegoric Alaskans             |  1 |  1 |  0 |  0 |  3\n' +
-      'Blithering Badgers             |  1 |  0 |  0 |  1 |  0';
+      'Blithering Badgers             |  1 |  0 |  0 |  1 |  0\n';
     expect(tally).toEqual(expected);
   });
   xtest('a win can also be expressed as a loss', () => {
@@ -68,7 +68,7 @@ describe('Tournament', () => {
     const expected =
       'Team                           | MP |  W |  D |  L |  P\n' +
       'Allegoric Alaskans             |  1 |  1 |  0 |  0 |  3\n' +
-      'Blithering Badgers             |  1 |  0 |  0 |  1 |  0';
+      'Blithering Badgers             |  1 |  0 |  0 |  1 |  0\n';
     expect(tally).toEqual(expected);
   });
   xtest('a different team can win', () => {
@@ -76,7 +76,7 @@ describe('Tournament', () => {
     const expected =
       'Team                           | MP |  W |  D |  L |  P\n' +
       'Blithering Badgers             |  1 |  1 |  0 |  0 |  3\n' +
-      'Allegoric Alaskans             |  1 |  0 |  0 |  1 |  0';
+      'Allegoric Alaskans             |  1 |  0 |  0 |  1 |  0\n';
     expect(tally).toEqual(expected);
   });
   xtest('a draw is one point each', () => {
@@ -84,18 +84,18 @@ describe('Tournament', () => {
     const expected =
       'Team                           | MP |  W |  D |  L |  P\n' +
       'Allegoric Alaskans             |  1 |  0 |  1 |  0 |  1\n' +
-      'Blithering Badgers             |  1 |  0 |  1 |  0 |  1';
+      'Blithering Badgers             |  1 |  0 |  1 |  0 |  1\n';
     expect(tally).toEqual(expected);
   });
   xtest('there can be more than one match', () => {
     const input =
       'Allegoric Alaskans;Blithering Badgers;win\n' +
-      'Allegoric Alaskans;Blithering Badgers;win';
+      'Allegoric Alaskans;Blithering Badgers;win\n';
     const tally = tournamentTally(input);
     const expected =
       'Team                           | MP |  W |  D |  L |  P\n' +
       'Allegoric Alaskans             |  2 |  2 |  0 |  0 |  6\n' +
-      'Blithering Badgers             |  2 |  0 |  0 |  2 |  0';
+      'Blithering Badgers             |  2 |  0 |  0 |  2 |  0\n';
     expect(tally).toEqual(expected);
   });
   xtest('there can be more than one winner', () => {
@@ -106,7 +106,7 @@ describe('Tournament', () => {
     const expected =
       'Team                           | MP |  W |  D |  L |  P\n' +
       'Allegoric Alaskans             |  2 |  1 |  0 |  1 |  3\n' +
-      'Blithering Badgers             |  2 |  1 |  0 |  1 |  3';
+      'Blithering Badgers             |  2 |  1 |  0 |  1 |  3\n';
     expect(tally).toEqual(expected);
   });
   xtest('there can be more than two teams', () => {
@@ -119,7 +119,7 @@ describe('Tournament', () => {
       'Team                           | MP |  W |  D |  L |  P\n' +
       'Allegoric Alaskans             |  2 |  2 |  0 |  0 |  6\n' +
       'Blithering Badgers             |  2 |  1 |  0 |  1 |  3\n' +
-      'Courageous Californians        |  2 |  0 |  0 |  2 |  0';
+      'Courageous Californians        |  2 |  0 |  0 |  2 |  0\n';
     expect(tally).toEqual(expected);
   });
   xtest('typical input', () => {
@@ -136,7 +136,7 @@ describe('Tournament', () => {
       'Devastating Donkeys            |  3 |  2 |  1 |  0 |  7\n' +
       'Allegoric Alaskans             |  3 |  2 |  0 |  1 |  6\n' +
       'Blithering Badgers             |  3 |  1 |  0 |  2 |  3\n' +
-      'Courageous Californians        |  3 |  0 |  1 |  2 |  1';
+      'Courageous Californians        |  3 |  0 |  1 |  2 |  1\n';
     expect(tally).toEqual(expected);
   });
   xtest('incomplete competition (not all pairs have played)', () => {
@@ -151,7 +151,7 @@ describe('Tournament', () => {
       'Allegoric Alaskans             |  3 |  2 |  0 |  1 |  6\n' +
       'Blithering Badgers             |  2 |  1 |  1 |  0 |  4\n' +
       'Courageous Californians        |  2 |  0 |  1 |  1 |  1\n' +
-      'Devastating Donkeys            |  1 |  0 |  0 |  1 |  0';
+      'Devastating Donkeys            |  1 |  0 |  0 |  1 |  0\n';
     expect(tally).toEqual(expected);
   });
   xtest('ties broken alphabetically', () => {
@@ -168,7 +168,7 @@ describe('Tournament', () => {
       'Allegoric Alaskans             |  3 |  2 |  1 |  0 |  7\n' +
       'Courageous Californians        |  3 |  2 |  1 |  0 |  7\n' +
       'Blithering Badgers             |  3 |  0 |  1 |  2 |  1\n' +
-      'Devastating Donkeys            |  3 |  0 |  1 |  2 |  1';
+      'Devastating Donkeys            |  3 |  0 |  1 |  2 |  1\n';
     expect(tally).toEqual(expected);
   });
   xtest('ensure points sorted numerically', () => {
@@ -182,7 +182,7 @@ describe('Tournament', () => {
     const expected =
       'Team                           | MP |  W |  D |  L |  P\n' +
       'Devastating Donkeys            |  5 |  4 |  0 |  1 | 12\n' +
-      'Blithering Badgers             |  5 |  1 |  0 |  4 |  3';
+      'Blithering Badgers             |  5 |  1 |  0 |  4 |  3\n';
     expect(tally).toEqual(expected);
   });
 });

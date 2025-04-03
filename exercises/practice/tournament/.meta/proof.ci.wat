@@ -270,6 +270,6 @@
         (local.set $outputLength (i32.add (local.get $outputLength) (global.get $lineLength)))))
     (local.set $team (i32.add (local.get $team) (i32.const 1)))
     (br_if $write (local.get $pos)))
-    (global.get $outputOffset) (i32.sub (local.get $outputLength) (i32.const 1))
+    (global.get $outputOffset) (local.get $outputLength)
   )
 )
