@@ -536,6 +536,14 @@
         "difficulty": 6
       },
       {
+        "slug": "tournament",
+        "name": "Tournament",
+        "uuid": "2a9a91e1-dac4-403c-b68a-d6530f0c30bb",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 6
+      },
+      {
         "slug": "meetup",
         "name": "Meetup",
         "uuid": "5f859c2d-bf40-4d87-9dfd-bd434bb8e4ac",
