@@ -448,6 +448,14 @@
         "difficulty": 5
       },
       {
+        "slug": "spiral-matrix",
+        "name": "Spiral Matrix",
+        "uuid": "cbf5bf2f-6b53-4d49-9ac7-0da10889c333",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 5
+      },
+      {
         "slug": "twelve-days",
         "name": "Twelve Days",
         "uuid": "fd218a7d-3c39-473b-a71b-ff984ea58b86",
