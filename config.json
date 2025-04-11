@@ -256,6 +256,14 @@
         "difficulty": 4
       },
       {
+        "slug": "grade-school",
+        "name": "Grade School",
+        "uuid": "c7d17539-76f5-4499-ae97-262c56aeebb7",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 4
+      },
+      {
         "slug": "isbn-verifier",
         "name": "ISBN Verifier",
         "uuid": "952efb86-f0a3-432a-8751-614c431d9021",
