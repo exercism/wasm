@@ -65,7 +65,7 @@ describe('VariableLengthQuantity', () => {
   });
 
   describe('Encode a series of integers, producing a series of bytes.', () => {
-    xtest('zero', () => {
+    test('zero', () => {
       expect(encode([0])).toEqual([0]);
     });
 
