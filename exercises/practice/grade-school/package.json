@@ -1,5 +1,6 @@
 {
   "name": "@exercism/wasm-grade-school",
+  "version": "0.0.2",
   "description": "Exercism exercises in WebAssembly.",
   "author": "Alex Lohr",
   "type": "module",
