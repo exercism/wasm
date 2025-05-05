@@ -33,8 +33,6 @@ class GradeSchool {
   #getOutput(call, ...args) {
     const [outputOffset, outputLength] = currentInstance.exports[call](...args);
     const output = currentInstance.get_mem_as_utf8(outputOffset, outputLength);
-
-    console.log(JSON.stringify(output));
     return output ? output.trim().split('\n') : [];
   }
   roster() {
