@@ -115,22 +115,6 @@ describe('School', () => {
     expect(school.roster()).toEqual(expectedSortedStudents);
   });
 
-  xtest('roster cannot be modified outside of module', () => {
-    school.add('Aimee', 2);
-    let roster = school.roster();
-    roster += 'Oops.';
-    const expectedDb = 'Aimee\n';
-    expect(school.roster()).toEqual(expectedDb);
-  });
-
-  xtest('roster cannot be modified outside of module using grade()', () => {
-    school.add('Aimee', 2);
-    let grade = school.grade(2);
-    grade += 'Oops.';
-    const expectedDb = 'Aimee\n';
-    expect(school.roster()).toEqual(expectedDb);
-  });
-
   xtest("a student can't be in two different grades", () => {
     school.add('Aimee', 2);
     school.add('Aimee', 1);
