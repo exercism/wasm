@@ -1,3 +1,4 @@
+import { test as xtest } from '@jest/globals';
 import { compileWat, WasmRunner } from "@exercism/wasm-lib";
 
 let wasmModule;
@@ -5,7 +6,7 @@ let currentInstance;
 
 beforeAll(async () => {
   try {
-    const watPath = new URL("./grade-school.wat", import.meta.url);
+    const watPath = new URL("./.meta/proof.ci.wat", import.meta.url);
     const { buffer } = await compileWat(watPath);
     wasmModule = await WebAssembly.compile(buffer);
   } catch (err) {
@@ -32,8 +33,7 @@ class GradeSchool {
   }
   #getOutput(call, ...args) {
     const [outputOffset, outputLength] = currentInstance.exports[call](...args);
-    const output = currentInstance.get_mem_as_utf8(outputOffset, outputLength);
-    return output ? output.trim().split('\n') : [];
+    return currentInstance.get_mem_as_utf8(outputOffset, outputLength);
   }
   roster() {
     return this.#getOutput('roster');
@@ -66,13 +66,13 @@ describe('School', () => {
   });
 
   test('a new school has an empty roster', () => {
-    expect(school.roster()).toEqual([]);
+    expect(school.roster()).toEqual('');
   });
 
   xtest('adding a student adds them to the roster for the given grade', () => {
     school.add('Aimee', 2);
 
-    const expectedDb = ['Aimee'];
+    const expectedDb = 'Aimee\n';
     expect(school.roster()).toEqual(expectedDb);
   });
 
@@ -81,7 +81,7 @@ describe('School', () => {
     school.add('James', 2);
     school.add('Paul', 2);
 
-    const expectedDb = ['Blair', 'James', 'Paul'];
+    const expectedDb = 'Blair\nJames\nPaul\n';
     expect(school.roster()).toEqual(expectedDb);
   });
 
@@ -89,7 +89,7 @@ describe('School', () => {
     school.add('Chelsea', 3);
     school.add('Logan', 7);
 
-    const expectedDb = ['Chelsea', 'Logan'];
+    const expectedDb = 'Chelsea\nLogan\n';
     expect(school.roster()).toEqual(expectedDb);
   });
 
@@ -98,12 +98,12 @@ describe('School', () => {
     school.add('Bradley', 5);
     school.add('Jeff', 1);
 
-    const expectedStudents = ['Bradley', 'Franklin'];
+    const expectedStudents = 'Bradley\nFranklin\n';
     expect(school.grade(5)).toEqual(expectedStudents);
   });
 
   xtest('grade returns an empty array if there are no students in that grade', () => {
-    expect(school.grade(1)).toEqual([]);
+    expect(school.grade(1)).toEqual('');
   });
 
   xtest('the students names in each grade in the roster are sorted', () => {
@@ -112,28 +112,29 @@ describe('School', () => {
     school.add('Christopher', 4);
     school.add('Kyle', 3);
 
-    const expectedSortedStudents = ['Kyle', 'Christopher', 'Jennifer', 'Kareem'];
+    const expectedSortedStudents = 'Kyle\nChristopher\nJennifer\nKareem\n';
     expect(school.roster()).toEqual(expectedSortedStudents);
   });
 
   xtest('roster cannot be modified outside of module', () => {
     school.add('Aimee', 2);
-    const roster = school.roster();
-    roster.push('Oops.');
-    const expectedDb = ['Aimee'];
+    let roster = school.roster();
+    roster += 'Oops.';
+    const expectedDb = 'Aimee\n';
     expect(school.roster()).toEqual(expectedDb);
   });
 
   xtest('roster cannot be modified outside of module using grade()', () => {
     school.add('Aimee', 2);
-    school.grade(2).push('Oops.');
-    const expectedDb = ['Aimee'];
+    let grade = school.grade(2);
+    grade += 'Oops.';
+    const expectedDb = 'Aimee\n';
     expect(school.roster()).toEqual(expectedDb);
   });
 
   xtest("a student can't be in two different grades", () => {
     school.add('Aimee', 2);
     school.add('Aimee', 1);
-    expect(school.grade(2)).toEqual([]);
+    expect(school.grade(2)).toEqual('');
   });
 });
