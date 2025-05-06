@@ -1,6 +1,6 @@
 {
   "name": "@exercism/wasm-grade-school",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Exercism exercises in WebAssembly.",
   "author": "Alex Lohr",
   "type": "module",
@@ -11,26 +11,19 @@
     "url": "https://github.com/exercism/wasm",
     "directory": "exercises/practice/grade-school"
   },
-  "jest": {
-    "maxWorkers": 1
-  },
   "devDependencies": {
-    "@babel/core": "^7.23.3",
-    "@exercism/babel-preset-javascript": "^0.4.0",
     "@exercism/eslint-config-javascript": "^0.6.0",
-    "@types/jest": "^29.5.8",
     "@types/node": "^20.9.1",
-    "babel-jest": "^29.7.0",
-    "core-js": "^3.33.2",
     "eslint": "^8.54.0",
-    "jest": "^29.7.0"
+    "uvu": "^0.5.6",
+    "watchlist": "0.3.1"
   },
   "dependencies": {
     "@exercism/wasm-lib": "^0.2.0"
   },
   "scripts": {
-    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js ./*",
-    "watch": "node --experimental-vm-modules node_modules/jest/bin/jest.js --watch ./*",
+    "test": "uvu ./",
+    "watch": "watchlist *.spec.mjs *.wat -- yarn test",
     "lint": "eslint ."
   }
 }

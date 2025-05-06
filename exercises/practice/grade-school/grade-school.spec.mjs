@@ -1,9 +1,15 @@
+import { suite } from "uvu";
+import * as assert from "uvu/assert";
 import { compileWat, WasmRunner } from "@exercism/wasm-lib";
+
+const test = suite('grade-school');
+const xtest = test.skip;
+const describe = (_, x) => x();
 
 let wasmModule;
 let currentInstance;
 
-beforeAll(async () => {
+test.before(async () => {
   try {
     const watPath = new URL("./grade-school.wat", import.meta.url);
     const { buffer } = await compileWat(watPath);
@@ -43,7 +49,7 @@ class GradeSchool {
 }
 
 describe('School', () => {
-  beforeEach(async () => {
+  test.before.each(async () => {
     currentInstance = null;
 
     if (!wasmModule) {
@@ -60,19 +66,19 @@ describe('School', () => {
 
   let school;
 
-  beforeEach(() => {
+  test.before.each(() => {
     school = new GradeSchool();
   });
 
   test('a new school has an empty roster', () => {
-    expect(school.roster()).toEqual('');
+    assert.equal(school.roster(), '');
   });
 
   xtest('adding a student adds them to the roster for the given grade', () => {
     school.add('Aimee', 2);
 
     const expectedDb = 'Aimee\n';
-    expect(school.roster()).toEqual(expectedDb);
+    assert.equal(school.roster(), expectedDb);
   });
 
   xtest('adding more students to the same grade adds them to the roster', () => {
@@ -81,7 +87,7 @@ describe('School', () => {
     school.add('Paul', 2);
 
     const expectedDb = 'Blair\nJames\nPaul\n';
-    expect(school.roster()).toEqual(expectedDb);
+    assert.equal(school.roster(), expectedDb);
   });
 
   xtest('adding students to different grades adds them to the roster', () => {
@@ -89,7 +95,7 @@ describe('School', () => {
     school.add('Logan', 7);
 
     const expectedDb = 'Chelsea\nLogan\n';
-    expect(school.roster()).toEqual(expectedDb);
+    assert.equal(school.roster(), expectedDb);
   });
 
   xtest('grade returns the students in that grade in alphabetical order', () => {
@@ -98,11 +104,11 @@ describe('School', () => {
     school.add('Jeff', 1);
 
     const expectedStudents = 'Bradley\nFranklin\n';
-    expect(school.grade(5)).toEqual(expectedStudents);
+    assert.equal(school.grade(5), expectedStudents);
   });
 
   xtest('grade returns an empty array if there are no students in that grade', () => {
-    expect(school.grade(1)).toEqual('');
+    assert.equal(school.grade(1), '');
   });
 
   xtest('the students names in each grade in the roster are sorted', () => {
@@ -112,12 +118,15 @@ describe('School', () => {
     school.add('Kyle', 3);
 
     const expectedSortedStudents = 'Kyle\nChristopher\nJennifer\nKareem\n';
-    expect(school.roster()).toEqual(expectedSortedStudents);
+    assert.equal(school.roster(), expectedSortedStudents);
   });
 
   xtest("a student can't be in two different grades", () => {
     school.add('Aimee', 2);
     school.add('Aimee', 1);
-    expect(school.grade(2)).toEqual('');
+    assert.equal(school.grade(2), '');
   });
 });
+
+test.run();
+
