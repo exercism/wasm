@@ -7,7 +7,7 @@
       "grade-school.wat"
     ],
     "test": [
-      "grade-school.spec.js"
+      "grade-school.spec.mjs"
     ],
     "example": [
       ".meta/proof.ci.wat"
