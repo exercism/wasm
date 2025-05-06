@@ -3,6 +3,7 @@
   "version": "0.0.3",
   "description": "Exercism exercises in WebAssembly.",
   "author": "Alex Lohr",
+  "module": true,
   "type": "module",
   "private": true,
   "license": "MIT",
@@ -23,7 +24,7 @@
   },
   "scripts": {
     "test": "uvu ./",
-    "watch": "watchlist *.spec.mjs *.wat -- yarn test",
+    "watch": "watchlist *.spec.js *.wat -- yarn test",
     "lint": "eslint ."
   }
 }
