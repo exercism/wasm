@@ -17,7 +17,6 @@ beforeAll(async () => {
 const spiralMatrix = (size) => {
   const [outputOffset, outputLength] = currentInstance.exports.spiralMatrix(size);
   const output = currentInstance.get_mem_as_u16(outputOffset, outputLength);
-  console.log(output);
   const outputIterator = output[Symbol.iterator]();
   return Array.from({ length: size }, () => 
     Array.from({ length: size}, () => outputIterator.next()?.value));

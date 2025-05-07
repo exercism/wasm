@@ -1,5 +1,5 @@
 {
-  "name": "@exercism/wasm-bob",
+  "name": "@exercism/wasm-bowling",
   "description": "Exercism exercises in WebAssembly.",
   "type": "module",
   "private": true,
