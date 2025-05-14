@@ -1,14 +1,14 @@
 {
-  "name": "@exercism/wasm-nucleotide-count",
+  "name": "@exercism/wasm-nth-prime",
   "description": "Exercism exercises in WebAssembly.",
-  "author": "Sean McBride",
+  "author": "Alex Lohr",
   "type": "module",
   "private": true,
   "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/exercism/wasm",
-    "directory": "exercises/practice/nucleotide-count"
+    "directory": "exercises/practice/nth-prime"
   },
   "jest": {
     "maxWorkers": 1
