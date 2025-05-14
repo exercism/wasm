@@ -1,0 +1,35 @@
+{
+  "name": "@exercism/wasm-nucleotide-count",
+  "description": "Exercism exercises in WebAssembly.",
+  "author": "Sean McBride",
+  "type": "module",
+  "private": true,
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/exercism/wasm",
+    "directory": "exercises/practice/nucleotide-count"
+  },
+  "jest": {
+    "maxWorkers": 1
+  },
+  "devDependencies": {
+    "@babel/core": "^7.23.3",
+    "@exercism/babel-preset-javascript": "^0.4.0",
+    "@exercism/eslint-config-javascript": "^0.6.0",
+    "@types/jest": "^29.5.8",
+    "@types/node": "^20.9.1",
+    "babel-jest": "^29.7.0",
+    "core-js": "^3.33.2",
+    "eslint": "^8.54.0",
+    "jest": "^29.7.0"
+  },
+  "dependencies": {
+    "@exercism/wasm-lib": "^0.2.0"
+  },
+  "scripts": {
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js ./*",
+    "watch": "node --experimental-vm-modules node_modules/jest/bin/jest.js --watch ./*",
+    "lint": "eslint ."
+  }
+}
