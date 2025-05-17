@@ -5,7 +5,7 @@ let currentInstance;
 
 beforeAll(async () => {
   try {
-    const watPath = new URL("saddle-points.wat", import.meta.url);
+    const watPath = new URL("./.meta/proof.ci.wat", import.meta.url);
     const { buffer } = await compileWat(watPath);
     wasmModule = await WebAssembly.compile(buffer);
   } catch (err) {
@@ -14,10 +14,10 @@ beforeAll(async () => {
   }
 });
 
-function saddlePoints(trees) {
+function saddlePoints(matrix) {
   const inputBufferOffset = 64;
   const inputBufferCapacity = 128;
-  const input = trees.map(line => line.join(' ')).join('\n');
+  const input = matrix?.[0]?.length ? matrix.map(line => line.join(' ') + '\n').join('') : '';
 
   const inputLengthEncoded = new TextEncoder().encode(input).length;
   if (inputLengthEncoded > inputBufferCapacity) {
