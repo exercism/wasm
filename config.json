@@ -685,6 +685,14 @@
         "uuid": "9edd0fda-cc73-40a2-a32c-b16918c65167",
         "practices": [],
         "prerequisites": [],
+        "difficulty": 2
+      },
+      {
+        "slug": "saddle-points",
+        "name": "Saddle Points",
+        "uuid": "5efb23b7-fa38-4667-a344-4455877beb03",
+        "practices": [],
+        "prerequisites": [],
         "difficulty": 4
       }
     ]
