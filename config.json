@@ -272,6 +272,14 @@
         "difficulty": 4
       },
       {
+        "slug": "nth-prime",
+        "name": "Nth Prime",
+        "uuid": "9edd0fda-cc73-40a2-a32c-b16918c65167",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 4
+      },
+      {
         "slug": "pascals-triangle",
         "name": "Pascal's Triangle",
         "uuid": "a5578de1-456c-46de-9066-e729f8f9ebaa",
@@ -323,6 +331,14 @@
         "slug": "rotational-cipher",
         "name": "Rotational Cipher",
         "uuid": "039a7a86-d954-4bb6-a144-93b2eb17b016",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 4
+      },
+      {
+        "slug": "saddle-points",
+        "name": "Saddle Points",
+        "uuid": "5efb23b7-fa38-4667-a344-4455877beb03",
         "practices": [],
         "prerequisites": [],
         "difficulty": 4
@@ -608,6 +624,14 @@
         "difficulty": 7
       },
       {
+        "slug": "piecing-it-together",
+        "name": "Piecing It Together",
+        "uuid": "18f049a1-428b-4364-9d28-28208119b7de",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 7
+      },
+      {
         "slug": "pig-latin",
         "name": "Pig Latin",
         "uuid": "96fae126-c097-4946-9ae0-4e604b93e582",
@@ -678,22 +702,6 @@
         "practices": [],
         "prerequisites": [],
         "difficulty": 8
-      },
-      {
-        "slug": "nth-prime",
-        "name": "Nth Prime",
-        "uuid": "9edd0fda-cc73-40a2-a32c-b16918c65167",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 2
-      },
-      {
-        "slug": "saddle-points",
-        "name": "Saddle Points",
-        "uuid": "5efb23b7-fa38-4667-a344-4455877beb03",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 4
       }
     ]
   },
