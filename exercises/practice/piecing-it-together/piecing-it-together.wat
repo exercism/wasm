@@ -18,7 +18,7 @@
   ;; @param {f64} $aspectRatio - aspect ratio between columns and rows*
   ;; @param {i32} $format - see formats globals*
   ;;
-  ;; @returns {(i32,i32,i32,i32,i32,f64,i32)} - complemented data in the same order**
+  ;; @returns {(i32,i32,i32,i32,i32,f64,i32)} - completed data in the same order**
   ;;
   ;; * 0 if not given
   ;; ** if an error occurs, it replaces the first return value
