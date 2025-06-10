@@ -15,7 +15,6 @@
     "invalidator": [
       "package.json"
     ]
-
   },
   "blurb": "Detect saddle points in a matrix.",
   "source": "J Dalbey's Programming Practice problems",
