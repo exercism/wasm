@@ -1,13 +1,13 @@
 {
   "authors": [
-    "atk"
+    "keiravillekode"
   ],
   "files": {
     "solution": [
-      "nth-prime.wat"
+      "proverb.wat"
     ],
     "test": [
-      "nth-prime.spec.js"
+      "proverb.spec.js"
     ],
     "example": [
       ".meta/proof.ci.wat"
@@ -16,9 +16,9 @@
       "package.json"
     ]
   },
-  "blurb": "Given a number n, determine what the nth prime is.",
-  "source": "A variation on Problem 7 at Project Euler",
-  "source_url": "https://projecteuler.net/problem=7",
+  "blurb": "For want of a horseshoe nail, a kingdom was lost, or so the saying goes. Output the full text of this proverbial rhyme.",
+  "source": "Wikipedia",
+  "source_url": "https://en.wikipedia.org/wiki/For_Want_of_a_Nail",
   "custom": {
     "version.tests.compatibility": "jest-27",
     "flag.tests.task-per-describe": false,

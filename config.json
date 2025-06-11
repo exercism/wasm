@@ -448,6 +448,14 @@
         "difficulty": 5
       },
       {
+        "slug": "proverb",
+        "name": "Proverb",
+        "uuid": "e386a22c-b48a-4074-a997-09659976fc21",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 5
+      },
+      {
         "slug": "pythagorean-triplet",
         "name": "Pythagorean Triplet",
         "uuid": "f8607f6e-229c-4b28-88ff-0d191ea90155",
