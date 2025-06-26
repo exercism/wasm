@@ -616,6 +616,14 @@
         "difficulty": 6
       },
       {
+        "slug": "book-store",
+        "name": "Book Store",
+        "uuid": "8fe40b8b-d6f4-46a7-83cc-29bac3494858",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 7
+      },
+      {
         "slug": "meetup",
         "name": "Meetup",
         "uuid": "5f859c2d-bf40-4d87-9dfd-bd434bb8e4ac",
