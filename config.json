@@ -552,6 +552,14 @@
         "difficulty": 6
       },
       {
+        "slug": "dominoes",
+        "name": "Dominoes",
+        "uuid": "9a60bba5-0ac4-4621-aa23-1e8e7dfe9d2b",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 6
+      },
+      {
         "slug": "food-chain",
         "name": "Food Chain",
         "uuid": "3e84ce64-9874-4a49-8d8c-d7414f50112a",
