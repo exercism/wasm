@@ -31,16 +31,7 @@
                                        (i32.const 4))))
     (local.set $inputPtr (local.get $basketOffset))
 
-    (local.set $i (i32.const 0))
-    (loop $zero
-      (if (i32.lt_u (local.get $i) (i32.const 20)) (then
-        (i32.store (i32.add (global.get $tableOffset)
-                            (local.get $i)) (i32.const 0))
-        (local.set $i (i32.add (local.get $i)
-                               (i32.const 4)))
-        (br $zero)
-      ))
-    )
+    (memory.fill (global.get $tableOffset) (i32.const 0) (i32.const 20))
 
     (loop $read
       (if (i32.ne (local.get $inputPtr) (local.get $stop)) (then
