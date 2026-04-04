@@ -3,23 +3,27 @@ import { compileWat, WasmRunner } from "@exercism/wasm-lib";
 let wasmModule;
 let currentInstance;
 
-function canChain(input = "") {
+function canChain(dominoes) {
   const inputBufferOffset = 256;
   const inputBufferCapacity = 256;
 
-  const inputLengthEncoded = new TextEncoder().encode(input).length;
-  if (inputLengthEncoded > inputBufferCapacity) {
+  const byteLength = dominoes.length * 2;
+  if (byteLength > inputBufferCapacity) {
     throw new Error(
-      `String is too large for buffer of size ${inputBufferCapacity} bytes`
+      `Input is too large for buffer of size ${inputBufferCapacity} bytes`
     );
   }
 
-  currentInstance.set_mem_as_utf8(inputBufferOffset, inputLengthEncoded, input);
+  const mem = new Uint8Array(currentInstance.exports.mem.buffer);
+  for (let i = 0; i < dominoes.length; i++) {
+    mem[inputBufferOffset + i * 2] = dominoes[i][0];
+    mem[inputBufferOffset + i * 2 + 1] = dominoes[i][1];
+  }
 
-  // Pass offset and length to WebAssembly function
+  // Pass offset and number of dominoes to WebAssembly function
   return currentInstance.exports.canChain(
     inputBufferOffset,
-    inputLengthEncoded
+    dominoes.length
   );
 }
 
@@ -50,55 +54,129 @@ describe("canChain()", () => {
   });
 
   test("empty input = empty output", () => {
-    expect(canChain("")).toBe(1);
+    expect(canChain([])).toBe(1);
   });
 
   xtest("singleton input = singleton output", () => {
-    expect(canChain("\x11")).toBe(1);
+    expect(canChain([[1, 1]])).toBe(1);
   });
 
   xtest("singleton that can't be chained", () => {
-    expect(canChain("\x12")).toBe(0);
+    expect(canChain([[1, 2]])).toBe(0);
   });
 
   xtest("three elements", () => {
-    expect(canChain("\x12\x31\x23")).toBe(1);
+    expect(
+      canChain([
+        [1, 2],
+        [3, 1],
+        [2, 3],
+      ])
+    ).toBe(1);
   });
 
   xtest("can reverse dominoes", () => {
-    expect(canChain("\x12\x13\x23")).toBe(1);
+    expect(
+      canChain([
+        [1, 2],
+        [1, 3],
+        [2, 3],
+      ])
+    ).toBe(1);
   });
 
   xtest("can't be chained", () => {
-    expect(canChain("\x12\x41\x23")).toBe(0);
+    expect(
+      canChain([
+        [1, 2],
+        [4, 1],
+        [2, 3],
+      ])
+    ).toBe(0);
   });
 
   xtest("disconnected - simple", () => {
-    expect(canChain("\x11\x22")).toBe(0);
+    expect(
+      canChain([
+        [1, 1],
+        [2, 2],
+      ])
+    ).toBe(0);
   });
 
   xtest("disconnected - double loop", () => {
-    expect(canChain("\x12\x21\x34\x43")).toBe(0);
+    expect(
+      canChain([
+        [1, 2],
+        [2, 1],
+        [3, 4],
+        [4, 3],
+      ])
+    ).toBe(0);
   });
 
   xtest("disconnected - single isolated", () => {
-    expect(canChain("\x12\x23\x31\x44")).toBe(0);
+    expect(
+      canChain([
+        [1, 2],
+        [2, 3],
+        [3, 1],
+        [4, 4],
+      ])
+    ).toBe(0);
   });
 
   xtest("need backtrack", () => {
-    expect(canChain("\x12\x23\x31\x24\x24")).toBe(1);
+    expect(
+      canChain([
+        [1, 2],
+        [2, 3],
+        [3, 1],
+        [2, 4],
+        [2, 4],
+      ])
+    ).toBe(1);
   });
 
   xtest("separate loops", () => {
-    expect(canChain("\x12\x23\x31\x11\x22\x33")).toBe(1);
+    expect(
+      canChain([
+        [1, 2],
+        [2, 3],
+        [3, 1],
+        [1, 1],
+        [2, 2],
+        [3, 3],
+      ])
+    ).toBe(1);
   });
 
   xtest("nine elements", () => {
-    expect(canChain("\x12\x53\x31\x12\x24\x16\x23\x34\x56")).toBe(1);
+    expect(
+      canChain([
+        [1, 2],
+        [5, 3],
+        [3, 1],
+        [1, 2],
+        [2, 4],
+        [1, 6],
+        [2, 3],
+        [3, 4],
+        [5, 6],
+      ])
+    ).toBe(1);
   });
 
   xtest("separate three-domino loops", () => {
-    expect(canChain("\x12\x23\x31\x45\x56\x64")).toBe(0);
+    expect(
+      canChain([
+        [1, 2],
+        [2, 3],
+        [3, 1],
+        [4, 5],
+        [5, 6],
+        [6, 4],
+      ])
+    ).toBe(0);
   });
-
 });
