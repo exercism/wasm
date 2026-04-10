@@ -14,11 +14,8 @@ function canChain(dominoes) {
     );
   }
 
-  const mem = new Uint8Array(currentInstance.exports.mem.buffer);
-  for (let i = 0; i < dominoes.length; i++) {
-    mem[inputBufferOffset + i * 2] = dominoes[i][0];
-    mem[inputBufferOffset + i * 2 + 1] = dominoes[i][1];
-  }
+  const mem = currentInstance.get_mem_as_u8(inputBufferOffset, inputBufferCapacity);
+  mem.set(dominoes.flat());
 
   // Pass offset and number of dominoes to WebAssembly function
   return currentInstance.exports.canChain(
