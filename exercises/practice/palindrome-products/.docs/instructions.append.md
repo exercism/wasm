@@ -1,6 +1,6 @@
 # Instructions append
 
-## Return values
+## Track specific instructions
 
 The functions are supposed to return the product and the offset and length of the factors array.
 The factors are just written as pairs of i32 into memory:

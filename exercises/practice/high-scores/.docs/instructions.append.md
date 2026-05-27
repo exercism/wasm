@@ -1,6 +1,6 @@
 # Instructions append
 
-## Implementation
+## Track specific instructions
 
 You may assume that the high score list is never empty.
 

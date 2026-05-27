@@ -1,12 +1,14 @@
 # Instructions append
 
-## Minefield format
+## Track specific instructions
+
+### Minefield format
 
 The minefield is represented as a string, with a newline character at the end of each row.
 
 An example would be `"   \n * \n   \n"`
 
-## Reserved Memory
+### Reserved Memory
 
 The buffer for the input string uses bytes 64-319 of linear memory.
 

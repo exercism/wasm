@@ -1,6 +1,6 @@
 # Instructions append
 
-## Implementation
+## Track specific instructions
 
 A queen must be placed on a valid position on the board.
 Two queens cannot share the same position.

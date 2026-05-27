@@ -1,6 +1,6 @@
 # Instructions append
 
-## Reserved Memory
+## Track specific instructions
 
 The buffer for the input string uses bytes 64-319 of linear memory.
 

@@ -1,6 +1,6 @@
 # Instructions append
 
-## Output format
+## Track specific instructions
 
 The output is expected as a flat array of u16 numbers; it will be deserialized into the required square array of arrays:
 
