@@ -1,4 +1,6 @@
-## Reserved Memory
+# Instructions append
+
+## Track specific instructions
 
 The buffer for the UTF-8 input string uses bytes 64-319 of linear memory.
 

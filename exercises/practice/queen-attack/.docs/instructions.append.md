@@ -1,9 +1,13 @@
 # Instructions append
 
+## Track specific instructions
+
 A queen must be placed on a valid position on the board.
 Two queens cannot share the same position.
 
-The queens shown below are at their [default starting positions](https://en.wikipedia.org/wiki/Rules_of_chess#Initial_setup). That's the 1st rank (row 7) for the white queen and the 8th rank (row 0) for the black queen. Both queens start in the d file (column 3).
+The queens shown below are at their [default starting positions](https://en.wikipedia.org/wiki/Rules_of_chess#Initial_setup).
+That's the 1st rank (row 7) for the white queen and the 8th rank (row 0) for the black queen.
+Both queens start in the d file (column 3).
 
 ```text
   a b c d e f g h
@@ -18,9 +22,10 @@ The queens shown below are at their [default starting positions](https://en.wiki
   a b c d e f g h
 ```
 
-# Positions argument
+## Positions argument
 
-The function will receive only a single unsigned 32bit number as argument. Both rows and columns are encoded into it:
+The function will receive only a single unsigned 32bit number as argument.
+Both rows and columns are encoded into it:
 
 - The chess notation files a..h become zero-indexed columns 0..7
 - The chess notation ranks 8..1 become zero-indexed rows 0..7
