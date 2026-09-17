@@ -16,7 +16,6 @@ beforeAll(async () => {
 
 const inputBufferOffset = 64;
 const inputBufferCapacity = 128;
-const u32Size = 4;
 
 export class HighScores {
   #scores;
@@ -24,7 +23,7 @@ export class HighScores {
   constructor(scores = []) {
     this.#scores = currentInstance.get_mem_as_u32(inputBufferOffset, inputBufferCapacity);
     this.#scores.set(scores);
-    this.#encodedLength = scores.length * u32Size;
+    this.#encodedLength = scores.length;
   }
   get scores() {
     return [...this.#scores].filter(Boolean);
