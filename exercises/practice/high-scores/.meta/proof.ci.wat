@@ -10,7 +10,7 @@
   ;; @result {i32} - latest score from the score board
   ;;
   (func (export "latest") (param $inputOffset i32) (param $inputElements i32) (result i32)
-    (i32.load (i32.sub (i32.add (local.get $inputOffset) (local.get $inputElements)) (i32.const 4)))
+    (i32.load (i32.sub (i32.add (local.get $inputOffset) (i32.shl (local.get $inputElements) (i32.const 2))) (i32.const 4)))
   )
 
   ;;
@@ -26,9 +26,9 @@
     (local $next i32)
     (local $best i32)
     (loop $findBest
-      (local.set $next (i32.load (i32.add (local.get $inputOffset) (local.get $index))))
+      (local.set $next (i32.load (i32.add (local.get $inputOffset) (i32.shl (local.get $index) (i32.const 2)))))
       (if (i32.gt_u (local.get $next) (local.get $best)) (then (local.set $best (local.get $next))))
-      (local.set $index (i32.add (local.get $index) (i32.const 4)))
+      (local.set $index (i32.add (local.get $index) (i32.const 1)))
     (br_if $findBest (i32.lt_u (local.get $index) (local.get $inputElements))))
     (local.get $best)
   )
@@ -48,7 +48,7 @@
     (local $second i32)
     (local $third i32)
     (loop $findTopThree
-      (local.set $next (i32.load (i32.add (local.get $inputOffset) (local.get $index))))
+      (local.set $next (i32.load (i32.add (local.get $inputOffset) (i32.shl (local.get $index) (i32.const 2)))))
       (if (i32.gt_u (local.get $next) (local.get $first)) (then
         (local.set $third (local.get $second))
         (local.set $second (local.get $first))
@@ -58,7 +58,7 @@
         (local.set $second (local.get $next))) 
       (else (if (i32.gt_u (local.get $next) (local.get $third)) (then
         (local.set $third (local.get $next))))))))
-      (local.set $index (i32.add (local.get $index) (i32.const 4)))
+      (local.set $index (i32.add (local.get $index) (i32.const 1)))
     (br_if $findTopThree (i32.lt_u (local.get $index) (local.get $inputElements))))
     (local.get $first) (local.get $second) (local.get $third)
   )
