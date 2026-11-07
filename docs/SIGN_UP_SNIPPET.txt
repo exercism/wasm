@@ -1,0 +1,15 @@
+(func (export "mostCommonLetter") (param $offset i32) (param $length i32) (result i32 i32)
+  (local $i i32) (local $char i32) (local $count i32) (local $best i32) (local $bestCount i32)
+  (loop $next
+    (local.set $char (i32.load8_u (i32.add (local.get $offset) (local.get $i))))
+    (local.set $count (i32.add (i32.load8_u offset=1024 (local.get $char)) (i32.const 1)))
+    (i32.store8 offset=1024 (local.get $char) (local.get $count))
+    (if (i32.and (i32.ne (local.get $char) (i32.const 32))
+                 (i32.gt_u (local.get $count) (local.get $bestCount)))
+      (then
+        (local.set $best (local.get $char))
+        (local.set $bestCount (local.get $count))))
+    (local.set $i (i32.add (local.get $i) (i32.const 1)))
+    (br_if $next (i32.lt_u (local.get $i) (local.get $length))))
+  (local.get $best)
+  (local.get $bestCount))
