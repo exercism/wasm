@@ -112,6 +112,8 @@ describe("Bank Account", () => {
 
   xtest("close already closed account throws error", () => {
     const account = currentInstance.exports;
+    expect(account.open()).toEqual(0);
+    expect(account.close()).toEqual(0);
     expect(account.close()).toEqual(-1);
   });
 
