@@ -110,6 +110,11 @@ describe("Bank Account", () => {
     expect(account.close()).toEqual(-1);
   });
 
+  xtest("close an unopened account throws error", () => {
+    const account = currentInstance.exports;
+    expect(account.close()).toEqual(-1);
+  });
+
   xtest("close already closed account throws error", () => {
     const account = currentInstance.exports;
     expect(account.open()).toEqual(0);
